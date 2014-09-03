@@ -24,36 +24,37 @@
   <script type="text/javascript" src='js/trap-ajax.js'></script>
 </div>
 
-  <div id="simple">
+  <div id="jmpress">
 
     <div id="home" class="step">
       <h1>Low or no cost distributed evolutionary computation </h1>
       <h2>JJ Merelo</h2>    
-      <h3><a href='http://geneura.wordpress.com'>GeNeura</a> + <a href='http://citic.ugr.es'>CITIC</a> for IDC14. Watch this at <a href='http://idc-keynote.herokuapp.com/'><code>idc-keynote.herokuapp.com</code></a></h3>
+      <h3><a href='http://geneura.wordpress.com'>GeNeura</a> + <a href='http://citic.ugr.es'>CITIC</a> for IDC14.</h3>
+      <h3>Watch this at <a href='http://idc-keynote.herokuapp.com/'><code>idc-keynote.herokuapp.com</code></a></h3>
     </div>
 
 <!-- Slides starts here -->
 
 <!-- a bit in the way of introduction -->
 
-<div class="step" data-x="0" data-y='-800' data-z='0' >
-  <h1 class='img'>Wait. Evolutionary algorithms? What's that?</h1>
+  <div class="step" data-template='row1' data-x='1000' >
+    <h1 class='img'>Wait. Evolutionary algorithms? What's that?</h1>
+  </div>
+
+  <div class="step" data-template='row1' data-x='2000' >
+    <img src='img/sheep.jpg' alt='Sheep from US national archives'>
+    <h1 class='image'>Population-based algorithms</h1>
+    <p class='image'>From <a href='https://www.flickr.com/photos/usnationalarchives/4309058199/in/photostream/'>Flocks in Owens Valley, Ansel Adams</a></p>
+  </div>
+
+  <div class="step"  data-template='row1' data-x='3000' >
+    <h1 class='img'>Evolving solutions through <em>natural</em> selection</h1>
+    <img src='img/wing.jpg' alt='Wing from the origin of Species'>
+    <h3>Select the best, combine and change them, repeat until solution found</h3>
+    <p class='image'>From <a href='https://www.flickr.com/photos/internetarchivebookimages/14780730844#'>The descent of man by Darwin</a></p></h3>
 </div>
 
-<div class="step" data-x='1000' data-y='-800' data-z='0'>
-  <img src='img/sheep.jpg' alt='Sheep from US national archives'>
-  <h1 class='image'>Population-based algorithms</h1>
-      <p class='image'>From <a href='https://www.flickr.com/photos/usnationalarchives/4309058199/in/photostream/'>Flocks in Owens Valley, Ansel Adams</a></p>
-</div>
-
-<div class="step" data-x='2000' data-y='-800' data-z='0' >
-  <h1 class='img'>Evolving solutions through natural selection</h1>
-  <img src='img/wing.jpg' alt='Wing from the origin of Species'>
-  <h3>Select the best, combine and change them, repeat until solution found</h3>
-      <p class='image'>From <a href='https://www.flickr.com/photos/internetarchivebookimages/14780730844#'>The descent of man by Darwin</a></p></h3>
-</div>
-
-<div class='step' data-x='3000' data-y='-800'>
+<div class='step'  data-template='row1' data-x='3000' >
   <h2>Random mutation introduces more variations</h2>
   
   <div id='chromosome'
@@ -71,7 +72,7 @@
   </script>
 </div>
 
-<div class='step' data-x='4000' data-y='-800'>
+<div class='step'  data-template='row1' data-x='4000' >
   <h2>Random variation only takes you nowhere fast</h2>
 
   <div id='parent1'
@@ -92,7 +93,7 @@
 
 </div>
 
-<div class='step' data-x='5000' data-y='-800'>
+<div class='step'  data-template='row1' data-x='5000' >
   <h2>To every one its own</h2>
   
   <table style='width:100%'><tr>
@@ -107,9 +108,9 @@
 	      </table>
 	      
   <script type='text/javascript' src='js/eval.js'> </script>
-	    </div>
+</div>
 
-<div class='step' data-x='6000' data-y='-800'>
+<div class='step'  data-template='row1' data-x='6000' >
   <h2>Only the fittest leave a mark</h2>
 	      
 	      <table  style='width:100%'>
@@ -125,9 +126,9 @@
 	      </table>
 	      
 	      <script type='text/javascript' src='js/reproduce.js'> </script>
-	    </div>  
+</div>  
 
-<div class='step' data-x='7000' data-y='-800'>
+<div class='step'  data-template='row1' data-x='7000' >
   <h2>We are doing it right now!</h2>
   
   <h3>Are you browsing this presentation?</h3>
@@ -136,8 +137,11 @@
   
 </div>
 
+
 <div class='step' data-x='7000' data-y='-800' data-z='-1000'>
-  <h1>The browser is the new operating system</h1>
+  <h1 class='img'>The browser is the new operating system</h1>
+
+  <img src='img/layout.gif' alt='real newspaper layout'>
 
   <h3><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em>, PPSN, <strong>1998</strong></h3>
 </div>
@@ -175,6 +179,8 @@
   <h2>Almost, but not quite</h2>
 
 </div>
+
+
 
 <div class='step' data-x='2000' data-y='-800' data-z='-1000'>
 
@@ -232,9 +238,10 @@
 </div>
 
 <script type="text/javascript">
-$(function() {
-	$('#simple').jmpress();
-});
+  $.jmpress("template", "row1", { y: -800, z: 0 });
+  $(function() {
+      $('#jmpress').jmpress();
+  });
 </script>
 
 </body>
