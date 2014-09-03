@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express();
 
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 5555))
 app.use(express.static(__dirname + '/public'))
 
 //app.get('/', function(request, response) {
@@ -34,7 +34,8 @@ app.put('/one/:chromosome', function(req, res){
 	    if ( req.params.chromosome ) {
 		chromosomes[ req.params.chromosome ] = 1; // to avoid repeated chromosomes
 		log.push( { put: process.hrtime(),
-			chromosome: req.params.chromosome } );
+			    chromosome: req.params.chromosome,
+			    IP: req.connection.remoteAddress } );
 		res.send( { length : Object.keys(chromosomes).length });
 	    } else {
 		res.send( { length : 0 });

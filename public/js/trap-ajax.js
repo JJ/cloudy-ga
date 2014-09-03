@@ -61,6 +61,8 @@
 	    fitness_data.datasets[0].data.push(eo.fitness_of[eo.population[0]]);
 	    this_chart.Line(fitness_data);
 	    // now migration
+	    $.ajax({ type: 'put',
+		     url: "one/"+eo.population[0] } );
 	}
 	if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b ) 
 	    && ( generation_count*conf.population_size < conf.max_evaluations)) {
