@@ -18,7 +18,7 @@
 			       "a": 1, 
 			       "b": 2, 
 			       "z": 3,
-			       "traps": 100 }
+			       "traps": 150 }
 	       };
     
     var traps = conf.fitness.traps;
