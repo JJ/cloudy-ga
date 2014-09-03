@@ -10,6 +10,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<link href="css/idc.css" rel="stylesheet" type="text/css" />
+	<link href="css/basic-animations.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jmpress.js"></script>
@@ -138,11 +139,11 @@
 </div>  
 
 <div class='step'  data-template='row1' data-x='7000' >
-  <h2>We are doing it right now!</h2>
+  <h1>We are doing it right now!</h1>
   
   <h3>Are you browsing this presentation?</h3>
 
-  <h2 data-jmpress='fade'>You're helping</h2>
+  <h2 data-jmpress='appear'>You're helping</h2>
   
 </div>
 
@@ -192,7 +193,13 @@
 
 </div>
 
+<div class='step' data-template='row2' data-x='1000'>
+  <h1 class='img'>We still need the the server</h1>
 
+  <h2>And the sysadmin, and the electricity...</h2>
+  <img src='img/servers.jpg' alt='Servers in a cave by reggestraat'>
+  <p class='image'>From <a href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony Antony <code>flic.kr/p/6K3ZAG</code></a></p></h3>
+</div>
 
 <div class='step' data-x='2000' data-y='-800' data-z='-1000'>
 
@@ -252,6 +259,7 @@
 <script type="text/javascript">
   $.jmpress("template", "row1", { y: -800, z: 0 });
   $.jmpress("template", "row2", {y: -800, z:  -1000 });
+  $.jmpress("template", "row3", {y: -800, z:  -2000 });
 
   $(function() {
       $('#jmpress').jmpress();
