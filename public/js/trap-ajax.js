@@ -12,7 +12,7 @@
     var this_chart = new Chart(buyers);
     
     // GA conf
-    var conf = {  "max_evaluations": 1000000,
+    var conf = {  "max_evaluations": 10000000,
 		  "population_size": 256,
 		  "fitness": { "l": 4, 
 			       "a": 1, 
