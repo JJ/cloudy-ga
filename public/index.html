@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Keynote IDC 2014: Low or no cost distributed evolutionary computation</title>
+
+	<meta name="description" content="IDC 2014 Keynote">
+	<meta name="author" content="JJ Merelo" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<link href="css/idc.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jmpress.js"></script>
+	<script type="text/javascript" src="js/SimplEA.js"></script>
+</head>
+<body>
+
+  <div id="simple">
+
+    <div id="home" class="step">
+      <h1>Low or no cost distributed evolutionary computation </h1>
+      <h2>JJ Merelo</h2>    
+      <h3><a href='http://geneura.wordpress.com'>GeNeura</a> + <a href='http://citic.ugr.es'>CITIC</a> for IDC14. Watch this at <a href='http://jj.github.io/IDC-low-or-no-cost/'><code>TODO</code></a></h3>
+    </div>
+
+<!-- Slides starts here -->
+
+<!-- a bit in the way of introduction -->
+
+<div class="step" data-x="0" data-y='-800' data-z='0' >
+  <h1 class='img'>Wait. Evolutionary algorithms? What's that?</h1>
+</div>
+
+<div class="step" data-x='1000' data-y='-800' data-z='0'>
+  <img src='img/sheep.jpg' alt='Sheep from US national archives'>
+  <h1 class='image'>Population-based algorithms</h1>
+      <p class='image'>From <a href='https://www.flickr.com/photos/usnationalarchives/4309058199/in/photostream/'>Flocks in Owens Valley, Ansel Adams</a></p>
+</div>
+
+<div class="step" data-x='2000' data-y='-800' data-z='0' >
+  <h1 class='img'>Evolving solutions through natural selection</h1>
+  <img src='img/wing.jpg' alt='Wing from the origin of Species'>
+  <h3>Select the best, combine and change them, repeat until solution found</h3>
+      <p class='image'>From <a href='https://www.flickr.com/photos/internetarchivebookimages/14780730844#'>The descent of man by Darwin</a></p></h3>
+</div>
+
+<div class='step' data-x='3000' data-y='-800'>
+  <h2>Random mutation introduces more variations</h2>
+  
+  <div id='chromosome'
+       class='chrom'>11111111000000001111111100000000</div>
+  <form id='mutation' >
+    <input type="submit" value="Evolve!" class='presshere'/>
+  </form>
+  <div id='new_chromosome' class='chrom'></div>
+  <script type='text/javascript'>
+    $("#mutation").submit(function(){
+    var new_guy = mutate($("#chromosome").text());
+    $("#new_chromosome").text(new_guy);
+    return false;
+    });
+  </script>
+</div>
+
+<div class='step' data-x='4000' data-y='-800'>
+  <h2>Random variation only takes you nowhere fast</h2>
+
+  <div id='parent1'
+       class='chrom'>11111111000000001111111100000000</div>
+  <div id='parent2'
+       class='chrom'>00000000111111110000000011111111</div>
+  <form id='crossover' >
+    <input type="submit" value="Do it!" class='presshere'/>
+  </form>
+  <div id='offspring' class='chrom'></div>
+	  <script type='text/javascript'>
+	    $("#crossover").submit(function(){
+	    var new_guy = crossover($("#parent1").text(),$("#parent2").text());
+	    $("#offspring").text(new_guy);
+	    return false;
+	    });
+	  </script>
+
+</div>
+
+<div class='step' data-x='5000' data-y='-800'>
+  <h2>To every one its own</h2>
+  
+  <table style='width:100%'><tr>
+      <td id='gen1' class='left'></td>
+      <td>
+	<form id='eval' >
+	  <input type="submit" value="Fit?" class='presshere' style='float:none:overflow:hidden'/>
+	</form>
+      </td>
+      <td id='gen2' class='right'></td>
+    </tr>
+	      </table>
+	      
+  <script type='text/javascript' src='js/eval.js'> </script>
+	    </div>
+
+<div class='step' data-x='6000' data-y='-800'>
+  <h2>Only the fittest leave a mark</h2>
+	      
+	      <table  style='width:100%'>
+		<tr>
+		  <td id='repro1' class='left'></td>
+		  <td>
+		    <form id='repro' >
+		      <input type="submit" value="Replicate!" class='presshere' style='float:none'/>
+		    </form>
+		  </td>
+		  <td id='repro2' class='right'></td>
+		</tr>
+	      </table>
+	      
+	      <script type='text/javascript' src='js/reproduce.js'> </script>
+	    </div>  
+
+<div class='step' data-x='7000' data-y='-800'>
+  <h2>Let's see how all this plays together</h2>
+  
+  <h3>Check it out at <a href='http://jj.github.io/nodeo/app/browser/chart.html'>http://goo.gl/yXpcKG</a></h3>
+  
+</div>
+
+<div class="step" data-z='0' data-x='0' data-y='8000' data-scale='20'>
+  <h1 class='img'>Science as potlatch</h1>
+
+  <img src='img/totems-by-frana-blaylock.jpg' alt='Totems'>
+  <p class='image'>Image by <a href='https://www.flickr.com/photos/11909427@N07/3119247124'>Frana Blaylock <code>flic.kr/p/5KCXuQ</code></a></p>
+</div>
+
+<div class="step" data-x='-1000' data-y='6000' data-z='100'>
+  <h1>Potlatch is a resource redistribution system</h1>
+
+  <h2> == load balancing!</h2>
+</div>
+
+<div class="step" data-x='0' data-y='6000' data-z='100'>
+  <h1>But also creates a link between persons and tribes</h1>
+
+  <h2> == distributed system!</h2>
+</div>
+
+<div class="step"  data-x='-4200' data-y='6400' data-z='100'>
+  <h1>Where's my gift?</h1>
+
+  <h2>I want my free distributed computing system!</h2>
+</div>
+
+<div class="step" data-x='0' data-y='6400' data-z='100'>
+  <h1>Potlatch arose from big resource surpluses</h1>
+
+  <h2>You only give what you've got to spare</h2>
+</div>
+
+<div class="step" data-x='-4200' data-y='7200' data-z='100'>
+  <h1>Where's my free computing resources?</h1>
+
+  <h2>In your pockets!</h2>
+</div>
+
+<!-- last slide -->
+
+<div class="step" data-z='-1500' data-x='0' data-y='800' data-scale='3' data-rotate-z='270' data-rotate-x='90'>
+  <h1>Any question?</h1>
+
+  <h3>Download/fork this presentation from <a href='http://git.io/idc14soea'><code>http://git.io/idc14soea</code></a></h3>
+</div>
+<!-- Slides end here -->
+  </div>
+
+<div class="hint">
+    <p>Use arrow keys to navigate</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+});
+</script>
+
+</body>
+</html>
