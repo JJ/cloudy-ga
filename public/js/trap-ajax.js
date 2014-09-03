@@ -3,7 +3,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
     var nodeo = require('../../lib/nodeo.js'),
-    trap = require('../../lib/trap.js');
+    trap = require('../../lib/trap.js'); // included in thefile
     
     // get line chart canvas
     var buyers = document.getElementById('fitness').getContext('2d');
@@ -13,12 +13,12 @@
     
     // GA conf
     var conf = {  "max_evaluations": 1000000,
-		  "population_size": 512,
+		  "population_size": 256,
 		  "fitness": { "l": 4, 
 			       "a": 1, 
 			       "b": 2, 
 			       "z": 3,
-			       "traps": 40 }
+			       "traps": 100 }
 	       };
     
     var traps = conf.fitness.traps;
@@ -60,6 +60,7 @@
 	    fitness_data.labels.push(generation_count);
 	    fitness_data.datasets[0].data.push(eo.fitness_of[eo.population[0]]);
 	    this_chart.Line(fitness_data);
+	    // now migration
 	}
 	if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b ) 
 	    && ( generation_count*conf.population_size < conf.max_evaluations)) {
