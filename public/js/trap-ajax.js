@@ -61,9 +61,10 @@
 	    fitness_data.datasets[0].data.push(eo.fitness_of[eo.population[0]]);
 	    this_chart.Line(fitness_data);
 	    // now migration - first get
-	    $.get("random", function( data ) {
+	    $.get("/random", function( data ) {
 		if ( data.chromosome ) {
 		    eo.incorporate( data.chromosome );
+//		    alert('Getting ' + data.chromosome );
 		}
 	    });
 	    // then send
