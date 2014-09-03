@@ -146,13 +146,16 @@
   
 </div>
 
+<!-- End row 1 -->
 
-<div class='step' data-x='7000' data-y='-800' data-z='-1000'>
+<div class='step' data-template='row2' data-x='7000'>
+
   <h1 class='img'>The browser is the new operating system</h1>
 
   <img src='img/layout.gif' alt='real newspaper layout'>
 
   <h3><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em>, PPSN, <strong>1998</strong></h3>
+
 </div>
 
 <div class='step' data-x='6000' data-y='-800' data-z='-1000'>
@@ -248,6 +251,8 @@
 
 <script type="text/javascript">
   $.jmpress("template", "row1", { y: -800, z: 0 });
+  $.jmpress("template", "row2", {y: -800, z:  -1000 });
+
   $(function() {
       $('#jmpress').jmpress();
   });
