@@ -60,7 +60,13 @@
 	    fitness_data.labels.push(generation_count);
 	    fitness_data.datasets[0].data.push(eo.fitness_of[eo.population[0]]);
 	    this_chart.Line(fitness_data);
-	    // now migration
+	    // now migration - first get
+	    $.get("random", function( data ) {
+		if ( data.chromosome ) {
+		    eo.incorporate( data.chromosome );
+		}
+	    });
+	    // then send
 	    $.ajax({ type: 'put',
 		     url: "one/"+eo.population[0] } );
 	}
