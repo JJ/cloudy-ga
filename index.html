@@ -87,8 +87,8 @@
     <div class='step' data-template='hor1' data-x='9000'>
       <h1>Chromosomes and fitness</h1>
       <pre><code>var chromosome = '1001100110011';
-      var fitness_of = new Object;
-      fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
+var fitness_of = new Object;
+fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
       
     </div>
 
@@ -100,13 +100,15 @@
 
     <div class='step' data-template='ver1' data-y='800'>
       <h1>(Almost) forget loops</h1>
-      <pre><code>eo.generation();
-generation_count++;
-if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
+      <pre><code>function do_ea() {
+ eo.generation();
+ generation_count++;
+ if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
   && ( generation_count*conf.population_size < conf.max_evaluations)) {
   setTimeout(do_ea, 5);
-} else {
+ } else {
   console.log( "Finished ", log );
+ }
 }</code></pre>
       
     </div>

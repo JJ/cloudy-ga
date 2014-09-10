@@ -16,14 +16,14 @@ body {
 
 /** STEP STYLES **/
 .step {
-	width: 900px;
-	height: 600px;
+	width: 950px;
+	height: 650px;
 	font-size: 1em;
 /*	min-height: 600px; */
 	background-color: #f1f0ff;
 
 	display: block;
-	padding: 40px 60px;
+	padding: 20px 40px;
 	border-radius: 20px;
 
 	box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
@@ -98,11 +98,11 @@ body {
 
 /* Color combo from http://www.colorcombos.com/color-schemes/14/ColorCombo14.html */
 
-h1 {font-size:4em;    
+h1 {font-size:3em;    
     font-family: "Short Stack", sans-serif;
     color: #443266;}
 
-h1.img {font-size:3em;    
+h1.img {font-size:2.5em;    
 	padding: 20px;
 	font-family: "Short Stack", sans-serif;
 	color: #443266;
@@ -124,14 +124,14 @@ h3 {font-size:2em;
 
 code { 
        font-family: Lekton, Courier, Courier New, monospace;
-       font-size: 1.5em;
+       font-size: 1.75em;
        background-color: black;
        color: lightgreen;
        font-weight:bold;
        margin: 2px;
        padding: 2px;
-       -moz-border-radius: 10px;
-       border-radius: 10px;
+       -moz-border-radius: 5px;
+       border-radius: 5px;
 }
 
 /* Customization */
