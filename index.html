@@ -14,13 +14,13 @@
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jmpress.js"></script>
+
+	<!-- Code highlight -->
+	<link rel="stylesheet" href="css/github.css">
+	<script src="js/highlight.pack.js"></script>
+
 </head>
 <body>
-
-<div id='graph' style="position:absolute; top:20px; right:20px; z-index:3">    <!-- top right corner evolution graph -->
-  <canvas id="fitness" width="150" height="100"></canvas>
-  <script type="text/javascript" src='js/trap-ajax.js'></script>
-</div>
 
   <div id="jmpress">
 
@@ -30,7 +30,11 @@
       <h3><a href='http://geneura.wordpress.com'>GeNeura</a> + <a href='http://citic.ugr.es'>CITIC</a> for <a href='http://ppsn2014.ijs.si/'>PPSN2014</a>. Watch this at <a href='http://jj.github.io/low-or-no-cost-ppsn2014'><code>TODO</code></a>.</h3>
     </div>
 
-<!-- Slides starts here -->
+    <!-- Slides starts here -->
+    <div class='step'>
+      <h1>JavaScript</h1>
+      <pre><code>console.log('What is the what?')</code></pre>
+    </div>
 
 <!-- a bit in the way of introduction -->
 
@@ -231,13 +235,13 @@
 </div>
 
 <script type="text/javascript">
-  $.jmpress("template", "row1", { y: -800, z: 0 });
-  $.jmpress("template", "row2", {y: -800, z:  -1000 });
-  $.jmpress("template", "row3", {y: 0, z:  -1000 });
-
-  $(function() {
-      $('#jmpress').jmpress();
-  });
+ $.jmpress("template", "row1", { y: -800, z: 0 });
+ $.jmpress("template", "row2", {y: -800, z:  -1000 });
+ $.jmpress("template", "row3", {y: 0, z:  -1000 });
+ hljs.initHighlightingOnLoad();
+ $(function() {
+   $('#jmpress').jmpress();
+ });
 </script>
 
 </body>
