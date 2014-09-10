@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Keynote IDC 2014: Low or no cost distributed evolutionary computation</title>
+	<title>Tutorial PPSN 2014: Low or no cost distributed evolutionary computation</title>
 
-	<meta name="description" content="IDC 2014 Keynote">
+	<meta name="description" content="PPSN 2014 Tutorial">
 	<meta name="author" content="JJ Merelo" />
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -22,227 +22,278 @@
 </head>
 <body>
 
-  <div id="jmpress">
+  <div id="jmpress"> <!-- wrapper -->
 
     <div id="home" class="step">
       <h1>Low or no cost distributed evolutionary computation</h1>
-      <h2>JJ Merelo <code>@jjmerelo</code></h2>    
+      <h2>JJ Merelo <code>@jjmerelo</code></h2> 
       <h3><a href='http://geneura.wordpress.com'>GeNeura</a> + <a href='http://citic.ugr.es'>CITIC</a> for <a href='http://ppsn2014.ijs.si/'>PPSN2014</a>. Watch this at <a href='http://jj.github.io/low-or-no-cost-ppsn2014'><code>TODO</code></a>.</h3>
     </div>
 
-    <!-- Slides starts here -->
-    <div class='step'>
-      <h1>JavaScript</h1>
-      <pre><code>console.log('What is the what?')</code></pre>
+
+   
+    <div class="step" data-template='hor1' data-x='1000' >
+      <h1 class='img'>The era of big science is over</h1>
     </div>
 
-<!-- a bit in the way of introduction -->
 
-  <div class="step" data-template='row1' >
-    <h1 class='img'>Brother, you got a computing cycle to spare?</h1>
-    <img src='img/begging.jpg' alt='From National Archive Netherlands, Flickr'>
-    <p class='image'>Flickr image from <a href='https://www.flickr.com/photos/nationaalarchief/5371990429'>Nationaal Archief @ <code>flic.kr/p/9bGRAD</code></a>.</p>
-  </div>
+    <div class="step" data-template='hor1' data-x='2000'  >
+      <h1 class='img'>Brother, you got a computing cycle to spare?</h1>
+      <img src='img/begging.jpg' alt='From National Archive Netherlands, Flickr'>
+      <p class='image'>Flickr image from <a href='https://www.flickr.com/photos/nationaalarchief/5371990429'>Nationaal Archief @ <code>flic.kr/p/9bGRAD</code></a>.</p>
+    </div>
 
-  <!-- End row 1 -->
+    <div class="step" data-template='hor1' data-x='3000'  >
+      <h1 class='img'>Fortunately, everybody's got cycles to spare</h1>
+      
+      <h2>How many computers do you have on you?</h2>
+    </div>
+    
+    
+    <div class='step' data-template='hor1' data-x='4000'>
 
-<div class='step' data-template='row2' data-x='7000'>
+      <h1 class='img'>The browser is the new operating system</h1>
+      
+      <img src='img/layout.gif' alt='real newspaper layout'>
+      
+      <h3><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em>, PPSN, <strong>1998</strong></h3>
+      
+    </div>
 
-  <h1 class='img'>The browser is the new operating system</h1>
+    <div class='step' data-template='hor1' data-x='5000'>
+      <h1>JavaScript is its native language</h1>
+      
+      <h2>Every browser uses JavaScript</h2>
+    </div>
+    
+    <div class='step' data-template='hor1' data-x='6000'>
+      <h1>Let's do Javascript!</h1>
+      
+      <h2>Menu → developer → console</h2>
+      
+      <h3>(Might vary depending on browser)</h3>
+    </div>
+    
+    <div class='step' data-template='hor1' data-x='7000'>
+      <h1>Say hello to these nice folks!</h1>
+      <pre><code>console.log('Dobrodošli')</code></pre>
+    </div>
+    
+    <div class='step' data-template='hor1' data-x='8000'>
+      <h1>This is an object. That, too.</h1>
+      <pre><code>console.log('Dobrodošli'.length)</code></pre>
+    </div>
+    
+    <div class='step' data-template='hor1' data-x='9000'>
+      <h1>Chromosomes and fitness</h1>
+      <pre><code>var chromosome = '1001100110011';
+      var fitness_of = new Object;
+      fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
+      
+    </div>
 
-  <img src='img/layout.gif' alt='real newspaper layout'>
+     <div class='step' data-template='hor1' data-x='10000'>
+       <h1>JavaScript is:</h1>
+       <h2>Standard, (reasonably) fast and</h2>
+       <h1 data-jmpress='fade'>Everywhere</h1>
+     </div>
 
-  <h3><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em>, PPSN, <strong>1998</strong></h3>
+    <div class='step' data-template='ver1' data-y='800'>
+      <h1>(Almost) forget loops</h1>
+      <pre><code>eo.generation();
+generation_count++;
+if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
+  && ( generation_count*conf.population_size < conf.max_evaluations)) {
+  setTimeout(do_ea, 5);
+} else {
+  console.log( "Finished ", log );
+}</code></pre>
+      
+    </div>
 
-</div>
-
-<div class='step' data-x='6000' data-y='-800' data-z='-1000'>
-  <h1>JavaScript is its native language</h1>
-
-  <h2>Every browser uses JavaScript</h2>
-</div>
-
-<div class='step' data-x='5000' data-y='-800' data-z='-1000'>
-  <h1>It's not distributed yet!</h1>
-
-  <h2 data-jmpress='fade'>We're getting there!</h2>
-</div>
-
-<div class='step' data-x='4000' data-y='-800' data-z='-1000'>
-  <h1>Ajax, a standard browser-server communication framework</h1>
-
-  <h2>HTTP petitions from a standard object in the browser</h2>
-
-  <h3 data-jmpress='fade'>Asynchronous!</h3>
-</div>
-
-<div class='step' data-x='3000' data-y='-800' data-z='-1000'>
-  <h1>Now we can distribute!</h1>
-
-  <h3><em><a href='http://arxiv.org/pdf/cs.DC/0701115.pdf'>Browser-based distributed evolutionary computation: performance and scaling behavior</a></em>, GECCO, <strong>2007</strong></h3>
-</div>
-
-<div class='step' data-x='2000' data-y='-800' data-z='-1000'>
-
-  <h1>Is that free?</h1>
-
-  <h2>Almost, but not quite</h2>
-
-</div>
-
-<div class='step' data-template='row2' data-x='1000'>
-  <h1 class='img'>We still need the the server</h1>
-
-  <h2>And the sysadmin, and the electricity...</h2>
-  <img src='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-  <p class='image'>From <a href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony Antony <code>flic.kr/p/6K3ZAG</code></a></p></h3>
-</div>
-
-<div class='step' data-template='row2'>
-  <h1 class='img'>We need the cloud</h1>
-</div>
-
-<!-- End row 2 -->
-
-<div class='step' data-template='row3'>
-  <h1 class='img'>What's cloud computing?</h1>
-
-  <h2>On-demand access to virtual <em>devices</em>.</h2>
-</div>
-
-<div class='step' data-template='row3' data-x='1000'>
-  <h1 class='img'>Infrastructure as a service</h1>
+    <!-- Slides starts here     
+    <div class='step' data-x='5000' data-y='-800' data-z='-1000'>
+      <h1>It's not distributed yet!</h1>
+      
+      <h2 data-jmpress='fade'>We're getting there!</h2>
+    </div>
+    
+    <div class='step' data-x='4000' data-y='-800' data-z='-1000'>
+      <h1>Ajax, a standard browser-server communication framework</h1>
+      
+      <h2>HTTP petitions from a standard object in the browser</h2>
+      
+      <h3 data-jmpress='fade'>Asynchronous!</h3>
+    </div>
   
-    <img src='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
-  <p1 class='image'>Flickr image by <a href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia <code>flic.kr/p/5Pa7ZJ</code></a></p1>
-</div>
+    <div class='step' data-x='3000' data-y='-800' data-z='-1000'>
+      <h1>Now we can distribute!</h1>
+      
+      <h3><em><a href='http://arxiv.org/pdf/cs.DC/0701115.pdf'>Browser-based distributed evolutionary computation: performance and scaling behavior</a></em>, GECCO, <strong>2007</strong></h3>
+    </div>
+    
+    <div class='step' data-x='2000' data-y='-800' data-z='-1000'>
+      
+      <h1>Is that free?</h1>
+      
+      <h2>Almost, but not quite</h2>
+      
+    </div>
+    
+    <div class='step' data-template='row2' data-x='1000'>
+      <h1 class='img'>We still need the the server</h1>
+      
+      <h2>And the sysadmin, and the electricity...</h2>
+      <img src='img/servers.jpg' alt='Servers in a cave by reggestraat'>
+      <p class='image'>From <a href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony Antony <code>flic.kr/p/6K3ZAG</code></a></p></h3>
+    </div>
+    
+    <div class='step' data-template='row2'>
+      <h1 class='img'>We need the cloud</h1>
+    </div>
+    
+  
+    <div class='step' data-template='row3'>
+      <h1 class='img'>What's cloud computing?</h1>
+      
+      <h2>On-demand access to virtual <em>devices</em>.</h2>
+    </div>
+    
+    <div class='step' data-template='row3' data-x='1000'>
+      <h1 class='img'>Infrastructure as a service</h1>
+      
+      <img src='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
+      <p1 class='image'>Flickr image by <a href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia <code>flic.kr/p/5Pa7ZJ</code></a></p1>
+    </div>
+    
+    
+    <div class='step' data-template='row3' data-x='2000'>
+      
+      <h1 class='img'>Platform as a service</h1>
+      <img src='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>
+      <p1 class='image'>Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></p1>
+      
+    </div>
+    
+    <div class='step' data-template='row3' data-x='3000'>
+      
+      <h1 class='img'>That can't be free</h1>
+      
+      <h2>It's mostly low-cost</h2>
+    </div>
+    
+    <div class='step' data-template='row3' data-x='4000'>
+      
+      <h1 class='img'>Distributed EA for 10$</h1>
+      
+      <h3><em><a href='http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6557709&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6552460%2F6557545%2F06557709.pdf%3Farnumber%3D6557709'>Is there a free lunch for cloud-based evolutionary algorithms?</a></em>, IEEE CEC, 2013</h3>
+    </div>
+    
+    <div class='step' data-template='row3' data-x='5000'>
+      
+      <h1 class='img'>IaaS have free <em>tiers</em></h1>
+      
+      <h2>But it generally is pay-as-you-go</h2>
+    </div>
+    
+    <div class='step' data-template='row3' data-x='6000'>
+      
+      <h1 class='img'>But then there's <em>freemium</em> PaaS</h1>
+      
+      <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a> and Google AppSpot</h3>
+    </div>
+    
+  
+    <div class="step" data-z='0' data-x='0' data-y='8000' data-scale='20'>
+      <h1 class='img'>Science as potlatch</h1>
+      
+      <img src='img/totems-by-frana-blaylock.jpg' alt='Totems'>
+      <p class='image'>Image by <a href='https://www.flickr.com/photos/11909427@N07/3119247124'>Frana Blaylock <code>flic.kr/p/5KCXuQ</code></a></p>
+    </div>
+    
+    <div class="step" data-x='-1000' data-y='6000' data-z='100'>
+      <h1>Potlatch is a resource redistribution system</h1>
+      
+      <h2> == load balancing!</h2>
+    </div>
+    
+    <div class="step" data-x='0' data-y='6000' data-z='100'>
+      <h1>Creates a link between persons and tribes</h1>
+      
+      <h2> == distributed system!</h2>
+    </div>
+    
+    <div class="step"  data-x='-4200' data-y='6400' data-z='100'>
+      <h1>Where's my gift?</h1>
+      
+      <h2>I want my free distributed computing system!</h2>
+    </div>
+    
+    <div class="step" data-x='0' data-y='6800' data-z='100'>
+      <h1>Potlatch arose from big resource surpluses</h1>
+      
+      <h2>You only give what you've got to spare</h2>
+    </div>
+    
+    <div class="step" data-x='-4200' data-y='7200' data-z='100'>
+      <h1>I give access to knowledge</h1>
+      
+      <h2>Open source!</h2>
+      
+      <h3>Engage community from inception.</h3>
+    </div>
+    
+    <div class="step" data-x='4200' data-y='7200' data-z='100'>
+      <h1 class='img'>Citizen gives attention</h1>
+      
+      <img class='figures' src='img/puts-twitter-experiment.png' alt='Twitter experiment'>
+      <h2>And computing resources!</h2>
+      
+    </div>
+    
+    <div class="step" data-x='0' data-y='7800' data-z='300' data-scale='2'>
+      <h1>Challenges and issues</h1>
+      
+      <h3>
+	<ul>
+	  <li>(Almost) Unpredictable infrastructure</li>
+	  <li>Ephemeral contributions: single seconds</li>
+	  <li>Complex socio-technical system</li>
+	</ul></h3>
+    </div>
+  
+  
+    <div class="step" data-x='0' data-y='9000' data-z='400' data-scale='3' >
+      <h2>Thanks a lot for your attention</h2>
+      
+      <h1>Any question?</h1>
+      
+      <h3>Download/fork this presentation from <a href='http://git.io/idc14kn'><code>git.io/idc14kn</code></a></h3>
+    </div>
+    
+    <!-- Slides end here -->
+  </div> <!-- end wrapper -->
 
-
-<div class='step' data-template='row3' data-x='2000'>
-
-  <h1 class='img'>Platform as a service</h1>
-  <img src='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>
-  <p1 class='image'>Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></p1>
-
-</div>
-
-<div class='step' data-template='row3' data-x='3000'>
-
-  <h1 class='img'>That can't be free</h1>
-
-  <h2>It's mostly low-cost</h2>
-</div>
-
-<div class='step' data-template='row3' data-x='4000'>
-
-  <h1 class='img'>Distributed EA for 10$</h1>
-
-  <h3><em><a href='http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6557709&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6552460%2F6557545%2F06557709.pdf%3Farnumber%3D6557709'>Is there a free lunch for cloud-based evolutionary algorithms?</a></em>, IEEE CEC, 2013</h3>
-</div>
-
-<div class='step' data-template='row3' data-x='5000'>
-
-  <h1 class='img'>IaaS have free <em>tiers</em></h1>
-
-  <h2>But it generally is pay-as-you-go</h2>
-</div>
-
-<div class='step' data-template='row3' data-x='6000'>
-
-  <h1 class='img'>But then there's <em>freemium</em> PaaS</h1>
-
-  <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a> and Google AppSpot</h3>
-</div>
-
-<div class='step' data-template='row3' data-x='8000'>
-  <h1>Why did you (or did not) give me cycles</h1>
-</div>
-
-<!-- end row -->
-
-<div class="step" data-z='0' data-x='0' data-y='8000' data-scale='20'>
-  <h1 class='img'>Science as potlatch</h1>
-
-  <img src='img/totems-by-frana-blaylock.jpg' alt='Totems'>
-  <p class='image'>Image by <a href='https://www.flickr.com/photos/11909427@N07/3119247124'>Frana Blaylock <code>flic.kr/p/5KCXuQ</code></a></p>
-</div>
-
-<div class="step" data-x='-1000' data-y='6000' data-z='100'>
-  <h1>Potlatch is a resource redistribution system</h1>
-
-  <h2> == load balancing!</h2>
-</div>
-
-<div class="step" data-x='0' data-y='6000' data-z='100'>
-  <h1>Creates a link between persons and tribes</h1>
-
-  <h2> == distributed system!</h2>
-</div>
-
-<div class="step"  data-x='-4200' data-y='6400' data-z='100'>
-  <h1>Where's my gift?</h1>
-
-  <h2>I want my free distributed computing system!</h2>
-</div>
-
-<div class="step" data-x='0' data-y='6800' data-z='100'>
-  <h1>Potlatch arose from big resource surpluses</h1>
-
-  <h2>You only give what you've got to spare</h2>
-</div>
-
-<div class="step" data-x='-4200' data-y='7200' data-z='100'>
-  <h1>I give access to knowledge</h1>
-
-  <h2>Open source!</h2>
-
-  <h3>Engage community from inception.</h3>
-</div>
-
-<div class="step" data-x='4200' data-y='7200' data-z='100'>
-  <h1 class='img'>Citizen gives attention</h1>
-
-  <img class='figures' src='img/puts-twitter-experiment.png' alt='Twitter experiment'>
-  <h2>And computing resources!</h2>
-
-</div>
-
-<div class="step" data-x='0' data-y='7800' data-z='300' data-scale='2'>
-  <h1>Challenges and issues</h1>
-
-  <h3>
-  <ul>
-    <li>(Almost) Unpredictable infrastructure</li>
-    <li>Ephemeral contributions: single seconds</li>
-    <li>Complex socio-technical system</li>
-  </ul></h3>
-</div>
-
-<!-- last slide -->
-
-<div class="step" data-x='0' data-y='9000' data-z='400' data-scale='3' >
-  <h2>Thanks a lot for your attention</h2>
-
-  <h1>Any question?</h1>
-
-  <h3>Download/fork this presentation from <a href='http://git.io/idc14kn'><code>git.io/idc14kn</code></a></h3>
-</div>
-<!-- Slides end here -->
+  <div class="hint">
+    <p>Use arrow keys to navigate</p>
   </div>
 
-<div class="hint">
-    <p>Use arrow keys to navigate</p>
-</div>
 
-<script type="text/javascript">
- $.jmpress("template", "row1", { y: -800, z: 0 });
- $.jmpress("template", "row2", {y: -800, z:  -1000 });
- $.jmpress("template", "row3", {y: 0, z:  -1000 });
- hljs.initHighlightingOnLoad();
- $(function() {
-   $('#jmpress').jmpress();
- });
-</script>
+  <script type="text/javascript">
+   $.jmpress("template", "hor1", { y: 0, z: 0 });
+   $.jmpress("template", "ver1", {x: 10000, z: 0 });
+   $.jmpress("template", "hor2", {y: 5600, z:0 });
+   $.jmpress("template", "ver2", {x: 0, z:0 });
+   $.jmpress("template", "hor3", {y: 800, z:0 });
+   $.jmpress("template", "ver3", {x: 9000, z:0 });
+   $.jmpress("template", "hor4", {y: 4800, z:0 });
+   $.jmpress("template", "ver4", {x: 1000, z:0 });
+   
+   $(function() {
+     $('#jmpress').jmpress();
+   });
+   hljs.initHighlightingOnLoad();
+  </script>
 
 </body>
 </html>
