@@ -134,7 +134,7 @@ fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
      <div class='step' data-template='ver1' data-y='2400'>
        <h1>And why not in the server too?</h1>
 
-       <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter. NodEO an EA library.</h2>
+       <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter. <a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
 
 <pre><code>var eo = new nodeo.Nodeo( { population_size: population_size,
 			    chromosome_size: chromosome_size,
@@ -205,30 +205,41 @@ do {
       <p class='image'>Image by <a href='https://flic.kr/p/5kGuNd'>Jake von Slatt <code>flic.kr/p/5kGuNd</code></a></p>
     </div>
 
-<!-- Continue here
-    <div class='step' data-x='4000' data-y='-800' data-z='-1000'>
-      <h1>Ajax, a standard browser-server communication framework</h1>
-      
-      <h2>HTTP petitions from a standard object in the browser</h2>
-      
-      <h3 data-jmpress='fade'>Asynchronous!</h3>
-    </div>
-  
-    <div class='step' data-x='3000' data-y='-800' data-z='-1000'>
-      <h1>Now we can distribute!</h1>
-      
-      <h3><em><a href='http://arxiv.org/pdf/cs.DC/0701115.pdf'>Browser-based distributed evolutionary computation: performance and scaling behavior</a></em>, GECCO, <strong>2007</strong></h3>
-    </div>
-    
-    <div class='step' data-x='2000' data-y='-800' data-z='-1000'>
+
+    <div class='step' data-x='5000' data-template='hor2'>
       
       <h1>Is that free?</h1>
       
       <h2>Almost, but not quite</h2>
+
+      <h2 data-jmpress='fade'>You need browsers and volunteers.</h2>
       
     </div>
+
+     <div class='step' data-x='4000' data-template='hor2'>
+      
+      <h1 class='img'>Browsers communicate using HTTP commands</h1>
+      <img src='img/rest.jpg' alt='Image by psd'>
+      <h2>PUT, GET, POST, DELETE</h2>
+      <p class='image'>Image by <a href='https://flic.kr/p/8yZyBF'>Paul Downey <code>flic.kr/p/8yZyBF</code></a></p>
+    </div>
+
+    <div class='step' data-x='3000' data-template='hor2'>
+      <h1>Ajax, a standard browser-server communication framework</h1>
+      
+      <h2>HTTP petitions from a standard object in the browser.</h2>
+      
+      <h3 data-jmpress='fade'>Asynchronous!</h3>
+    </div>
+
+    <div class='step' data-x='2000' data-template='hor2'>
+      <h1 class='right'>Now we can distribute!</h1>
+
+      <img class='figures' src='img/agajaj.gif' alt='image from another paper, by us'>
+      <p class='image'><em><a href='http://arxiv.org/pdf/cs.DC/0701115.pdf'>Browser-based distributed evolutionary computation: performance and scaling behavior</a></em>, GECCO, <strong>2007</strong>; showing histogram of generations given by volunteers</p>
+    </div>
     
-    <div class='step' data-template='row2' data-x='1000'>
+    <div class='step' data-template='hor2' data-x='1000'>
       <h1 class='img'>We still need the the server</h1>
       
       <h2>And the sysadmin, and the electricity...</h2>
@@ -236,28 +247,93 @@ do {
       <p class='image'>From <a href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony Antony <code>flic.kr/p/6K3ZAG</code></a></p></h3>
     </div>
     
-    
-    <div class='step' data-template='row3' data-x='4000'>
+    <div class='step' data-template='hor2' data-x='0'>
       
       <h1 class='img'>Distributed EA for 10$</h1>
       
+      <img src='img/evospace.gif' alt='Image from the paper'>
       <h3><em><a href='http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6557709&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6552460%2F6557545%2F06557709.pdf%3Farnumber%3D6557709'>Is there a free lunch for cloud-based evolutionary algorithms?</a></em>, IEEE CEC, 2013</h3>
     </div>
+
     
-    <div class='step' data-template='row3' data-x='5000'>
+    <div class='step' data-template='ver2' data-y='4800'>
       
       <h1 class='img'>IaaS have free <em>tiers</em></h1>
       
       <h2>But it generally is pay-as-you-go</h2>
+
+      <h3 data-jmpress='fade'>Great if you do smail amounts of computation</h3>
     </div>
+
     
-    <div class='step' data-template='row3' data-x='6000'>
+    <div class='step' data-template='ver2' data-y='4000'>
       
       <h1 class='img'>But then there's <em>freemium</em> PaaS</h1>
       
       <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a> and Google AppSpot</h3>
     </div>
+
+    <div class='step' data-template='ver2' data-y='3200'>
+      <h1>Three steps to have your little free simulation</h1>
+
+      <ol>
+	<li>Client-server application with JavaScript</li>
+	<li>Host it using Heroku/OpenShift</li>
+	<li>Tell people in Twitter!</li>
+      </ol>
+    </div>
+
+    <div class='step' data-template='ver2' data-y='2400'>
+      <h1 class='img'>What does that buy you?</h1>
+
+      <img src='img/idc-keynote.png' alt='Experiment result'>
+    </div>
+
+    <div class='step' data-template='ver2' data-y='1600'>
+      <h1 class='img'>It's not really a free lunch</h1>
+
+      <img src='img/idc-keynote-after.png' alt='Experiment result'>
+    </div>
+
+    <div class='step' data-template='ver2' data-y='800'>
+      <h1 class='img'>But it's pretty darn close to it</h1>
+
+      <h2>And all the technologies to use are already there</h2>
+    </div>
+
+    <div class='step' data-template='hor3' data-x='1000'>
+	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+	<img src='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
+	<p class='image'>Flickr image by <a href=' https://flic.kr/p/nXfbQ6'>Lorianne diSabato  @<code>flic.kr/p/nXfbQ6</code></a></p>
+	
+      </div>
+
+       <div class='step' data-template='hor3' data-x='2000'>
+	<h1 class='aside'>Detaching population from operations</h1>
+	
+	<img class='figures' src='img/poolbased.png' alt='pool schema'>
+
+	<h3 class='aside'>Chromosomes are taken from a persistent pool and brought back after evaluation, mutation, crossover</h3>
+      </div>
+
+      <div class='step' data-template='hor3' data-x='3000'>
+	<h1 class='img'>Three good things about pool-based EAs</h1>
+	<img src='img/3fingers.jpg' alt='3 problems'>
+	<p class='image'>Flickr image by <a href='https://www.flickr.com/photos/mutsmuts/6007667842'>Mutiara Karina <code>https://flic.kr/p/a9SSm3</code></a>.</p>
+      </div>
+
+      <div class='step' data-template='hor3' data-x='4000'>
+	<h1>1. Self-organizing clients</h1>
+	<h2>2. Fully asynchronous</h2>
+	<h3>3. Persistent population</h3>
+      </div>
+
+
+      
+    </div>
     
+<!-- Continue here
+
   
     <div class="step" data-z='0' data-x='0' data-y='8000' data-scale='20'>
       <h1 class='img'>Science as potlatch</h1>
