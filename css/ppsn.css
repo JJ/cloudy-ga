@@ -154,7 +154,13 @@ img.center { width: 90%;
       z-index: -1}
 
 img.figures { width: 700px;
-      z-index: -1}
+	      z-index: -1}
+
+img.illo {
+    width:auto;
+    height:auto;
+    position:relative;
+}
 
 p.image { 
           position: absolute;

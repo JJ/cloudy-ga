@@ -48,17 +48,19 @@
       
       <h2>How many computers do you have on you?</h2>
     </div>
-    
-    
+        
     <div class='step' data-template='hor1' data-x='4000'>
 
       <h1 class='img'>The browser is the new operating system</h1>
       
+      <h2>A long time ago, browser was for browsing</h2>
+
       <img src='img/layout.gif' alt='real newspaper layout'>
       
-      <h3><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em>, PPSN, <strong>1998</strong></h3>
+      <h2><a href='http://www.bibsonomy.org/bibtex/1d8eaf33c36765b5583683f996822e1b5/dblp'><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em></a>, PPSN, <strong>1998</strong></h2>
       
     </div>
+
 
     <div class='step' data-template='hor1' data-x='5000'>
       <h1>JavaScript is its native language</h1>
@@ -72,6 +74,7 @@
       <h2>Menu → developer → console</h2>
       
       <h3>(Might vary depending on browser)</h3>
+      <img class='illo' src='img/console.jpg' alt='firefox console'>
     </div>
     
     <div class='step' data-template='hor1' data-x='7000'>
@@ -85,8 +88,11 @@
     <div class='step' data-template='hor1' data-x='8000'>
       <h1>This is an object. That, too.</h1>
       <pre><code>console.log('Dobrodošli'.length)</code></pre>
+
+      <h2>Arrays are objects, and the other way round</h2>
+      <pre><code>console.log(['Dobro jutro','Dober dan','Dober večer'].pop())</code></pre>
     </div>
-    
+
     <div class='step' data-template='hor1' data-x='9000'>
       <h1>Chromosomes and fitness</h1>
       <pre><code>var chromosome = '1001100110011';
@@ -118,72 +124,88 @@ fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
 
     <div class='step' data-template='ver1' data-y='1600'>
       <h1>A whole algorithm/application in a browser</h1>
-      
+      <img src='img/screens.jpg' alt='Picture by bloem'>
       <h2 data-jmpress='fade'>The browser is the new operating system</h2>
-      
-      <h3 daja-jmpress='fade'>But I said that already, right?</h3>
+
+      <h3 data-jmpress='fade'>But I said that already, right?</h3>
+      <p class='image'>From <a href='https://flic.kr/p/8NDCRh'>Adriaan Bloem <code>flic.kr/p/8NDCRh</code></a></p>
     </div>
 
      <div class='step' data-template='ver1' data-y='2400'>
        <h1>And why not in the server too?</h1>
 
-       <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter.</h2>
+       <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter. NodEO an EA library.</h2>
 
+<pre><code>var eo = new nodeo.Nodeo( { population_size: population_size,
+			    chromosome_size: chromosome_size,
+			    fitness_func: utils.max_ones } );
+do {
+    eo.generation();
+    console.log( eo.population[0] );
+} while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
      </div>
 
-      <div class='step' data-template='ver1' data-y='3200'>
-	<h1>Servers can be in the clouds</h1>
-	<img src='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
-      </div>
-
+     <div class='step' data-template='ver1' data-y='3200'>
+       <h1 class='img'>Servers can be in the clouds</h1>
+       <img src='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
+     </div>
+     
       <div class='step' data-template='ver1' data-y='4000'>
 	<h1 class='img'>What's cloud computing?</h1>
       
 	<img src='img/grifo.jpg' alt='Magic tap by Caleb Khor'>
 	<h2>On-demand access to virtual <em>devices</em>.</h2>
-	<p1 class='image'>Flickr image by <a href='https://flic.kr/p/oBGSHw'>Caleb Khor <code>flic.kr/p/oBGSHw</code></a></p1>
+	<p class='image'>Flickr image by <a href='https://flic.kr/p/oBGSHw'>Caleb Khor <code>flic.kr/p/oBGSHw</code></a></p>
       </div>
-    
+
+      <div class='step' data-template='ver1' data-y='4800'>
+	<h1>And you can use it right now</h1>
+	<h3><a href='http://arxiv.org/abs/1105.6205'>Cloud-based Evolutionary Algorithms: An algorithmic study</a></h3>
+	<img class='illo' src='img/ga-dropbox.png' alt='GA folder'>
+	<h2>Using <a href='http://dropbox.com'>Dropbox</a>-shared folders for distribution. Easy as saving a file.</h2>
+      </div>
+
       <div class='step' data-template='ver1' data-y='5600'>
 	<h1 class='img'>Infrastructure as a service</h1>
       
 	<img src='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
-	<p1 class='image'>Flickr image by <a href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia <code>flic.kr/p/5Pa7ZJ</code></a></p1>
+	<p class='image'>Flickr image by <a href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia <code>flic.kr/p/5Pa7ZJ</code></a></p>
       </div>
     
     
-      <div class='step' data-template='ver1' data-y='6400'>
+      <div class='step' data-template='hor2' data-x='9000'>
       
 	<h1 class='img'>Platform as a service</h1>
 	<img src='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>
-	<p1 class='image'>Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></p1>
+	<p class='image'>Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></p>
 	
       </div>
 
-       <div class='step' data-template='ver1' data-y='7200'>
+       <div class='step' data-template='hor2' data-x='8000'>
       
 	<h1 class='img'>Software as a service</h1>
 	<img src='img/castle.jpg' alt='sandbox castle by sandifeet'>
-	<p1 class='image'>Flickr image by <a href='https://flic.kr/p/fPfHJJ'>sandifeet <code>flic.kr/p/fPfHJJ</code></a></p1>
+	<p class='image'>Flickr image by <a href='https://flic.kr/p/fPfHJJ'>sandifeet <code>flic.kr/p/fPfHJJ</code></a></p>
 	
       </div>
 
-       <div class='step' data-template='ver1' data-y='8000'>
-      
+       <div class='step' data-template='hor2' data-x='7000'>
+	 
 	 <h1 class='img'>Including development environments</h1>
-
+	 
 	 <h2><a href='http://koding.com'>koding</a> is a collaborative online development environment</h2>
-
-	 <h2 data-jmpress='fade'>With a in-browser virtual machine!</h2>
+	 
+	 <h2 data-jmpress='fade'>With a virtual machine you can use from the browser!</h2>
        </div>
    
-    <!-- Slides starts here     
-    <div class='step' data-x='5000' data-y='-800' data-z='-1000'>
-      <h1>It's not distributed yet!</h1>
-      
-      <h2 data-jmpress='fade'>We're getting there!</h2>
+    <div class='step' data-template='hor2' data-x='6000'>
+      <h1><em>Cloud</em> computers are (almost) normal computers</h1>
+      <img src='img/computers.jpg' alt='Picture by Jake Von Slatt'>      
+      <h2>You can use them pretty much in the same way you used them before</h2>
+      <p class='image'>Image by <a href='https://flic.kr/p/5kGuNd'>Jake von Slatt <code>flic.kr/p/5kGuNd</code></a></p>
     </div>
-    
+
+<!-- Continue here
     <div class='step' data-x='4000' data-y='-800' data-z='-1000'>
       <h1>Ajax, a standard browser-server communication framework</h1>
       
@@ -214,39 +236,6 @@ fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
       <p class='image'>From <a href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony Antony <code>flic.kr/p/6K3ZAG</code></a></p></h3>
     </div>
     
-    <div class='step' data-template='row2'>
-      <h1 class='img'>We need the cloud</h1>
-    </div>
-    
-  
-    <div class='step' data-template='row3'>
-      <h1 class='img'>What's cloud computing?</h1>
-      
-      <h2>On-demand access to virtual <em>devices</em>.</h2>
-    </div>
-    
-    <div class='step' data-template='row3' data-x='1000'>
-      <h1 class='img'>Infrastructure as a service</h1>
-      
-      <img src='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
-      <p1 class='image'>Flickr image by <a href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia <code>flic.kr/p/5Pa7ZJ</code></a></p1>
-    </div>
-    
-    
-    <div class='step' data-template='row3' data-x='2000'>
-      
-      <h1 class='img'>Platform as a service</h1>
-      <img src='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>
-      <p1 class='image'>Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></p1>
-      
-    </div>
-    
-    <div class='step' data-template='row3' data-x='3000'>
-      
-      <h1 class='img'>That can't be free</h1>
-      
-      <h2>It's mostly low-cost</h2>
-    </div>
     
     <div class='step' data-template='row3' data-x='4000'>
       
@@ -341,7 +330,7 @@ fitness_of[chromosome] = chromosome.match(/1/g).length;  </code></pre>
   </div> <!-- end wrapper -->
 
   <div class="hint">
-    <p>Use arrow keys to navigate</p>
+    <p>Use arrow keys or space bar to navigate</p>
   </div>
 
 
