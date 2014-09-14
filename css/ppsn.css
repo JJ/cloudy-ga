@@ -119,7 +119,7 @@ h2 {font-size:3em;
     background-color:rgba(250,240,230,0.7);
     padding: 10px;}
 
-ol {font-size:3em;
+ol,ul {font-size:3em;
     font-family: "Raleway", sans-serif;}
 
 h3 {font-size:2em;
