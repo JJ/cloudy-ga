@@ -219,3 +219,8 @@ p.image {
 }
 
 span.smaller { font-size:0.8em }
+span.hilite { background-color:yellow;
+	      margin: 5px;
+	      padding: 5px;
+	      -moz-border-radius: 15px;
+	      border-radius: 15px;}
