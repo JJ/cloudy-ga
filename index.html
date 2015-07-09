@@ -1,57 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>Tutorial PPSN 2014: Low or no cost distributed evolutionary computation</title>
 
-	<meta name="description" content="PPSN 2014 Tutorial">
-	<meta name="author" content="JJ Merelo" />
-	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<head>
+		<meta charset="utf-8">
 
-	<link href="css/ppsn.css" rel="stylesheet" type="text/css" />
-	<link href="css/basic-animations.css" rel="stylesheet" type="text/css" />
+		<title>Tutorial GECCO 2015: Low or no cost distributed evolutionary computation</title>
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jmpress.js"></script>
+		<meta name="description" content="Tutorial on browser-based evolutionary computation">
+		<meta name="author" content="JJ Merelo, framework by Hakim El Hattab">
 
-	<!-- Code highlight -->
-	<link rel="stylesheet" href="css/github.css">
-	<script src="js/highlight.pack.js"></script>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-</head>
-<body>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-  <div id="jmpress"> <!-- wrapper -->
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-    <!-- First slide -->
-    <div id="home" class="step">
-      <h1>Low or no cost distributed evolutionary computation</h1>
-      <h2><a href='http://twitter.com'>JJ Merelo <code>@jjmerelo</code></a></h2> 
-      <h3><a href='http://geneura.wordpress.com'>GeNeura</a> + <a href='http://citic.ugr.es'>CITIC</a> for <a href='http://ppsn2014.ijs.si/'>PPSN2014</a>. Watch this at <a href='http://jj.github.io/low-or-no-cost-ppsn2014'><code>http://goo.gl/qwMqmd</code></a>.</h3>
-    </div>
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link rel="stylesheet" href="css/github.css">
+		<script src="js/highlight.pack.js"></script>
+		<link href="css/ppsn.css" rel="stylesheet" type="text/css" />
 
-    <!-- First row -->
-    <div class="step" data-template='hor1' data-x='1000' >
-      <h1 class='img'>The era of big (computer) science is over</h1>
-      <img src='img/lab.jpg' alt='From UL Digital library, Flickr'>
-      <p class='image'>Flickr image from <a href='https://flic.kr/p/fsZ74Q'>UL Digital library @ <code>flic.kr/p/fsZ74Q</code></a>.</p>
-    </div>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
 
-    <div class="step" data-template='hor1' data-x='2000'  >
-      <h1 class='img'>Brother, you got a computing cycle to spare?</h1>
-      <img src='img/begging.jpg' alt='From National Archive Netherlands, Flickr'>
-      <p class='image'>Flickr image from <a href='https://www.flickr.com/photos/nationaalarchief/5371990429'>Nationaal Archief @ <code>flic.kr/p/9bGRAD</code></a>.</p>
-    </div>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
 
-    <div class="step" data-template='hor1' data-x='3000'  >
+	<body>
+
+	  <div class="reveal">
+
+	    <!-- Any section element inside of this container is displayed as a slide -->
+	    <div class="slides">
+	      
+	      <section data-x='1000' >
+		<h1 class='img'>The era of big (computer) science is over</h1>
+		<img src='img/lab.jpg' alt='From UL Digital library, Flickr'>
+		<p class='image'>Flickr image from <a href='https://flic.kr/p/fsZ74Q'>UL Digital library @ <code>flic.kr/p/fsZ74Q</code></a>.</p>
+	    </section>
+
+	    <section data-x='2000'  >
+	      <h1 class='img'>Brother, you got a computing cycle to spare?</h1>
+	      <img src='img/begging.jpg' alt='From National Archive Netherlands, Flickr'>
+	      <p class='image'>Flickr image from <a href='https://www.flickr.com/photos/nationaalarchief/5371990429'>Nationaal Archief @ <code>flic.kr/p/9bGRAD</code></a>.</p>
+	    </section>
+
+    <section data-x='3000'  >
       <h1 class='img'>Fortunately, everybody's got cycles to spare</h1>
       
       <h2>How many computers do you have on you?</h2>
-    </div>
+    </section>
         
-    <div class='step' data-template='hor1' data-x='4000'>
+    <section data-template='hor1' data-x='4000'>
 
       <h1 class='img'>The browser is the new operating system</h1>
       
@@ -61,44 +73,44 @@
       
       <h2><a href='http://www.bibsonomy.org/bibtex/1d8eaf33c36765b5583683f996822e1b5/dblp'><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em></a>, PPSN, <strong>1998</strong></h2>
       
-    </div>
+    </section>
 
 
-    <div class='step' data-template='hor1' data-x='5000'>
+    <section data-template='hor1' data-x='5000'>
       <h1 class='img'>JavaScript is its native language</h1>
       
       <h2>Every browser uses JavaScript</h2>
       <img src='img/js-mobiles.jpg' alt='pic by hendry'>
 
       <p class='image'>Flickr image by <a href='https://flic.kr/p/5omH5r'>Kai Hendry <code>flic.kr/p/5omH5r</code></a></p>
-    </div>
+    </section>
     
-    <div class='step' data-template='hor1' data-x='6000'>
+    <section data-template='hor1' data-x='6000'>
       <h1>Let's do Javascript!</h1>
       
       <h2>Menu → developer → console</h2>
       
       <h3>(Might vary depending on browser)</h3>
       <img class='illo' src='img/console.png' alt='firefox console'>
-    </div>
+    </section>
     
-    <div class='step' data-template='hor1' data-x='7000'>
+    <section data-template='hor1' data-x='7000'>
       <h1>Say hello to these nice folks!</h1>
       <pre><code>console.log('Dobrodošli')</code></pre>
 
       <h2>Or the much more annoying</h2>
       <pre><code>alert('Dobro jutro!');</code></pre>
-    </div>
+    </section>
     
-    <div class='step' data-template='hor1' data-x='8000'>
+    <section data-template='hor1' data-x='8000'>
       <h1>This is an object. That, too.</h1>
       <pre><code>console.log('Dobrodošli'.length)</code></pre>
 
       <h2>Arrays are objects, and the other way round</h2>
       <pre><code>console.log(['Dobro jutro','Dober dan','Dober večer'].pop())</code></pre>
-    </div>
+    </section>
 
-    <div class='step' data-template='hor1' data-x='9000'>
+    <section data-template='hor1' data-x='9000'>
       <h1>Chromosomes and fitness</h1>
       <pre><code>var chromosome = '1001100110011';
 var fitness_of = new Object;
@@ -111,16 +123,16 @@ var rr = function (chromosome) {
   }
   return fitness;
 }; </code></pre>
-    </div>
+    </section>
 
-     <div class='step' data-template='hor1' data-x='10000'>
+     <section data-template='hor1' data-x='10000'>
        <h1>JavaScript is:</h1>
        <h2>Standard, (reasonably) fast and</h2>
        <h1 data-jmpress='fade'>Everywhere</h1>
        <h2 data-jmpress='fade'>Yes, also in your PS4</h2>
-     </div>
+     </section>
 
-    <div class='step' data-template='ver1' data-y='800'>
+    <section data-template='ver1' data-y='800'>
       <h1>(Almost) forget about loops</h1>
       <pre><code>function do_ea() {
  eo.generation();
@@ -133,18 +145,18 @@ var rr = function (chromosome) {
  }
 }</code></pre>
 
-    </div>
+    </section>
 
-    <div class='step' data-template='ver1' data-y='1600'>
+    <section data-template='ver1' data-y='1600'>
       <h1 class='img'>A whole algorithm/application in a browser</h1>
       <img src='img/screens.jpg' alt='Picture by bloem'>
       <h2 data-jmpress='fade'>The browser is the new operating system</h2>
 
       <h3 data-jmpress='fade'>But I said that already, right?</h3>
       <p class='image'>From <a href='https://flic.kr/p/8NDCRh'>Adriaan Bloem <code>flic.kr/p/8NDCRh</code></a></p>
-    </div>
+   </section>
 
-     <div class='step' data-template='ver1' data-y='2400'>
+     <section data-template='ver1' data-y='2400'>
        <h1>And why not in the server too?</h1>
 
        <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter. <a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
@@ -156,70 +168,70 @@ do {
     eo.generation();
     console.log( eo.population[0] );
 } while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
-     </div>
+    </section>
 
-     <div class='step' data-template='ver1' data-y='3200'>
+     <section data-template='ver1' data-y='3200'>
        <h1 class='img'>Servers can be in the clouds</h1>
        <img src='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
-     </div>
+    </section>
      
-      <div class='step' data-template='ver1' data-y='4000'>
+      <section data-template='ver1' data-y='4000'>
 	<h1 class='img'>What's cloud computing?</h1>
       
 	<img src='img/grifo.jpg' alt='Magic tap by Caleb Khor'>
 	<h2>On-demand access to virtual <em>devices</em>.</h2>
 	<p class='image'>Flickr image by <a href='https://flic.kr/p/oBGSHw'>Caleb Khor <code>flic.kr/p/oBGSHw</code></a></p>
-      </div>
+     </section>
 
-      <div class='step' data-template='ver1' data-y='4800'>
+      <section data-template='ver1' data-y='4800'>
 	<h1>And you can use it right now</h1>
 	<h3><a href='http://arxiv.org/abs/1105.6205'>Cloud-based Evolutionary Algorithms: An algorithmic study</a></h3>
 	<img class='illo' src='img/ga-dropbox.png' alt='GA folder'>
 	<h2>Using <a href='http://dropbox.com'>Dropbox</a>-shared folders for distribution. Easy as saving a file.</h2>
-      </div>
+     </section>
 
-      <div class='step' data-template='ver1' data-y='5600'>
+      <section data-template='ver1' data-y='5600'>
 	<h1 class='img'>Infrastructure as a service</h1>
       
 	<img src='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
 	<p class='image'>Flickr image by <a href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia <code>flic.kr/p/5Pa7ZJ</code></a></p>
-      </div>
+     </section>
     
     
-      <div class='step' data-template='hor2' data-x='9000'>
+      <section data-template='hor2' data-x='9000'>
       
 	<h1 class='img'>Platform as a service</h1>
 	<img src='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>
 	<p class='image'>Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></p>
 	
-      </div>
+     </section>
 
-       <div class='step' data-template='hor2' data-x='8000'>
+       <section data-template='hor2' data-x='8000'>
       
 	<h1 class='img'>Software as a service</h1>
 	<img src='img/castle.jpg' alt='sandbox castle by sandifeet'>
 	<p class='image'>Flickr image by <a href='https://flic.kr/p/fPfHJJ'>sandifeet <code>flic.kr/p/fPfHJJ</code></a></p>
 	
-      </div>
+     </section>
 
-       <div class='step' data-template='hor2' data-x='7000'>
+       <section data-template='hor2' data-x='7000'>
 	 
 	 <h1 class='img'>Including development environments</h1>
 	 
 	 <h2><a href='http://koding.com'>koding</a> is a collaborative online development environment</h2>
 	 
 	 <h2 data-jmpress='fade'>With a virtual machine you can use from the browser!</h2>
-       </div>
+      </section>
    
-    <div class='step' data-template='hor2' data-x='6000'>
+    <section data-template='hor2' data-x='6000'>
       <h1 class='img'><em>Cloud</em> computers are (almost) normal computers</h1>
       <img src='img/computer.jpg' alt='Picture by Jake Von Slatt'>      
       <h2>You can use them pretty much in the same way you used them before</h2>
       <p class='image'>Image by <a href='https://flic.kr/p/5kGuNd'>Jake von Slatt <code>flic.kr/p/5kGuNd</code></a></p>
-    </div>
+   </section>
 
     
-    <div class='step' data-x='5000' data-template='hor2'>
+    <section data-x='5000' data-template='hor2'>
       
       <h1>Is that free?</h1>
       
@@ -230,59 +242,59 @@ do {
 
       <h2 data-jmpress='fade'>You need browsers and volunteers.</h2>
       
-    </div>
+   </section>
 
-     <div class='step' data-x='4000' data-template='hor2'>
+     <section data-x='4000' data-template='hor2'>
       
       <h1 class='img'>Browsers communicate using HTTP commands</h1>
       <img src='img/rest.jpg' alt='Image by psd'>
       <h2>PUT, GET, POST, DELETE</h2>
       <p class='image'>Image by <a href='https://flic.kr/p/8yZyBF'>Paul Downey <code>flic.kr/p/8yZyBF</code></a></p>
-    </div>
+   </section>
 
-    <div class='step' data-x='3000' data-template='hor2'>
+    <section data-x='3000' data-template='hor2'>
       <h1>Ajax, a standard browser-server communication framework</h1>
       
       <h2>HTTP petitions from a standard object in the browser.</h2>
       
       <h3 data-jmpress='fade'>Asynchronous!</h3>
-    </div>
+   </section>
 
-    <div class='step' data-x='2000' data-template='hor2'>
+    <section data-x='2000' data-template='hor2'>
       <h1 class='right'>Now we can distribute!</h1>
 
       <img class='figures' src='img/agajaj.gif' alt='image from another paper, by us'>
       <p class='image'><em><a href='http://arxiv.org/pdf/cs.DC/0701115.pdf'>Browser-based distributed evolutionary computation: performance and scaling behavior</a></em>, GECCO, <strong>2007</strong>; showing histogram of generations given by volunteers</p>
-    </div>
+   </section>
     
-    <div class='step' data-template='hor2' data-x='1000'>
+    <section data-template='hor2' data-x='1000'>
       <h1 class='img'>We still need the the server</h1>
       
       <h2>And the sysadmin, and the electricity...</h2>
       <img src='img/servers.jpg' alt='Servers in a cave by reggestraat'>
       <p class='image'>From <a href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony Antony <code>flic.kr/p/6K3ZAG</code></a></p></h3>
-    </div>
+   </section>
     
-    <div class='step' data-template='hor2' data-x='0'>
+    <section data-template='hor2' data-x='0'>
       
       <h1 class='img'>Distributed EA for 10$</h1>
       
       <img src='img/evospace.gif' alt='Image from the paper'>
       <p class='image'><em><a href='http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6557709&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6552460%2F6557545%2F06557709.pdf%3Farnumber%3D6557709'>Is there a free lunch for cloud-based evolutionary algorithms?</a></em>, IEEE CEC, 2013</p>
-    </div>
+   </section>
 
     
-    <div class='step' data-template='ver2' data-y='4800'>
+    <section data-template='ver2' data-y='4800'>
       
       <h1 class='img'>IaaS have free <em>tiers</em></h1>
       
       <h2>But it generally is pay-as-you-go</h2>
 
-      <h3 data-jmpress='fade'>Great if you do smail amounts of computation</h3>
-    </div>
+      <h3 data-jmpress='fade'>Great if you do small amounts of computation</h3>
+   </section>
 
     
-    <div class='step' data-template='ver2' data-y='4000'>
+    <section data-template='ver2' data-y='4000'>
       
       <h1 class='img'>But then there's <em>freemium</em> PaaS</h1>
       
@@ -290,9 +302,9 @@ do {
       and Google AppSpot</h3>
 
       <img class='illo' src='img/openshift.png' alt="it's openshift capture">
-    </div>
+   </section>
 
-    <div class='step' data-template='ver2' data-y='3200'>
+    <section data-template='ver2' data-y='3200'>
       <h1>Three steps to have your own little free simulation</h1>
 
       <ol>
@@ -300,122 +312,122 @@ do {
 	<li>Host it using Heroku/OpenShift</li>
 	<li>Tell people in Twitter!</li>
       </ol>
-    </div>
+   </section>
 
-    <div class='step' data-template='ver2' data-y='2400'>
+    <section data-template='ver2' data-y='2400'>
       <h1 class='img'>What does that buy you?</h1>
 
       <img src='img/idc-keynote.png' alt='Experiment result'>
-    </div>
+   </section>
 
-    <div class='step' data-template='ver2' data-y='1600'>
+    <section data-template='ver2' data-y='1600'>
       <h1 class='img'>It's not really a free lunch</h1>
 
       <img src='img/idc-keynote-after.png' alt='Experiment result'>
-    </div>
+   </section>
 
-    <div class='step' data-template='ver2' data-y='800'>
+    <section data-template='ver2' data-y='800'>
       <h1 class='img'>But it's pretty darn close to it</h1>
 
       <h2>And all the technologies you need use are already there:
       JavaScript, browsers and Ajax.</h2>
-    </div>
+   </section>
 
-    <div class='step' data-template='hor3' data-x='1000'>
+    <section data-template='hor3' data-x='1000'>
 	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 	<img src='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
 	<p class='image'>Flickr image by <a href=' https://flic.kr/p/nXfbQ6'>Lorianne diSabato  @<code>flic.kr/p/nXfbQ6</code></a></p>
 	
-      </div>
+     </section>
 
-       <div class='step' data-template='hor3' data-x='2000'>
+       <section data-template='hor3' data-x='2000'>
 	<h1 class='aside'>Detaching population from operations</h1>
 	
 	<img class='figures' src='img/poolbased.png' alt='pool schema'>
 
 	<h3 class='aside'>Chromosomes are taken from a persistent pool and brought back after evaluation, mutation, crossover</h3>
-      </div>
+     </section>
 
-      <div class='step' data-template='hor3' data-x='3000'>
+      <section data-template='hor3' data-x='3000'>
 	<h1 class='img'>Three good things about pool-based EAs</h1>
 	<img src='img/3fingers.jpg' alt='3 problems'>
 	<p class='image'>Flickr image by <a href='https://www.flickr.com/photos/mutsmuts/6007667842'>Mutiara Karina <code>https://flic.kr/p/a9SSm3</code></a>.</p>
-      </div>
+     </section>
 
-      <div class='step' data-template='hor3' data-x='4000'>
+      <section data-template='hor3' data-x='4000'>
 	<h1>1. Self-organizing clients</h1>
 	<h2>2. Fully asynchronous</h2>
 	<h3>3. Persistent population</h3>
-      </div>
+     </section>
 
-      <div class='step' data-template='hor3' data-x='5000'>
+      <section data-template='hor3' data-x='5000'>
 	<h1>The island model can also use the pool</h1>
 
 	<img class='illo' src='img/islas.jpg' alt='islands in the
 	     mist' style='width:95%'>
       
 	<h2>But it will have to rely on it for communications</h2>
-      </div>
+     </section>
       
-      <div class='step' data-template='hor3' data-x='6000'>
+      <section data-template='hor3' data-x='6000'>
 	<h1 class='img'>Science as potlatch</h1>
 	
 	<img src='img/totems-by-frana-blaylock.jpg' alt='Totems'>
 	<p class='image'>Image by <a href='https://www.flickr.com/photos/11909427@N07/3119247124'>Frana Blaylock <code>flic.kr/p/5KCXuQ</code></a></p>
-      </div>
+     </section>
 
-    <div class="step" data-x='7000' data-template='hor3'>
+    <section data-x='7000' data-template='hor3'>
       <h1 class='img'>Potlatch is a resource redistribution system</h1>
       
       <h2 data-jmpress='fade'> == load balancing!</h2>
 
       <img src='img/natives.jpg' alt='natives on horseback from MOPA'>
 	<p class='image'>Image by <a href='https://flic.kr/p/9GEcfB'>MOPA <code>flic.kr/p/9GEcfB</code></a></p>
-    </div>
+   </section>
     
-     <div class="step" data-x='8000' data-template='hor3'>
+     <section data-x='8000' data-template='hor3'>
       <h1 class='img'>The performance of your free system will depend
 	on your karma/mojo</h1>
 
       <h2 data-jmpress='fade'>Lose a follower, downgrade your volunteer computer
       system</h2>
-     </div>
+    </section>
 
-      <div class="step" data-x='9000' data-template='hor3'>
+      <section data-x='9000' data-template='hor3'>
       <h1 class='img'>The power is in the network</h1>
       <img src='img/gifts.jpg' alt='Network in a goal'>
       <h2 data-jmpress='fade'>As well as possible security holes</h2>
-     </div>
+    </section>
      
-    <div class="step" data-template='ver3' data-y='1600'>
+    <section data-template='ver3' data-y='1600'>
       <h1>Creates a link between persons and tribes</h1>
       
       <h2 data-jmpress='fade'> == distributed system!</h2>
-    </div>
+   </section>
     
-    <div class="step" data-template='ver3' data-y='2400'>
+    <section data-template='ver3' data-y='2400'>
       <h1>Potlatch arose from big resource surpluses</h1>
       
       <h2>You only give what you've got to spare</h2>
-    </div>
+   </section>
     
-    <div class="step" data-template='ver3' data-y='3200'>
+    <section data-template='ver3' data-y='3200'>
       <h1>Scientists give access to knowledge</h1>
       
       <h2>Open source your science!</h2>
       
       <h3 data-jmpress='fade'>Engage community from inception.</h3>
-    </div>
+   </section>
     
-    <div class="step"  data-template='ver3' data-y='4000'>
+    <section  data-template='ver3' data-y='4000'>
       <h1 class='img'>Citizen gives attention</h1>
       
       <img class='figures' src='img/puts-twitter-experiment.png' alt='Twitter experiment'>
       <h2>And computing resources!</h2>
       
-    </div>
+   </section>
 
-    <div class="step"  data-template='ver3' data-y='4800'>
+    <section  data-template='ver3' data-y='4800'>
       <h1 class='img'>What are you giving back?</h1>
       
       <h2>Interpretation, participation, engagement, support,
@@ -423,9 +435,9 @@ do {
 
       <h2 data-jmpress='fade'>And play the lab-coat clad villain in movies</h2>
       
-    </div>
+   </section>
     
-    <div class="step" data-template='hor4' data-x='8000'>
+    <section data-template='hor4' data-x='8000'>
       <h1>Losers can't be chosers</h1>
       
       <h2>You have to deal with</h2>
@@ -434,9 +446,9 @@ do {
 	  <li>Ephemeral contributions: single seconds</li>
 	  <li>Complex socio-technical system</li>
 	</ul>
-    </div>
+   </section>
 
-    <div class="step" data-template='hor4' data-x='7000'>
+    <section data-template='hor4' data-x='7000'>
       <h1>Take-home messages</h1>
       
 	<ol>
@@ -448,10 +460,10 @@ do {
 	  <li>The <span class='hilite'>social network</span> plays a role in the performance of
 	    the system</li>
 	</ul>
-    </div>
+   </section>
   
   
-    <div class="step" data-x='3000' data-y='3000' data-scale='5' >
+    <section data-x='3000' data-y='3000' data-scale='5' >
       <h2>Thanks a lot for your attention</h2>
 
       <img src='img/galerija.jpg' alt='galerija in Ljubljana'>
@@ -459,31 +471,47 @@ do {
       <h1 class='img'>Any question?</h1>
       
       <h2>Download/fork this presentation from <a href='http://git.io/t-ppsn'><code>git.io/t-ppsn</code></a></h2>
-    </div>
+    </section>
+  
+    <section style="text-align: left;">
+      <h1>THE END</h1>
+      <p>
+	- <a href="http://slides.com">Try the online editor</a> <br>
+	- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+      </p>
+    </section>
     
-    <!-- Slides end here -->
-  </div> <!-- end wrapper -->
+	    </div>
+	  
+	  </div>
+	  
+	  <script src="lib/js/head.min.js"></script>
+	  <script src="js/reveal.js"></script>
 
-  <div class="hint">
-    <p>Use arrow keys or space bar to navigate</p>
-  </div>
+		<script>
 
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
 
-  <script type="text/javascript">
-   $.jmpress("template", "hor1", { y: 0, z: 0 });
-   $.jmpress("template", "ver1", {x: 10000, z: 0 });
-   $.jmpress("template", "hor2", {y: 5600, z:0 });
-   $.jmpress("template", "ver2", {x: 0, z:0 });
-   $.jmpress("template", "hor3", {y: 800, z:0 });
-   $.jmpress("template", "ver3", {x: 9000, z:0 });
-   $.jmpress("template", "hor4", {y: 4800, z:0 });
-   $.jmpress("template", "ver4", {x: 1000, z:0 });
-   
-   $(function() {
-     $('#jmpress').jmpress();
-   });
-   hljs.initHighlightingOnLoad();
-  </script>
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-</body>
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
 </html>
