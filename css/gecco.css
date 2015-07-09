@@ -9,11 +9,12 @@
 
 /* Color combo from http://www.colorcombos.com/color-schemes/14/ColorCombo14.html */
 
-h1.img {font-size:3em;    
-	padding: 20px;
-	color: #443266;
-	background-color: rgba(241,240,255,0.7);;
-       }
+.img {  
+  margin: 10px;
+  padding: 20px;
+  color: #443266;
+  background-color: rgba(241,240,255,0.7);;
+}
 
 
 ol,ul {font-size:3em;
