@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -39,25 +39,33 @@
 	</head>
 
 	<body>
-
+	  
 	  <div class="reveal">
+	    
+	    <div class='footer'>
+	      <a rel="license"
+		 href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+		alt="Licencia de Creative Commons"
+style="border-width:0"
+src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+/></a><br />This work is under a <a rel="license"
+				    href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0 license</a>.</div>
 
 	    <!-- Any section element inside of this container is displayed as a slide -->
 	    <div class="slides">
-	      
+
 	      <section data-background='img/lab.jpg' title='From UL Digital library, Flickr'>
 		<h1 class='img'>The era of big (computer) science is over</h1>
-		<p class='image'>Flickr image from <a href='https://flic.kr/p/fsZ74Q'>UL Digital library @ <code>flic.kr/p/fsZ74Q</code></a>.</p>
+	
 	    </section>
 
-	    <section data-x='2000'  >
+	    <section data-background='img/begging.jpg' alt='From National Archive Netherlands, Flickr' >
 	      <h1 class='img'>Brother, you got a computing cycle to spare?</h1>
-	      <img src='img/begging.jpg' alt='From National Archive Netherlands, Flickr'>
-	      <p class='image'>Flickr image from <a href='https://www.flickr.com/photos/nationaalarchief/5371990429'>Nationaal Archief @ <code>flic.kr/p/9bGRAD</code></a>.</p>
+	      
 	    </section>
 
     <section data-x='3000'  >
-      <h1 class='img'>Fortunately, everybody's got cycles to spare</h1>
+      <h1>Fortunately, everybody does</h1>
       
       <h2>How many computers do you have on you?</h2>
     </section>
@@ -480,6 +488,13 @@ do {
       </p>
     </section>
     
+    <section>
+      <h2>Credits</h2>
+      	<p class='image'>Big computer from <a href='https://flic.kr/p/fsZ74Q'>UL Digital library @ <code>flic.kr/p/fsZ74Q</code></a>.</p>
+	<p class='image'>Begging from <a href='https://www.flickr.com/photos/nationaalarchief/5371990429'>Nationaal Archief @ <code>flic.kr/p/9bGRAD</code></a>.</p>
+    </section>
+
+
 	    </div>
 	  
 	  </div>
@@ -492,22 +507,30 @@ do {
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+			  width: 1024,
+			  height: 768,
+			  // Factor of the display size that should remain empty around the content
+			  margin: 0.1,
+			  
+			  // Bounds for smallest/largest possible scale to apply to content
+			  minScale: 0.2,
+			  maxScale: 1.0,
+			  controls: true,
+			  progress: true,
+			  history: true,
+			  center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+			  transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
+			  // Optional reveal.js plugins
+			  dependencies: [
+			    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+			    { src: 'plugin/zoom-js/zoom.js', async: true },
+			    { src: 'plugin/notes/notes.js', async: true }
+			  ]
 			});
 
 		</script>
