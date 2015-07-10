@@ -45,8 +45,7 @@
 	    <div class='footer'>
 	      <a rel="license"
 		 href="http://creativecommons.org/licenses/by-sa/4.0/"><img
-		alt="Licencia de Creative Commons"
-style="border-width:0"
+		alt="Licencia de Creative Commons" style="border-width:0"
 src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 /></a><br />This work is under a <a rel="license"
 				    href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0 license</a>.</div>
@@ -76,22 +75,21 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	      
 	      <h1 class='img'>The browser is the new operating system</h1>
 	      
-	      <h2>A long time ago, browser was for browsing</h2>
-
 	      <h2><a href='http://www.bibsonomy.org/bibtex/1d8eaf33c36765b5583683f996822e1b5/dblp'><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em></a>, PPSN, <strong>1998</strong></h2>
 	      
-	      <aside class='notes'>This paper used the browser as "base computer" to run an evolutionary algorithm that optimized page layout. For the time being, not distributed, but we'll get there.</aside>
+	      <aside class='notes'>	      <h2>A long time ago,
+	      browser was for browsing</h2>. Not any more. This paper used the browser as "base computer" to run an evolutionary algorithm that optimized page layout. For the time being, not distributed, but we'll get there.</aside>
 	    </section>
 
 
 	    <section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
 	      <h1 class='img'>JavaScript is its native language</h1>
 	      
-	      <h2>Every browser uses JavaScript</h2>
+	      <h2 class='img'>Every browser uses JavaScript</h2>
 
 	    </section>
     
-	    <section data-template='hor1' data-x='6000'>
+	    <section>
 	      <h1>Let's do Javascript!</h1>
 	      
 	      <h2>Menu → developer → console</h2>
@@ -99,13 +97,15 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	      <img class='illo' src='img/console.png' alt='firefox console'>
 	    </section>
     
-    <section data-template='hor1' data-x='7000'>
-      <h1>Say hello to these nice folks!</h1>
-      <pre><code>console.log('¡Hola, chavales!')</code></pre>
+	    <section>
+	      <h1>Say hello to these nice folks!</h1>
+	      <pre><code>console.log('¡Hola, chavales!')</code></pre>
+	      
+	      <h2>Or the much more annoying</h2>
+	      <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
 
-      <h2>Or the much more annoying</h2>
-      <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
-    </section>
+	      <aside class='notes'>A gentle introduction to JavaScript to get a 
+	    </section>
     
     <section data-template='hor1' data-x='8000'>
       <h1>This is an object. That, too.</h1>
@@ -128,6 +128,12 @@ var rr = function (chromosome) {
   }
   return fitness;
 }; </code></pre>
+
+      <aside class='notes'>What is the way of representing a
+    chromosome then? What's the fastest way of counting ones? This is
+    a way of doing it, that besides proves that JS is a higher-order
+    language that is able to deal with functions as first-class
+	dwellers of the language</aside>
     </section>
 
      <section>
@@ -135,6 +141,9 @@ var rr = function (chromosome) {
        <h2>Standard, (reasonably) fast and</h2>
        <h1 class='fragment'>Everywhere</h1>
        <h2 class='fragment'>Yes, also in your PS4</h2>
+
+       <aside class='notes'>Standard is issued by ECMA, which is a
+	 weird standard body, but at least it's one</aside>
      </section>
 
     <section>
@@ -150,6 +159,8 @@ var rr = function (chromosome) {
  }
 }</code></pre>
 
+      <aside class='notes'>This has nothing to do with the language,
+	but with the implementation, which is usually single-threaded.</aside>
     </section>
 
     <section data-background='img/screens.jpg' alt='Picture by bloem'>
@@ -172,11 +183,13 @@ do {
     eo.generation();
     console.log( eo.population[0] );
 } while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
+
+<aside class='notes'>Nodeo can be downloaded from the Node modules
+  repository with <code>npm install nodeo</code>. </aside>
     </section>
 
-     <section data-template='ver1' data-y='3200'>
+     <section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
        <h1 class='img'>Servers can be in the clouds</h1>
-       <img src='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
     </section>
      
       <section data-template='ver1' data-y='4000'>
