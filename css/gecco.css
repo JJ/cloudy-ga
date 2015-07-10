@@ -9,6 +9,11 @@
 
 /* Color combo from http://www.colorcombos.com/color-schemes/14/ColorCombo14.html */
 
+h1.img {  
+  margin: 20px;
+  border-radius: 25px;
+}
+
 .img {  
   margin: 10px;
   padding: 20px;
