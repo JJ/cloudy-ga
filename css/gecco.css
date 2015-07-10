@@ -41,14 +41,6 @@ code {
        line-height: 1.5em;
 }
 
-/* Customization */
-img { width: 90%;
-      height: 90%;
-      position: absolute;
-      top:30px;
-      left:30px;
-      z-index: -1}
-
 imb.bg { width: 100%;
       position: absolute;
       top:0px;
