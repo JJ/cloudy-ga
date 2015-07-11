@@ -196,7 +196,12 @@ do {
 } while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
 
 <aside class='notes'>Nodeo can be downloaded from the Node modules
-  repository with <code>npm install nodeo</code>. </aside>
+  repository with <code>npm install nodeo</code>. This is actually
+  not the preferred way of doing a loop; it should be done
+  asynchronously as above, since that will leave no time for I/O or
+  other events. It's a single thread, same as in the browser. But it
+  can be done alright if you need to do it. Good thing about JS, same
+  programming model and language (but not the rest) in client and server. </aside>
     </section>
 
      <section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
@@ -340,19 +345,23 @@ do {
       <img class='illo' src='img/openshift.png' alt="it's openshift capture">
    </section>
 
-    <section data-template='ver2' data-y='3200'>
-      <h1>Three steps to have your own little free simulation</h1>
+    <section data-background='https://farm5.staticflickr.com/4063/4440771174_c86df3788e_b_d.jpg'>
+      <h3 class='img'>Three steps to have your own little free simulation</h3>
 
-      <ol>
-	<li class='fragment'>Client-server application with JavaScript</li>
-	<li class='fragment'>Host it using Heroku/OpenShift</li>
-	<li class='fragment'>Tell people in Twitter!</li>
-      </ol>
+      <h2 class='fragment img'>Client-server application with <strong>JavaScript</strong></h2>
+      <h2 class='fragment img'>Host it using <strong>Heroku/OpenShift</strong></h2>
+      <h1 class='fragment img'>Tell people in <span style='color:blue'>Twitter</span>!</h1>
+
    </section>
 
    <section>
      <section>
        <h1>What can you buy with that?</h1>
+
+       <aside class='notes'>Can you buy a cluster? A million hours in
+	 Amazon? What kind of performance can you expect from
+	 that?</aside>
+
      </section>
 
      <section>
@@ -530,6 +539,8 @@ do {
 	 	<li>Flickr image by <a
       href='https://flic.kr/p/oBGSHw'>Caleb Khor
       <code>flic.kr/p/oBGSHw</code></a></li>
+
+	<li>Steps by <a href='https://www.flickr.com/photos/dahlstroms/4440771174/'>Håkan Dahlström</a></li>
 
 	<li>Flickr image by <a
 	href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia
