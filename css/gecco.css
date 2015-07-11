@@ -127,3 +127,14 @@ span.hilite { background-color:yellow;
   left: 1em;
   font-size: 0.5em;
 }
+
+/* OL */
+
+.reveal ol {
+    font-size: 1.5em;
+}
+
+.reveal ol li{
+    line-height: 1.5em;
+    margin-bottom: 5px;
+}
