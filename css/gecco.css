@@ -1,0 +1,140 @@
+/** fonts **/
+
+@import url(http://fonts.googleapis.com/css?family=Duru+Sans);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Quicksand);
+@import url(http://fonts.googleapis.com/css?family=Lekton);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+/* Color combo from http://www.colorcombos.com/color-schemes/14/ColorCombo14.html */
+
+h1.img {  
+  margin: 20px;
+  border-radius: 25px;
+}
+
+.img {  
+  margin: 10px;
+  padding: 20px;
+  color: #443266;
+  background-color: rgba(241,240,255,0.7);;
+}
+
+
+ol,ul {font-size:3em;
+    font-family: "Raleway", sans-serif;}
+
+h3 {font-size:2em;
+    font-family: "Raleway", sans-serif;}
+
+code { 
+       font-family: Lekton, Courier, Courier New, monospace;
+       font-size: 2.5em;
+       background-color: black;
+       color: lightgreen;
+       font-weight:bold;
+       margin: 2px;
+       padding: 2px;
+       -moz-border-radius: 5px;
+       border-radius: 5px;
+       line-height: 1.5em;
+}
+
+imb.bg { width: 100%;
+      position: absolute;
+      top:0px;
+      z-index: -1}
+
+img.center { width: 90%;
+      position: absolute;
+      top:250px;
+      z-index: -1}
+
+img.figures { width: 700px;
+	      z-index: -1}
+
+img.illo {
+    width:auto;
+    height:auto;
+    position:relative;
+}
+
+p.image { 
+          position: absolute;
+          bottom:  0;
+          right: 0;
+          font-size: 1em;
+          background-color:rgba(230,240,250,0.5);
+          padding: 5px;
+ }
+
+/** NOT SUPPORTED STYLES **/
+.not-supported .step {
+	position: relative;
+	opacity: 1;
+	margin: 20px auto;
+}
+
+/** PRINT STYLE **/
+@media print {
+	body {
+		background: white;
+	}
+	.hint {
+		display: none;
+	}
+	#simple {
+		width: auto; 
+		margin: 0 5%;
+		padding: 0; 
+		border: 0;
+		float: none !important;
+		color: black; 
+		background: transparent;
+	}
+	.step {
+		page-break-after: always;
+		opacity: 1;
+		clear: both;
+		display: block;
+		float: none !important;
+		position: relative;
+		margin: 20px auto;
+
+		-webkit-transition: rotate(0deg);
+		-moz-transition:    rotate(0deg);
+		-ms-transition:     rotate(0deg);
+		-o-transition:      rotate(0deg);
+		transition:         rotate(0deg);
+	}
+	.step:not(.active) {
+		opacity: 1;
+	}
+}
+
+span.smaller { font-size:0.8em }
+span.hilite { background-color:yellow;
+	      margin: 5px;
+	      padding: 5px;
+	      -moz-border-radius: 15px;
+	      border-radius: 15px;}
+
+/* Footer */
+.reveal .footer {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 0.5em;
+}
+
+/* OL */
+
+.reveal ol {
+    font-size: 1.5em;
+}
+
+.reveal ol li{
+    line-height: 1.5em;
+    margin-bottom: 5px;
+}
