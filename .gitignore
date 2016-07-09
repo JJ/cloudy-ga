@@ -34,3 +34,11 @@ node_modules
 
 # stuff
 *~
+
+#Latex
+auto/
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.pdf
