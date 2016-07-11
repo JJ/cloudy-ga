@@ -5,6 +5,7 @@ winston = require('winston'),
 HIFF = nodeo.HIFF,
 fs= require('fs');
 require('winston-papertrail').Papertrail;
+require('winston-logstash');
 
 // Load conf file
 var conf_file = process.argv[2] || 'hiff.json';
@@ -18,7 +19,12 @@ var logger = new (winston.Logger)({
 	new winston.transports.Papertrail({
             host: 'logs2.papertrailapp.com',
             port: 46955
-        })
+        }),
+	new winston.transports.Logstash( {
+	    port: 8080,
+	    node_name: 'Cloudy GA',
+	    host: '172.17.0.2'
+	})
     ]
   });
 
