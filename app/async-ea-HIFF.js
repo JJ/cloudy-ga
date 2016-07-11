@@ -15,18 +15,29 @@ var conf = JSON.parse(fs.readFileSync( conf_file, 'utf8' ));
 var logger = new (winston.Logger)({
     transports: [
 	new (winston.transports.Console)(),
-	new (winston.transports.File)({ filename: conf.output_preffix+"-hiff.log" }),
-	new winston.transports.Papertrail({
-            host: 'logs2.papertrailapp.com',
-            port: 46955
-        }),
-	new winston.transports.Logstash( {
-	    port: 8080,
-	    node_name: 'Cloudy GA',
-	    host: '172.17.0.2'
-	})
+	new (winston.transports.File)({ filename: conf.output_preffix+"-hiff.log" })
     ]
   });
+
+if ( typeof process.env.PAPERTRAIL_PORT !== 'undefined' && typeof process.env.PAPERTRAIL_HOST !== 'undefined' ) { 
+    logger.add(winston.transports.Papertrail, 
+	       {
+		   host: process.env.PAPERTRAIL_HOST,
+		   port: process.env.PAPERTRAIL_PORT
+	       }
+	      )
+}
+
+if ( typeof process.env.LOGSTASH_PORT !== 'undefined' && typeof process.env.LOGSTASH_IP !== 'undefined' ) { 
+    logger.add( winston.transports.Logstash, 
+		{
+		    port: process.env.LOGSTASH_PORT,
+		    node_name: 'Cloudy GA',
+		    host: process.env.LOGSTASH_IP
+		}
+	      );
+};
+
 
 if ( !conf ) {
     throw "Problems with conf file";
@@ -67,5 +78,6 @@ function generation() {
 		     fitness : eo.fitness_of[eo.population[0]]}}} );
 	conf.output = conf.output_preffix+".json";
 	console.log("Finished");
+	process.exit();
     }
 }

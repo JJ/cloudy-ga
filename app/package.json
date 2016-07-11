@@ -4,7 +4,8 @@
   "description": "App for testing NodEO",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "./async-ea-HIFF.js"
   },
   "repository": {
     "type": "git",

@@ -11,4 +11,7 @@ RUN mkdir app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/async-ea-HIFF.js app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
-RUN cd app && npm i && node async-ea-HIFF.js
+WORKDIR /app
+RUN npm i
+RUN chmod +x async-ea-HIFF.js
+CMD npm start
