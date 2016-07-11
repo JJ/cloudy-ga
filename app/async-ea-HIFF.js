@@ -4,6 +4,7 @@ var nodeo = require('nodeo'),
 winston = require('winston'),
 HIFF = nodeo.HIFF,
 fs= require('fs');
+require('winston-papertrail').Papertrail;
 
 // Load conf file
 var conf_file = process.argv[2] || 'hiff.json';
@@ -12,8 +13,12 @@ var conf = JSON.parse(fs.readFileSync( conf_file, 'utf8' ));
 // Set up log
 var logger = new (winston.Logger)({
     transports: [
-      new (winston.transports.Console)(),
-      new (winston.transports.File)({ filename: conf.output_preffix+"-hiff.log" })
+	new (winston.transports.Console)(),
+	new (winston.transports.File)({ filename: conf.output_preffix+"-hiff.log" }),
+	new winston.transports.Papertrail({
+            host: 'logs2.papertrailapp.com',
+            port: 46955
+        })
     ]
   });
 

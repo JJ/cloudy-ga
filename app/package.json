@@ -1,6 +1,6 @@
 {
   "name": "hiffeitor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "App for testing NodEO",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/JJ/cloudy-ga#readme",
   "dependencies": {
     "nodeo": "^0.1.2",
-    "winston": "^2.2.0"
+    "winston": "^2.2.0",
+    "winston-papertrail": "^1.0.2"  
   }
 }
