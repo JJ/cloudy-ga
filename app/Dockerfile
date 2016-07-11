@@ -22,6 +22,7 @@ WORKDIR /app
 #Install needed libraries and make executable
 RUN npm i
 RUN chmod +x async-ea-HIFF.js
+RUN cat package.json
 
 #Set up running cmd
 CMD npm start
