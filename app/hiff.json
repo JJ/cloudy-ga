@@ -1,0 +1,8 @@
+{  "port": 3000,
+   "max_evaluations": 1000000,
+   "population_size": 1024,
+   "output_preffix": "testing",
+   "chromosome_size": 256,
+   "fitness_max" : 2304
+}
+

@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/JJ/cloudy-ga/issues"
   },
-  "homepage": "https://github.com/JJ/cloudy-ga#readme"
+  "homepage": "https://github.com/JJ/cloudy-ga#readme",
+  "dependencies": {
+    "nodeo": "^0.1.2"
+  }
 }
