@@ -49,27 +49,22 @@ var total_generations = 0;
 
 var hiff = new HIFF.HIFF();
 
+// Create the evolution/evolvable object
 var eo = new nodeo.Nodeo( { population_size: conf.population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: hiff } );
 
 logger.info( { start: process.hrtime() } );
-console.log( "Starting ");
 // start running the GA
 var generation_count = 0;
 
-// Start loop
-generation();
+// Checks termination conditions
+var check = function( eo, logger, conf,  generation_count ) {
 
-// ---------------------------------
-
-function generation() {
-    generation_count++;
-    eo.generation();
     if ( (eo.fitness_of[eo.population[0]] < conf.fitness_max ) && (generation_count*conf.population_size < conf.max_evaluations )) {
 	logger.info( { "chromosome": eo.population[0],
 		       "fitness" : eo.fitness_of[eo.population[0]]} );
-	setImmediate(generation);
+	evolve( generation_count, eo, logger, conf, check);
     } else {
 	logger.info( {end: { 
 	    time: process.hrtime(),
@@ -80,4 +75,21 @@ function generation() {
 	console.log("Finished");
 	process.exit();
     }
+};
+
+// Start loop
+console.log( "Starting ");
+evolve( generation_count, eo, logger, conf, check );
+
+// ---------------------------------
+
+
+// Evolves population
+function evolve( generation_count, eo, logger, conf, check ) {
+    generation_count++;
+    eo.generation();
+    check( eo, logger, conf, generation_count );
+
 }
+
+
