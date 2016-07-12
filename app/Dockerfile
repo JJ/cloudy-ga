@@ -14,14 +14,14 @@ RUN node --version
 
 #Set up app
 RUN mkdir app
-ADD https://github.com/JJ/cloudy-ga/raw/master/app/async-ea-HIFF.js app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/callback-ea-HIFF.js app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
 WORKDIR /app
 
 #Install needed libraries and make executable
 RUN npm i
-RUN chmod +x async-ea-HIFF.js
+RUN chmod +x callback-ea-HIFF.js
 RUN cat package.json
 
 #Set up running cmd

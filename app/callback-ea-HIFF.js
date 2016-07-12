@@ -106,8 +106,8 @@ eo.algorithm( population, function ( population ) {
 	    time: process.hrtime(),
 	    generation: total_generations,
 	    best : { 
-		chromosome : eo.population[0],
-		fitness : eo.fitness_of[eo.population[0]]
+		chromosome : population.best,
+		fitness : population.fitness(population.best)
 	    }
 	}
     });
