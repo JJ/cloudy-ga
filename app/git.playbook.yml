@@ -1,0 +1,6 @@
+---
+- hosts: azure
+  remote_user: azureuser
+  tasks:
+    - name: clone repo
+      git: repo=https://github.com/JJ/cloudy-ga.git dest=cloudy-ga

@@ -16,3 +16,5 @@
         - libssl-dev
         - nodejs
         - npm
+    - name: Create links
+      command: ln -s /usr/bin/nodejs /usr/bin/node
