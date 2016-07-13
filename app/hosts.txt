@@ -1,2 +1,4 @@
 [azure]
 cloudy-ga.cloudapp.net
+[aws]
+52.11.158.124

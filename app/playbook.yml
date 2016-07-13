@@ -1,9 +1,9 @@
 ---
-- hosts: azure
-  remote_user: azureuser
+- hosts: "{{target}}"
   sudo: yes
   tasks:
     - name: install prerrequisites
+      command: apt-get update -y && apt-get upgrade -y
       command: apt-get install aptitude python-apt -y
     - name: install packages
       apt: pkg={{ item}}
