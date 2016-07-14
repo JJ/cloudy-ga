@@ -1,0 +1,12 @@
+{  "port": 3000,
+   "tournament_size": 2,
+   "max_evaluations": 1000000,
+   "population_size": 1024,
+   "output_preffix": "testing",
+   "chromosome_size": 256,
+   "fitness_max" : 2304,
+   "generation_gap": 20,
+   "url": "http://localhost:5555/",
+   "experiment_id": "test"
+}
+

@@ -1,0 +1,35 @@
+{
+  "name": "hiffeitor",
+  "version": "0.1.1",
+  "description": "App for testing NodEO",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "./callback-ea-HIFF.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JJ/cloudy-ga.git"
+  },
+  "keywords": [
+    "evolutionary algorithms",
+    "GECCO",
+    "computational intelligence"
+  ],
+  "author": "JJ Merelo",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/JJ/cloudy-ga/issues"
+  },
+  "homepage": "https://github.com/JJ/cloudy-ga#readme",
+  "dependencies": {
+    "nodeo": "^0.2.2",
+    "restler": "^3.4.0",
+    "winston": "^2.2.0",
+    "winston-logstash": "^0.2.11",
+    "winston-papertrail": "^1.0.2"
+  },
+  "devDependencies": {
+    "flightplan": "^0.6.14"
+  }
+}
