@@ -25,10 +25,10 @@ plan.remote(function(remote) {
     remote.log('Pull');
     remote.with('cd cloudy-ga',function() {
 	remote.exec('git pull');
-	remote.exec('cd app/distributed;npm install .');
+	remote.exec('cd app/distributed; npm install .');
     });
     // Camino completo por sudo
-    remote.with('cd cloudy-ga/app',function() {
+    remote.with('cd cloudy-ga/app/distributed',function() {
 	remote.exec('npm start');
     });
 });
