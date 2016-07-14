@@ -1,4 +1,8 @@
 [azure]
 cloudy-ga.cloudapp.net
+
+[azuredeb]
+deb-cloudy-ga1029.cloudapp.net
+
 [aws]
 52.11.158.124

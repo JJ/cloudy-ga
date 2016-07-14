@@ -1,4 +1,5 @@
 ---
+
 - hosts: "{{target}}"
   sudo: yes
   tasks:
@@ -8,8 +9,6 @@
     - name: install packages
       apt: pkg={{ item}}
       with_items:
-        - language-pack-en 
-        - language-pack-es 
         - git 
         - curl 
         - build-essential 
@@ -18,3 +17,6 @@
         - npm
     - name: Create links
       command: ln -s /usr/bin/nodejs /usr/bin/node
+      ignore_errors: yes
+    - name: Create profile
+      copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}; export PAPERTRAIL_HOST={{PAPERTRAIL_HOST}}" dest=/home/cloudy/.profile
