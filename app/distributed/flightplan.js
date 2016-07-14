@@ -2,11 +2,17 @@
 var plan = require('flightplan');
 
 // configuration
-plan.target('azure', {
-  host: 'cloudy-ga.cloudapp.net',
-  username: 'azureuser',
-  agent: process.env.SSH_AUTH_SOCK
-});
+plan.target('production', [
+    {
+	host: 'cloudy-ga.cloudapp.net',
+	username: 'azureuser',
+	agent: process.env.SSH_AUTH_SOCK
+    },{
+	host: 'deb-cloudy-ga1029.cloudapp.net',
+	username: 'cloudy',
+	agent: process.env.SSH_AUTH_SOCK
+    }
+]);
 
 // Local
 plan.local(function(local) {
@@ -22,7 +28,7 @@ plan.remote(function(remote) {
 	remote.exec('cd app/distributed;npm install .');
     });
     // Camino completo por sudo
-    remote.with('cd /home/azureuser/cloudy-ga/app',function() {
+    remote.with('cd cloudy-ga/app',function() {
 	remote.exec('npm start');
     });
 });
