@@ -88,6 +88,14 @@ var check = function( population ) {
 	// Perform immigration
 	if ( generation_count % conf.generation_gap === 0 ) { // do migration stuff
 	    console.log("Do it");
+
+	    // Get from pool
+	    rest.get( conf.url + 'random' ).on('complete', function( data ) {
+		if ( data.chromosome ) {
+		    population.addAsLast( data.chromosome );
+		}
+	    });
+
 	    // Put chromosome
 	    // put in pool
 	    var this_request = conf.url
@@ -127,8 +135,8 @@ eo.algorithm( population, function ( population ) {
 	    time: process.hrtime(),
 	    generation: total_generations,
 	    best : { 
-		chromosome : population.best,
-		fitness : population.fitness(population.best)
+		chromosome : population.best(),
+		fitness : population.fitness(population.best())
 	    }
 	}
     });
