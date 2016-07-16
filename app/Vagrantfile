@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+
+  config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     apt-get upgrade -y
+  SHELL
+
+  #
+  # Run Ansible from the Vagrant Host
+  #
+  config.vm.provision "main", type: "ansible" do |ansible|
+    ansible.extra_vars = { target: "all" }
+    ansible.playbook = "playbook.yml"
+  end
+
+  config.vm.provision "code", type: "ansible" do |ansible|
+    ansible.extra_vars = { target: "all" }
+    ansible.playbook = "infrastructure/git.playbook.yml"
+  end
+end

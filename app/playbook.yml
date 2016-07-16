@@ -1,0 +1,18 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  sudo: yes
+  tasks:
+    - name: install prerrequisites
+      command: apt-get install aptitude python-apt -y
+    - name: install packages
+      apt: pkg={{ item}}
+      with_items:
+        - language-pack-en 
+        - language-pack-es 
+        - git 
+        - curl 
+        - build-essential 
+        - libssl-dev
+        - nodejs
+        - npm
