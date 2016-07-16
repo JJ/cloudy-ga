@@ -229,7 +229,7 @@ var eo = new nodeo.Nodeo( { population_size: conf.population_size,
 logger.info( { start: process.hrtime() } );</code></pre>
 
 		  <pre class='fragment'><code>evolve(generation_count, eo, 
-logger, conf, check );</code></pre>
+  logger, conf, check );</code></pre>
 		</section>
 
 		<section><h1>A container does <strong>one</strong>
@@ -262,8 +262,35 @@ logger, conf, check );</code></pre>
 };</code></pre></section>
 
 		<section>
-		  <h1>Describe infrastructure</h1>
+		  <h2>Describe infrastructure: <code>package.json</code></h2>
+		  <pre><code>{
+  "name": "hiffeitor",
+  "scripts": {
+    "test": "mocha",
+    "start": "./callback-ea-HIFF.js"
+  },
+  "dependencies": {
+    "nodeo": "^0.2.1",
+    "winston": "^2.2.0",
+    "winston-logstash": "^0.2.11",
+    "winston-papertrail": "^1.0.2"
+  },
+  "devDependencies": {
+    "flightplan": "^0.6.14"
+  }
+}</code></pre>
+
 		</section>
+
+		<section><h1>Introducing <code>docker</code></h1>
+
+		  <h2 class='fragment'><em>Lightweight</em>
+		  virtualization</h2>
+		  <h3 class='fragment'><em>Portable</em>
+		  infraestructure</h3>
+		</section>
+
+		
 		
 	      </section>
 
