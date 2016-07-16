@@ -221,6 +221,45 @@ do {
 		  <h1>Let's containerize</h1>
 		</section>
 
+		<section>
+		  <pre><code>var hiff = new HIFF.HIFF();
+var eo = new nodeo.Nodeo( { population_size: conf.population_size,
+			    chromosome_size: chromosome_size,
+			    fitness_func: hiff } );
+logger.info( { start: process.hrtime() } );</code></pre>
+
+		  <pre class='fragment'><code>evolve(generation_count, eo, 
+logger, conf, check );</code></pre>
+		</section>
+
+		<section><h1>A container does <strong>one</strong>
+		thing</h1>
+		  <pre><code>if ( typeof process.env.PAPERTRAIL_PORT !== 'undefined' 
+      && typeof process.env.PAPERTRAIL_HOST !== 'undefined' ) { 
+    logger.add(winston.transports.Papertrail, 
+	       {
+		   host: process.env.PAPERTRAIL_HOST,
+		   port: process.env.PAPERTRAIL_PORT
+	       }
+	      )
+}</code></pre></section>
+		
+		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
+    if ( (eo.fitness_of[eo.population[0]] < conf.fitness_max ) 
+          && (generation_count*conf.population_size < conf.max_evaluations )) {
+	logger.info( { "chromosome": eo.population[0],
+		       "fitness" : eo.fitness_of[eo.population[0]]} );
+	evolve( generation_count, eo, logger, conf, check);
+    } else {
+	logger.info( {end: { 
+	    time: process.hrtime(),
+	    generation: total_generations,
+	    best : { chromosome : eo.population[0],
+		     fitness : eo.fitness_of[eo.population[0]]}}} );
+	conf.output = conf.output_preffix+".json";
+	process.exit();
+    }
+};</code></pre></section>
 		
 	      </section>
 
@@ -568,8 +607,7 @@ do {
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-			  width: 1024,
-			  height: 768,
+			  width: '90%',
 			  // Factor of the display size that should remain empty around the content
 			  margin: 0.1,
 			  
@@ -586,8 +624,6 @@ do {
 			  // Optional reveal.js plugins
 			  dependencies: [
 			    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-			    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-			    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 			    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 			    { src: 'plugin/zoom-js/zoom.js', async: true },
 			    { src: 'plugin/notes/notes.js', async: true }
