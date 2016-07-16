@@ -55,56 +55,76 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	    <!-- Any section element inside of this container is displayed as a slide -->
 	    <div class="slides">
             
-	    <section data-background='img/layout.gif' alt='real newspaper layout'>
-	      
-	      <h1 class='img'>Browser == new operating system</h1>
-	      
-	      <h2 class='img'><a href='http://www.bibsonomy.org/bibtex/1d8eaf33c36765b5583683f996822e1b5/dblp'><em>Optimizing Web Page Layout using an annealed Genetic Algorithm as client-side script</em></a>, PPSN, <strong>1998</strong></h2>
-	      
-	      <aside class='notes'><h2>A long time ago,
-	      browser was for browsing</h2>. Not any more. This paper used the browser as "base computer" to run an evolutionary algorithm that optimized page layout. For the time being, not distributed, but we'll get there.</aside>
-	    </section>
+	      <section>
+		<section data-background=''>
+		  <h1>What is the cloud?</h1>
+		</section>
+
+		<section data-background=''>
+		  <h1>Virtualized resources on tap</h1>
+		  <h2 class='fragment'>Scaling out of the box</h2>
+		</section>
+
+		
+		<section data-background=''>
+		  <h1>Distributed, multi-vendor, computing</h1>
+		</section>
+
+		
+		<section data-background=''>
+		  <h1>Reproducible configurations</h1>
+		</section>
+
+		
+		<section data-background=''>
+		  <h1>A new application development and deployment paradigm</h1>
+		</section>
+
+	      </section>
 
 
-	    <section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
-	      <h1 class='img'>JavaScript is its native language</h1>
-	      
-	      <h2 class='img'>Every browser uses JavaScript</h2>
+	      <!-- Javascript -->
+	      <section>
 
-	      <aside class='notes'>JavaScript is a standard scripting
-	      language initially intended for Netscape but landed
-		eventually in every browser out there.</aside>
-	    </section>
+
+		<section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
+		  <h1 class='img'>JavaScript = its native language</h1>
+		  
+		  <aside class='notes'>JavaScript is a standard scripting
+		    language initially intended for Netscape but landed
+		    eventually in every browser out there.</aside>
+		</section>
     
-	    <section>
-	      <h1>Let's do Javascript!</h1>
-	      
-	      <h2>Menu → developer → console</h2>
-	      
-	      <img class='illo' src='img/console.png' alt='firefox console'>
-	    </section>
-    
-	    <section>
-	      <h1>Say hello to these nice folks!</h1>
-	      <pre><code>console.log('¡Hola, chavales!')</code></pre>
-	      
-	      <h2>Or the much more annoying</h2>
-	      <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
-
-	      <aside class='notes'>A gentle introduction to JavaScript to get a 
-	    </section>
-    
-    <section data-template='hor1' data-x='8000'>
-      <h1>This is an object. That, too.</h1>
-      <pre><code>console.log('Buenos días'.length)</code></pre>
-
-      <h2>Arrays are objects, and the other way round</h2>
-      <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
-    </section>
-
-    <section data-template='hor1' data-x='9000'>
-      <h1>Chromosomes and fitness</h1>
-      <pre><code>var chromosome = '1001100110011';
+		<section>
+		  <h1>Let's do Javascript!</h1>
+		  
+		  <h2>Menu → developer → console</h2>
+		  
+		  <img class='illo' src='img/console.png' alt='firefox console'>
+		</section>
+		
+		<section>
+		  <h1>Say hello to these nice folks!</h1>
+		  <pre><code>console.log('¡Hola, chavales!')</code></pre>
+		  
+		  <h2>Or the much more annoying</h2>
+		  <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
+		  
+		  <aside class='notes'>A gentle introduction to
+		    JavaScript to get a idea of what it's like</aside>
+		</section>
+		
+		<section data-template='hor1' data-x='8000'>
+		  <h1>This is an object. That, too.</h1>
+		  <pre><code>console.log('Buenos días'.length)</code></pre>
+		  
+		  <h2>Arrays are objects, and the other way round</h2>
+		  <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
+		</section>
+		
+		<section data-template='hor1' data-x='9000'>
+		  <h1>Chromosomes and fitness</h1>
+		  <pre><code>var chromosome = '1001100110011';
 var fitness_of = new Object;
 fitness_of[chromosome] = chromosome.match(/1/g).length;  
 var rr = function (chromosome) {
@@ -116,26 +136,28 @@ var rr = function (chromosome) {
   return fitness;
 }; </code></pre>
 
-      <aside class='notes'>What is the way of representing a
-    chromosome then? What's the fastest way of counting ones? This is
-    a way of doing it, that besides proves that JS is a higher-order
-    language that is able to deal with functions as first-class
-	dwellers of the language</aside>
-    </section>
+		  <aside class='notes'>What is the way of representing a
+		    chromosome then? What's the fastest way of counting ones? This is
+		    a way of doing it, that besides proves that JS is a higher-order
+		    language that is able to deal with functions as first-class
+		    dwellers of the language</aside>
+		</section>
 
-     <section>
-       <h1>JavaScript is:</h1>
-       <h2>Standard, (reasonably) fast and</h2>
-       <h1 class='fragment'>Everywhere</h1>
-       <h2 class='fragment'>Yes, also in your PS4</h2>
+		<section>
+		  <h1>JavaScript is:</h1>
+		  <h2>Standard, (reasonably) fast and</h2>
+		  <h1 class='fragment'>Everywhere</h1>
+		  <h2 class='fragment'>Yes, also in your PS4</h2>
+		  
+		  <aside class='notes'>Standard is issued by ECMA, which is a
+		    weird standard body, but at least it's one. Last
+		    standard is called ES6, which is closer to more
+		    traditional languages. ES7 up and coming.</aside>
+		</section>
 
-       <aside class='notes'>Standard is issued by ECMA, which is a
-	 weird standard body, but at least it's one</aside>
-     </section>
-
-    <section>
-      <h1>(Almost) forget about loops</h1>
-      <pre><code>function do_ea() {
+		<section>
+		  <h1>(Almost) forget about loops</h1>
+		  <pre><code>function do_ea() {
  eo.generation();
  generation_count++;
  if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
@@ -146,24 +168,27 @@ var rr = function (chromosome) {
  }
 }</code></pre>
 
-      <aside class='notes'>This has nothing to do with the language,
-	but with the implementation, which is usually single-threaded.</aside>
-    </section>
+		  <aside class='notes'>This has nothing to do with the language,
+		    but with the implementation, which is usually single-threaded.</aside>
+		</section>
+		
+		<section data-background='img/screens.jpg' alt='Picture by bloem'>
+		  <h1 class='img'>A whole algorithm or program in a browser</h1>
+		  <h2 class='fragment img'>The browser is the new operating system</h2>
+		  
+		  
+		</section>
 
-    <section data-background='img/screens.jpg' alt='Picture by bloem'>
-      <h1 class='img'>A whole algorithm or program in a browser</h1>
-      <h2 class='fragment img'>The browser is the new operating system</h2>
+		<section>
+		  <h1>And why not in the server too?</h1>
 
-      <h3 class='fragment img'>But I said that already, right?</h3>
+		</section>
 
-   </section>
-
-     <section>
-       <h1>And why not in the server too?</h1>
-
-       <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter. <a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
-
-<pre><code>var eo = new nodeo.Nodeo( { population_size: population_size,
+		<section>
+		  
+		  <h2><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter. <a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
+		  
+		  <pre><code>var eo = new nodeo.Nodeo( { population_size: population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: utils.max_ones } );
 do {
@@ -171,27 +196,24 @@ do {
     console.log( eo.population[0] );
 } while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
 
-<aside class='notes'>Nodeo can be downloaded from the Node modules
+		  <aside class='notes'>Nodeo can be downloaded from the Node modules
   repository with <code>npm install nodeo</code>. This is actually
   not the preferred way of doing a loop; it should be done
   asynchronously as above, since that will leave no time for I/O or
   other events. It's a single thread, same as in the browser. But it
   can be done alright if you need to do it. Good thing about JS, same
-  programming model and language (but not the rest) in client and server. </aside>
-    </section>
+  programming model and language (but not the rest) in client and
+  server. Very recently, in fact for this tutorial, version 0.2.2 has
+  been released. </aside>
+		</section>
 
-     <section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
-       <h1 class='img'>Servers can be in the clouds</h1>
-    </section>
+
+	      </section>
+
+	      <section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
+		<h1 class='img'>Servers can be in the clouds</h1>
+	      </section>
      
-      <section data-background='img/grifo.jpg' alt='Magic tap by Caleb Khor'>
-	<h1 class='img'>What's cloud computing?</h1>
-      
-	<h2 class='img'>On-demand access to virtual <em>devices</em>.</h2>
-
-	<aside class='notes'>That is, resources on tap as in the image</aside>
-     </section>
-
       <section data-template='ver1' data-y='4800'>
 	<h3><a href='http://arxiv.org/abs/1105.6205'>Cloud-based Evolutionary Algorithms: An algorithmic study</a></h3>
 	<img class='illo' src='img/ga-dropbox.png' alt='GA folder'>
