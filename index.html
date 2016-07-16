@@ -222,7 +222,7 @@ do {
 		</section>
 
 		<section>
-		  <pre><code>var hiff = new HIFF.HIFF();
+		  <pre><code class='javascript'>var hiff = new HIFF.HIFF();
 var eo = new nodeo.Nodeo( { population_size: conf.population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: hiff } );
@@ -290,7 +290,49 @@ logger.info( { start: process.hrtime() } );</code></pre>
 		  infraestructure</h3>
 		</section>
 
+		<section><h1>Using docker</h1>
+		  
+		  <code>docker pull jjmerelo/cloudy-ga</code>
 		
+		</section>
+
+		<section><h1>Containerizing through
+		<code>Dockerfile</code></h1>
+
+		<pre><code>FROM phusion/baseimage
+MAINTAINER JJ Merelo "jjmerelo@gmail.com"
+RUN echo "Building a docker environment for NodEO"
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install apt-utils -y 
+RUN apt-get install nodejs npm -y 
+		</code></pre>
+		</section>
+		<section>
+		  	<pre><code class='dockerfile'>RUN mkdir app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/callback-ea-HIFF.js app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
+WORKDIR /app
+RUN npm i
+RUN chmod +x callback-ea-HIFF.js</code></pre>
+
+			<pre class='fragment'><code>CMD npm start</code></pre>
+		</section>
+
+		<section><h1>Bring your own container</h1>
+		  <code>sudo docker build --no-cache -t jjmerelo/cloudy-ga:0.0.1</code>
+
+		  <h2 class='fragment'>... and run it</h2>
+
+		  <pre  class='fragment shell'><code> sudo docker run -t jjmerelo/cloudy-ga:0.0.1  
+     -e "PAPERTRAIL_PORT=7777" 
+     -e "PAPERTRAIL_HOST=logs77.papertrailapp.com"</code></pre>
+		</section>
+
+		<section>
+		  <h1>Logging matters</h1>
+		</section>
 		
 	      </section>
 
