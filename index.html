@@ -387,8 +387,37 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		  <h1>Decoupled processing and data structures</h1>
 		</section>
 
-			<section data-background=''>
-		  <h1>Decoupled processing and data structures</h1>
+		<section data-background=''>
+		  <h1>Before</h1>
+		  <pre><code class='javascript'>do {
+    eo.generation();
+} while ( eo.fitness_of[eo.population[0]] < chromosome_size ); </pre></code>
+		</section>
+
+		<section data-background=''>
+		  <h1>Decoupling</h1>
+		  <pre><code class='javascript'>var random_chromosome = function() {
+    return utils.random( chromosome_size );
+};
+var population = new Population();
+population.initialize( population_size, random_chromosome); </code></pre>
+
+		  <pre class='fragment'><code class='javascript'>var eo = new fluxeo( this_fitness,
+		     new Tournament( tournament_size, population_size-2 ),
+check);</code></pre>
+		</section>
+
+		<section>
+		  <h1>Algorithm on population</h1>
+		  <pre class='fragment'><code class='javascript'>eo.algorithm( population, function ( population ) {
+    logger.info( {
+	end: { time: process.hrtime(),
+	    generation: total_generations,
+	    best : { chromosome : population.best,
+		fitness : population.fitness(population.best)  }
+	}
+    });
+});</code></pre>
 		</section>
 		
 		
