@@ -16,6 +16,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/extra.css">
 		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
 		<!-- Code syntax highlighting -->
@@ -346,16 +347,14 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 			<pre class='fragment'><code>CMD npm start</code></pre>
 		</section>
 
-		<section><h1>Bring your own container</h1>
-		  <code>sudo docker build --no-cache -t jjmerelo/cloudy-ga:0.0.1</code>
-
-		  <img src='img/dockerfile.png' alt='building with
-		  Dockerfile'>
+		<section data-background='img/dockerfile.png'>
+		  <h1>Bring your own container</h1>
+		  <code class='img'>sudo docker build --no-cache -t jjmerelo/cloudy-ga:0.0.1</code>
 
 		</section>
 
 		<section>
-		  <h1 class='fragment'>... and run it</h2>
+		  <h1>... and run it</h2>
 
 		  <pre  class='fragment shell'><code> sudo docker run -t jjmerelo/cloudy-ga:0.0.1  
      -e "PAPERTRAIL_PORT=7777" 
@@ -392,7 +391,7 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		</section>
 		
 		<section data-background=''>
-		  <h1>Algorithm + stream = applcation in the cloud</h1>
+		  <h1>Algorithm + stream = application in the cloud</h1>
 		</section>
 
 		<section data-background=''>
@@ -454,7 +453,7 @@ check);</code></pre>
 		  Azure instance'>
 		</section>
 
-		<section data-background=''>
+		<section>
 		  <h1>Set up with Ansible</h1>
 		  
 		  <pre><code>- hosts: "{{target}}"
@@ -712,7 +711,8 @@ end</code></pre>
 		
 		<ol>
 		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
-		  <li class='fragment'>Computing resources can be used (mostly) for <span class='hilite'>free</span></li>
+		  <li class='fragment'>There is (almost) <span
+		  class='hilite'>free</span> lunch</li>
 		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
 		  <li class='fragment'>I ❤ <span class='hilite'>logs</span></li>
 		</ol>
