@@ -349,7 +349,13 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		<section><h1>Bring your own container</h1>
 		  <code>sudo docker build --no-cache -t jjmerelo/cloudy-ga:0.0.1</code>
 
-		  <h2 class='fragment'>... and run it</h2>
+		  <img src='img/dockerfile.png' alt='building with
+		  Dockerfile'>
+
+		</section>
+
+		<section>
+		  <h1 class='fragment'>... and run it</h2>
 
 		  <pre  class='fragment shell'><code> sudo docker run -t jjmerelo/cloudy-ga:0.0.1  
      -e "PAPERTRAIL_PORT=7777" 
@@ -359,6 +365,12 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		<section>
 		  <h1>Logging matters</h1>
 		  <img src='img/papertrail.png' alt='Papertrail'>
+		</section>
+
+		<section>
+		  <h1>Use CoreOS</h1>
+		  <h2 class='fragment'>Ready to run on Azure or
+		  anywhere</h2>
 		</section>
 		
 	      </section>
@@ -408,7 +420,7 @@ check);</code></pre>
 		</section>
 
 		<section>
-		  <h1>Algorithm on population</h1>
+		  <h1>Algorithm <strong>on</strong> population</h1>
 		  <pre class='fragment'><code class='javascript'>eo.algorithm( population, function ( population ) {
     logger.info( {
 	end: { time: process.hrtime(),
@@ -424,139 +436,249 @@ check);</code></pre>
 	      </section>
 
 	      
-	      <!-- More cloud -->
-	      <section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
-		<h1 class='img'>Servers can be in the clouds</h1>
+	      <!-- Running on cloud infraestructure -->
+	      <section>
+		<section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
+		  <h1 class='img'>Servers can be in the clouds</h1>
+		</section>
+		
+
+		<section data-background='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
+		  <h1 class='img'>Infrastructure as a service</h1>
+		</section>
+
+		<section>
+		  <h1>Create instance</h1>
+
+		  <img src='img/starting-azure.png' alt='Starting
+		  Azure instance'>
+		</section>
+
+		<section data-background=''>
+		  <h1>Set up with Ansible</h1>
+		  
+		  <pre><code>- hosts: "{{target}}"
+  tasks:
+    - name: install prerrequisites
+      command: apt-get update -y && apt-get upgrade -y
+    - name: install packages
+      apt: pkg={{ item}}
+      with_items:
+        - git 
+        - npm
+    - name: Create profile
+copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}}" 
+      dest=/home/cloudy/.profile</code></pre>
+		</section>
+
+		<section><h1>Run the playbook</h1>
+		  <pre><code>ansible-playbook git.playbook.yml 
+        -e "target=azuredeb" 
+        -u ubuntu 
+        -i ./hosts.txt -vvvv</code></pre>
+
+		  <img src='img/vagrant-ansible.png' alt='Running ansible'>
+		</section>
+
+		<section><h1>Ready to run ✓</h1>
+		  <img src='img/cloud-running.png' alt='Running in  azure'>
+		</section>
+
+		<section><h1>But there's something missing here</h1>
+		  <h1 class='fragment'>Deploying to the cloud</h1>
+		</section>
+
+		<section><h1>Let's use <code>FlightPlan</code></h1>
+
+		  <pre><code>plan.target('azure', {
+  host: 'cloudy-ga.cloudapp.net',
+  username: 'azureuser',
+  agent: process.env.SSH_AUTH_SOCK
+});
+// Local
+plan.local(function(local) {
+    local.echo('Plan local: push changes');
+    local.exec('git push');
+});</code></pre>
+		</section>
+
+		<section><h1>... And after setup</h1>
+		  <pre><code>plan.remote(function(remote) {
+    remote.log('Pull');
+    remote.with('cd cloudy-ga',function() {
+	remote.exec('git pull');
+	remote.exec('cd app;npm install .');
+    });
+    remote.with('cd /home/azureuser/cloudy-ga/app',function() {
+	remote.exec('npm start');
+    });
+});</code></pre>
+
+		  <aside class='notes'>Please note that we are using
+		    here infrastructure at several levels: the
+		    <code>package.json</code> that we declared at the
+		    beginning, that allowed us to run npm install and
+		    npm start</aside>
+		</section>
+
+		<section>
+      
+		  <h1 class='img'>IaaS have free <em>tiers</em></h1>
+		  
+		  <h2>But it generally is pay-as-you-go</h2>
+		  
+		  <h3 class='fragment'>Great if you do small amounts of computation</h3>
+		</section>
+
 	      </section>
-     
-      <section data-template='ver1' data-y='4800'>
-	<h3><a href='http://arxiv.org/abs/1105.6205'>Cloud-based Evolutionary Algorithms: An algorithmic study</a></h3>
-	<img class='illo' src='img/ga-dropbox.png' alt='GA folder'>
-	<h2>Using <a href='http://dropbox.com'>Dropbox</a>-shared
-	folders for distribution. Easy as saving a file.</h2>
-	<aside class='notes'>	<h1>And you can use it right now</h1></aside>
-     </section>
 
-      <section data-background='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
-	<h1 class='img'>Infrastructure as a service</h1>
-     </section>
-        
-      <section data-background='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>  
-	<h1 class='img'>Platform as a service</h1>
-	
-	<aside class='notes'>A platform offers a stack for developers,
-     and limited configurability; you usually can make do with
-	  whatever stacks are available as <em>cartridges</em></aside>
+	      <!-- Proceed to platform as a servide -->
 
-     </section>
+              <section>
 
-     <section data-background='img/castle.jpg' alt='sandbox castle by sandifeet'>
-      
-	<h1 class='img'>Software as a service</h1>
+		 
+		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
+		  <h1 class='img'>We still need the the server</h1>
+		  
+		  <h2 class='img'>And the sysadmin, and the electricity...</h2>
+		  
+		</section>
 
-	<aside class='notes'>A SaaS provides access to an application
-	which, in particular, can be a data store or can be used as a
-	backend for logging or storing stuff in a distributed
-	  evolutionary algorithm</aside>
-	
-     </section>
+		<section data-background='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>  
+		  <h1 class='img'>Platform as a service</h1>
+		  
+		  <aside class='notes'>A platform offers a stack for developers,
+		    and limited configurability; you usually can make do with
+		    whatever stacks are available as <em>cartridges</em></aside>
+		  
+		</section>
 
-     <section>
-	 
-       <h1 class='img'>Including development environments</h1>
-	 
-       <h2><a href='http://koding.com'>koding</a> = collaborative development environment</h2>
-	 
-       <h2 class='fragment'>With a virtual machine you can use from the browser!</h2>
-      </section>
-   
-
-      <section data-background='img/computer.jpg' alt='Picture by Jake Von Slatt'>      
-	<h1 class='img'><em>Cloud</em> computers are (almost) normal computers</h1>
-	<h2 class='img'>You can use them pretty much in the same way you used them before</h2>
-      </section>
-
+		<section data-background='img/rest.jpg' alt='Image by psd'>
+		  
+		  <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
+		  
+		  <h2 class='img'>PUT, GET, POST, DELETE</h2>
+		  
+		</section>
+		
+		<section>
+		  <h1><strong>Ajax</strong>, a standard browser-server communication framework</h1>
+		  
+		  <h2>HTTP petitions from a standard object.</h2>
+		  
+		  <h3 class='fragment'>Asynchronous!</h3>
+		</section>
+		
     
-    <section>
-      
-      <h2>Almost, but not
-	quite <strong>free</strong>: <a href='http://link.springer.com/chapter/10.1007%2F978-3-642-29178-4_48'>Flex-GP:
-      Genetic Programming on the Cloud</a> uses Amazon EC to scale up
-      to 350 nodes (with unexpected problems).</h2>
+		<section data-template='ver2' data-y='4000'>
+		  
+		  <h2>But then there's <em>freemium</em> PaaS</h2>
+		  
+		  <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a>
+		    and Google AppSpot</h3>
+		  
+		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
+		</section>
 
-      <h2 class='fragment img'>You need browsers and volunteers.</h2>
-      
-   </section>
+		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
+	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
-     <section data-background='img/rest.jpg' alt='Image by psd'>
-      
-       <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
+	<aside class='notes'>A change in environment implies a change
+	  in the technology. JS is asynchronous, servers are too. We
+	  can't just evolve all the browsers in lockstep like we used
+	  to.</aside>
 
-      <h2>PUT, GET, POST, DELETE</h2>
+		</section>
+		
+		<section>
+		  <h3>Detaching population from operations: <strong>Reactive</strong></h3>
+		  
+		  <img class='figures' src='img/poolbased.png' alt='pool schema'>
+		  
+		</section>
+		
+		<section data-background='img/3fingers.jpg' alt='3 problems'>
+		  <h1 class='img'>Three good things about pool-based EAs</h1>
+		  
+		</section>
+		
+		<section>
+		  <h1 class='fragment'>1. <strong>Self-organizing</strong> clients</h1>
+		  <h2 class='fragment'>2. Fully <strong>asynchronous</strong></h2>
+		  <h3 class='fragment'>3. <strong>Persistent</strong> population</h3>
+		</section>
 
-   </section>
+		
+		<section data-background='img/islas.jpg' alt='islands in the mist'>
+		  <h1>Also island models can be used</h1>
+		  
+		</section>
 
-    <section>
-      <h1><strong>Ajax</strong>, a standard browser-server communication framework</h1>
-      
-      <h2>HTTP petitions from a standard object.</h2>
-      
-      <h3 class='fragment'>Asynchronous!</h3>
-   </section>
+		<section><h1>The <a
+		  href='https://github.com/JJ/cloudy-ga-server'>cloudy
+		  server</a></h1>
 
-   <section>
-     <section>
-       <img src='img/agajaj.gif' alt='image from another paper, by
-	    us'>
-       
-     </section>
+		  <pre><code>app.put('/experiment/:expid/one/:chromosome/:fitness/:uuid', 
+  function(req, res){
+        // stuff here
+	logger.info("put", { chromosome: req.params.chromosome,
+			     fitness: parseInt(req.params.fitness),
+			     IP: client_ip,
+			     worker_uuid:req.params.uuid} );
+        res.send( { length : Object.keys(chromosomes).length });
+     }</code></pre>	  
+		</section>
 
-     <section>
-       <h2><em><a
-       href='http://arxiv.org/pdf/cs.DC/0701115.pdf'>Browser-based
-       distributed evolutionary computation: performance and scaling
-       behavior</a></em></h2>
+		<section><pre><code>app.get('/random', function(req, res){
+	var keys = Object.keys(chromosomes );
+	var one = keys[ Math.floor(keys.length*Math.random())];
+	res.send( { 'chromosome': one } );
+	logger.info('get');    
+});</code></pre>
+		</section>
 
-       <h3>GECCO, <strong>2007</strong>; showing histogram of generations <strong>computed</strong> by volunteers</h3>
-     </section>
+		<section><h1>Check out</h1>
+		  <h2 class='fragment'>✓ Asynchronous</h2>
+		  <h2 class='fragment'>✓ Uses Logger</h2>
+		</section>
 
-   </section>
-    
-    <section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-      <h1 class='img'>We still need the the server</h1>
-      
-      <h2 class='img'>And the sysadmin, and the electricity...</h2>
- 
-   </section>
-    
-    <section>
-      
-      <h2>Distributed EA for 10$</h2>
-      
-      <img src='img/evospace.gif' alt='Image from the paper'>
-      <h3><em><a href='http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6557709&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6552460%2F6557545%2F06557709.pdf%3Farnumber%3D6557709'>Is there a free lunch for cloud-based evolutionary algorithms?</a></em>, IEEE CEC, 2013</h3>
-   </section>
+		<section><h1>Changes in the client: draw from pool</h1>
+		  <pre><code>rest.get( conf.url + 'random' ).on('complete', function( data ) {
+		if ( data.chromosome ) {
+		    population.addAsLast( data.chromosome );
+		}
+});</code></pre>
 
-    
-    <section data-template='ver2' data-y='4800'>
-      
-      <h1 class='img'>IaaS have free <em>tiers</em></h1>
-      
-      <h2>But it generally is pay-as-you-go</h2>
+		</section>
+		<section><h1>Put into pool</h1>
+		  <pre><code>var this_request = conf.url
+		+ 'experiment/0/one/' + population.best() + "/" 
+		+ population.fitness(population.best()) + "/"
+		+ UUID;
+	    rest.put( this_request ).on("complete", function( result, response ) {
+		if ( response.statusCode == 410 ) {
+		    finished = true;
+		    experiment_id = result.current_id;
+		}
+});</code></pre>
+		</section>
+		
+		<section><h1>Deploy server to PaaS ✓</h1>
+		  <h1 class='fragment'>Deploy clients to IaaS ✓</h1>
+		  <h1 class='fragment'>➡ And run!</h1>
+		</section>
 
-      <h3 class='fragment'>Great if you do small amounts of computation</h3>
-   </section>
+		<section
+   	      data-background='img/running-azure-parallel.png'
+   alt='running in azure'>		  
+		</section>
 
-    
-    <section data-template='ver2' data-y='4000'>
-      
-      <h2>But then there's <em>freemium</em> PaaS</h2>
-      
-      <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a>
-      and Google AppSpot</h3>
-
-      <img class='illo' src='img/openshift.png' alt="it's openshift capture">
-   </section>
+		<section>
+   	      <img src='img/papertrail-openshift.png' alt='papertrail log'>
+		  <h1 class='fragment'>Logs glue everything
+   	      together</h1>
+		</section>
+   	      </section>
 
     <section data-background='https://farm5.staticflickr.com/4063/4440771174_c86df3788e_b_d.jpg'>
       <h3 class='img'>Three steps to have your own little free simulation</h3>
@@ -567,34 +689,6 @@ check);</code></pre>
 
    </section>
 
-   <section>
-     <section>
-       <h1>What can you buy with that?</h1>
-
-       <aside class='notes'>Can you buy a cluster? A million hours in
-	 Amazon? What kind of performance can you expect from
-	 that?</aside>
-
-     </section>
-
-     <section>
-       <img src='img/idc-keynote.png' alt='Experiment result'>
-
-       <aside class='note'>This is what I obtained during a keynote in
-	 which the slides contained a DEC experiment</aside>
-     </section>
-
-   </section>
-
-   <section>
-     <section>
-       <img src='img/idc-keynote-after.png' alt='Experiment result'>
-
-       <aside class='notes'>And this is what I obtained right
-       afterward, telling people "Go watch this evolutionary
-	 computation presentation"</aside>
-
-     </section>
      
      <section data-background='https://farm1.staticflickr.com/173/463544558_f145af709e_b_d.jpg'>
        <h2 class='img'>Not really a free lunch</h2>
@@ -606,45 +700,6 @@ check);</code></pre>
        
      </section>
 
-   </section>
-
-    <section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
-	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
-
-	<aside class='notes'>A change in environment implies a change
-	  in the technology. JS is asynchronous, servers are too. We
-	  can't just evolve all the browsers in lockstep like we used
-	  to.</aside>
-
-     </section>
-
-       <section >
-	<h3>Detaching population from operations</h3>
-	
-	<img class='figures' src='img/poolbased.png' alt='pool schema'>
-
-	<h3 class='aside'>Chromosomes are taken from a <strong>persistent pool</strong></h3>
-       </section>
-
-     <section> <!-- 3 good things -->
-       <section data-background='img/3fingers.jpg' alt='3 problems'>
-	<h1 class='img'>Three good things about pool-based EAs</h1>
-
-       </section>
-
-       <section>
-	<h1 class='fragment'>1. <strong>Self-organizing</strong> clients</h1>
-	<h2 class='fragment'>2. Fully <strong>asynchronous</strong></h2>
-	<h3 class='fragment'>3. <strong>Persistent</strong> population</h3>
-     </section>
-
-     </section> <!-- /3 good things -->
-
-     <section data-background='img/islas.jpg' alt='islands in the mist'>
-	<h1>The island model can also use the pool</h1>
-
-	<h2 class='fragment img'>Using it for communication</h2>
-     </section>
       
     <section data-template='hor4' data-x='8000'>
       <h3>You have to deal with</h3>
