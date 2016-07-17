@@ -680,51 +680,49 @@ plan.local(function(local) {
 		</section>
    	      </section>
 
-    <section data-background='https://farm5.staticflickr.com/4063/4440771174_c86df3788e_b_d.jpg'>
-      <h3 class='img'>Three steps to have your own little free simulation</h3>
+	      <!-- Bringing everything together -->
+	      <section>
+		<section>
+		  <h1><code>Vagrant</code> for orchestration</h1>
+		  
+		  <pre><code>Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     apt-get upgrade -y
+  SHELL
+  config.vm.provision "main", type: "ansible" do |ansible|
+    ansible.extra_vars = { target: "all" }
+    ansible.playbook = "playbook.yml"
+  end
+  # and the rest...
+end</code></pre>
+		</section>
+		
+		<section><h1>All together</h1>
+		  <h2 class='fragment'>✓ Get servers ➡ PaaS, Loggers</h2>
+		  <h2 class='fragment'>✓ Create/provision boxes ➡ Vagrant/Ansible</h2>
+		  <h2 class='fragment'>✓ Deploy/run ➡ FlightPlan </h2>
+		</section>
+	      </section>
 
-      <h2 class='fragment img'>Client-server application with <strong>JavaScript</strong></h2>
-      <h2 class='fragment img'>Host it using <strong>Heroku/OpenShift</strong></h2>
-      <h1 class='fragment img'>Tell people in <span style='color:blue'>Twitter</span>!</h1>
-
-   </section>
-
-     
-     <section data-background='https://farm1.staticflickr.com/173/463544558_f145af709e_b_d.jpg'>
-       <h2 class='img'>Not really a free lunch</h2>
-       <h1 class='img fragment'>But it's pretty darn close to it</h1>
-       
-       <h2 class='img fragment'>And all the technologies you need use are already there:
-	 JavaScript, browsers and Ajax.</h2>
-
-       
-     </section>
-
-      
-    <section data-template='hor4' data-x='8000'>
-      <h3>You have to deal with</h3>
-      <h2 class='fragment'>(Almost) <strong>Unpredictable</strong> infrastructure</h2>
-      <h2 class='fragment'><strong>Ephemeral</strong> contributions: single seconds</h2>
-      <h2 class='fragment'>Complex <strong>socio-technical</strong> system</h2>
-   </section>
-
-    <section>
-      <h1>Take this home</h1>
-      
-	<ol>
-	  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
-	  <li class='fragment'>Computing resources can be used (mostly) for <span class='hilite'>free</span></li>
-	  <li class='fragment'><span class='hilite'>JavaScript</span>, best way to tap them</li>
-	  <li class='fragment'>New ways of exploring <span class='hilite'>spontaneous</span>, ad-hoc networks for
-	  EC</li>
-	</ul>
-   </section>
+	      <!-- Final -->
+	      <section>
+		<h1>Take this home</h1>
+		
+		<ol>
+		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
+		  <li class='fragment'>Computing resources can be used (mostly) for <span class='hilite'>free</span></li>
+		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
+		  <li class='fragment'>I ❤ <span class='hilite'>logs</span></li>
+		</ol>
+	      </section>
   
   
     <section data-background='https://farm1.staticflickr.com/279/19602922051_6d77ce97d9_h_d.jpg'>
       <h1 class='img'>Questions?</h1>
 
-	<h2  class='img'>Code: <a href="https://github.com/JJ/low-or-no-cost-gecco-2015"><code>git.io/gecco-jj-15</a></code> </h2>
+	<h2  class='img'>Code: <a href="https://github.com/JJ/low-or-no-cost-gecco-2015"><code>git.io/cloudEC</a></code> </h2>
 	<h3  class='img'>Tweet out (of follow) <code>@jjmerelo</code></h3>
       </ul>
     </section>
