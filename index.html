@@ -249,12 +249,13 @@ do {
 
 	      <!-- Containerize -->
 	      <section>
-		<section data-background=''>
-		  <h1>Cloud is about reproductibe infrastructure</h1>
-
+		<section data-background='https://farm1.staticflickr.com/38/112168045_59c99de30c_o_d.jpg'>
+		  <h1>Cloud is about reproducible infrastructure</h1>
+		  <aside class='notes'>Let's forget about JavaScript for a moment. Not too long. Let's think about the cloud</aside></section>
+		<aside class='notes'>Clouds are unique, you have to capture the only fleeting moment where they happen. However, the basic idea about the cloud is software-defined, reproducible, infrastructure. And this starts here.</aside>
 		</section>
 
-		<section data-background=''>
+		<section data-background='img/tuppers.jpg'>
 		  <h1>Let's containerize</h1>
 		</section>
 
@@ -265,8 +266,7 @@ var eo = new nodeo.Nodeo( { population_size: conf.population_size,
 			    fitness_func: hiff } );
 logger.info( { start: process.hrtime() } );</code></pre>
 
-		  <pre class='fragment'><code>evolve(generation_count, eo, 
-  logger, conf, check );</code></pre>
+		  <pre class='fragment'><code>evolve(generation_count, eo, logger, conf, check );</code></pre>
 		</section>
 
 		<section><h1>A container does <strong>one</strong>
@@ -279,7 +279,9 @@ logger.info( { start: process.hrtime() } );</code></pre>
 		   port: process.env.PAPERTRAIL_PORT
 	       }
 	      )
-}</code></pre></section>
+		      }</code></pre>
+		  <aside class='notes'>It can't run <em>and</em> log</aside>
+		</section>
 		
 		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
     if ( (eo.fitness_of[eo.population[0]] < conf.fitness_max ) 
@@ -323,8 +325,8 @@ logger.info( { start: process.hrtime() } );</code></pre>
 
 		  <h2 class='fragment'><em>Lightweight</em>
 		  virtualization</h2>
-		  <h3 class='fragment'><em>Portable</em>
-		  infraestructure</h3>
+		  <h1 class='fragment'><em>Portable</em>
+		  infraestructure</h1>
 		</section>
 
 		<section><h1>Using docker</h1>
@@ -388,11 +390,11 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 	      <!-- Reactive programming -->
 
 	      <section>
-		<section data-background=''>
+		<section>
 		  <h1>It's not programming as usual</h1>
 		</section>
 
-		<section data-background=''>
+		<section>
 		  <h1><strong>Reactive</strong> programming</h1>
 
 		  <aside class='notes'>It's all about <a
@@ -400,22 +402,22 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		    flows</a> and taking care of them. </aside>
 		</section>
 		
-		<section data-background=''>
+		<section>
 		  <h1>Algorithm + stream = application in the cloud</h1>
 		</section>
 
-		<section data-background=''>
+		<section>
 		  <h1>Decoupled processing and data structures</h1>
 		</section>
 
-		<section data-background=''>
+		<section>
 		  <h1>Before</h1>
 		  <pre><code class='javascript'>do {
     eo.generation();
 } while ( eo.fitness_of[eo.population[0]] < chromosome_size ); </pre></code>
 		</section>
 
-		<section data-background=''>
+		<section>
 		  <h1>Decoupling</h1>
 		  <pre><code class='javascript'>var random_chromosome = function() {
     return utils.random( chromosome_size );
@@ -448,7 +450,7 @@ check);</code></pre>
 	      <!-- Running on cloud infraestructure -->
 	      <section>
 		<section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
-		  <h1 class='img'>Servers can be in the clouds</h1>
+		  <h1 class='img'>Running in the cloud</h1>
 		</section>
 		
 
@@ -460,7 +462,9 @@ check);</code></pre>
 		  <h1>Create instance</h1>
 
 		  <img src='img/starting-azure.png' alt='Starting
-		  Azure instance'>
+		       Azure instance'>
+
+		  <aside class='notes'>You can do this from the command line too, using CLI tools or higher level tools like Vagrant (later on).</aside>
 		</section>
 
 		<section>
