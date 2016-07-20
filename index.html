@@ -498,7 +498,9 @@ copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}}"
 		</section>
 
 		<section><h1>But there's something missing here</h1>
-		  <h1 class='fragment'>Deploying to the cloud</h1>
+		  <h1 class='fragment'><strong>Deploying</strong> to the cloud</h1>
+
+		  <aside class='notes'>The reproducibility should be end-to-end</aside>
 		</section>
 
 		<section><h1>Let's use <code>FlightPlan</code></h1>
@@ -536,7 +538,7 @@ plan.local(function(local) {
 
 		<section>
       
-		  <h1 class='img'>IaaS have free <em>tiers</em></h1>
+		  <h1>IaaS have free <em>tiers</em></h1>
 		  
 		  <h2>But it generally is pay-as-you-go</h2>
 		  
@@ -551,9 +553,7 @@ plan.local(function(local) {
 
 		 
 		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-		  <h1 class='img'>We still need the the server</h1>
-		  
-		  <h2 class='img'>And the sysadmin, and the electricity...</h2>
+		  <h1>You might not need a whole server</h1>
 		  
 		</section>
 
@@ -585,7 +585,7 @@ plan.local(function(local) {
     
 		<section data-template='ver2' data-y='4000'>
 		  
-		  <h2>But then there's <em>freemium</em> PaaS</h2>
+		  <h2>There's <em>freemium</em> PaaS</h2>
 		  
 		  <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a>
 		    and Google AppSpot</h3>
@@ -604,7 +604,8 @@ plan.local(function(local) {
 		</section>
 		
 		<section>
-		  <h3>Detaching population from operations: <strong>Reactive</strong></h3>
+		  <h2>Detaching population from operations</h2>
+		  <h1 class='fragment'>➡ <strong>Reactive</strong> programming.</h1>
 		  
 		  <img class='figures' src='img/poolbased.png' alt='pool schema'>
 		  
@@ -616,14 +617,14 @@ plan.local(function(local) {
 		</section>
 		
 		<section>
-		  <h1 class='fragment'>1. <strong>Self-organizing</strong> clients</h1>
-		  <h2 class='fragment'>2. Fully <strong>asynchronous</strong></h2>
-		  <h3 class='fragment'>3. <strong>Persistent</strong> population</h3>
+		  <h1>1. <strong>Self-organizing</strong> clients</h1>
+		  <h1 class='fragment'>2. Fully <strong>asynchronous</strong></h1>
+		  <h1 class='fragment'>3. <strong>Persistent</strong> population</h1>
 		</section>
 
 		
 		<section data-background='img/islas.jpg' alt='islands in the mist'>
-		  <h1>Also island models can be used</h1>
+		  <h1>Island models can be used too </h1>
 		  
 		</section>
 
