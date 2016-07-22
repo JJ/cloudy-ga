@@ -426,8 +426,9 @@ var population = new Population();
 population.initialize( population_size, random_chromosome); </code></pre>
 
 		  <pre class='fragment'><code class='javascript'>var eo = new fluxeo( this_fitness,
-		     new Tournament( tournament_size, population_size-2 ),
-check);</code></pre>
+		     new Tournament( tournament_size,
+		        population_size-2 ),
+                     check);</code></pre>
 		</section>
 
 		<section>
