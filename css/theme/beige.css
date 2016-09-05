@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import 'https://fonts.googleapis.com/css?family=Play|Signika|Titillium+Web|Varela+Round|Share+Tech+Mono';
+@import 'https://fonts.googleapis.com/css?family=Play|Miriam+Libre|Signika|Titillium+Web|Varela+Round|Share+Tech+Mono';
 
 /*********************************************
  * GLOBAL STYLES
@@ -53,11 +53,11 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-              font-family: "Signika", Helvetica, sans-serif;
+             font-family: "Miriam Libre", Helvetica, sans-serif;
              font-size: 3.77em; }
 
 .reveal h2 {
-              font-family: "Titillium Web", Helvetica, sans-serif;
+             font-family: "Titillium Web", Helvetica, sans-serif;
              font-size: 2.11em; }
 
 .reveal h3 {
