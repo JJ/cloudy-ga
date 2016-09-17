@@ -12,7 +12,7 @@ section[data-background] h1,h2,h3 {
        border-radius: 10px
 }
 
-.reveal li { font-size:1.75em }
+.reveal li { font-size:1.5em }
 .reveal li.credits { font-size:0.75em }
 .credits {
     -moz-column-count: 2;
