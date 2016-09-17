@@ -277,8 +277,11 @@ logger.info( { start: process.hrtime() } );</code></pre>
 		   port: process.env.PAPERTRAIL_PORT
 	       }
 	      )
-		      }</code></pre>
-		  <aside class='notes'>It can't run <em>and</em> log</aside>
+	}</code></pre>
+		  <aside class='notes'>It can't run <em>and</em> log,
+		  so logs have to be taken to another different
+		  place. In this case, to a Software-as-a-Service,
+		  another cloud service.</aside>
 		</section>
 		
 		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
