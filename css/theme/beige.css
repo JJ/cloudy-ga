@@ -54,11 +54,11 @@ body {
 
 .reveal h1 {
              font-family: "Baloo Tamma", Helvetica, sans-serif;
-             font-size: 3.77em; }
+             font-size: 3.5em; }
 
 .reveal h2 {
              font-family: "Titillium Web", Helvetica, sans-serif;
-             font-size: 2.11em; }
+             font-size: 2.75em; }
 
 .reveal h3 {
   font-size: 1.55em; }
@@ -150,7 +150,7 @@ body {
   margin: 20px auto;
   text-align: left;
   font-family: monospace;
-  line-height: 1.2em;
+  line-height: 1.1em;
   word-wrap: break-word;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
 
@@ -159,7 +159,8 @@ body {
 
 .reveal pre code {
   display: block;
-  padding: 5px;
+  padding: 3px;
+  font-size: 0.75em;
   overflow: auto;
   word-wrap: normal; }
 
