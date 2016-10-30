@@ -217,18 +217,19 @@ var generation_count = 0;
 
 // Checks termination conditions
 var check = function( population ) {
-
-    if ( (population.fitness( population.best()) < 2304 ) && (generation_count*population_size < 1000000 )) {
-	generation_count++;
-	console.log( { 
-	    "chromosome": population.best(),
-	    "fitness" : population.fitness( population.best() )
-	} );
-	return false;
-    } else {
-
-	return true;
-    }
+  if ( (population.fitness( population.best()) < 2304 ) && (generation_count*population_size < 1000000 )) {
+    generation_count++;
+    console.log( { 
+      "chromosome": population.best(),
+      "fitness" : population.fitness( population.best() )
+    } );
+    return false;
+  } else {
+    console.log("Looks like this is it");
+    console.log(population.fitness( population.best()))
+    console.log(population.fitness( population.best()) < 2304 )
+    return true;
+  }
 };
 
 // Create the evolution/evolvable object
@@ -237,8 +238,6 @@ var eo = new fluxeo( this_fitness,
 		     check);
 
 console.log( { start: process.hrtime() } );
-
-
 
 // Start loop
 console.log( "Starting ");
@@ -315,28 +314,28 @@ FluxEO.prototype.reproduce = function( population, done ) {
 };
 
 // Incorporate using elitism
-FluxEO.prototype.generation = function( population, done ) {
-    this.reproduce( population, function( population, new_population ) {
-	population.cull( new_population.length );
-	population.insert( new_population );
-	done( population );
-    });
+// var generation = 0;
+FluxEO.prototype.generation = function( population ) {
+//  console.log( "In " + generation ++ );
+  this.reproduce( population, function( population, new_population ) {
+    population.cull( new_population.length );
+    population.insert( new_population );
+  });
 };
 
 
 // Run the algorithm
 FluxEO.prototype.algorithm = function( population, done ) {
-    var that = this;
-    this.generation( population, function( population ) {
-	if ( that.found_solution( population ) ) {
-	    console.log( "Found!!!");
-	    done( population );
-	} else {
-	    setImmediate( function () {
-		that.algorithm( population, done );
-	    });
-	}
+  var that = this;
+  this.generation(population);
+  if ( this.found_solution( population ) ) {
+    console.log( "Found!!!");
+    done( population );
+  } else {
+    setImmediate( function () {
+      that.algorithm( population, done );
     });
+  }
 };
 
 },{"./nodeo/Population":8,"./nodeo/Selection":10,"./nodeo/ops":18}],4:[function(require,module,exports){
@@ -735,6 +734,14 @@ Population.prototype.size = function() {
     return this.living.length;
 }
 
+/* Incorporates a chromosome, eliminating the worst. Mainly used for immigration purposes
+Do not care if it's sorted or not, and it's not evaluated. To be done in the next round */
+Population.prototype.addAsLast = function( individual ) {
+    this.living.pop();
+    this.living.push( individual );
+}
+    
+
 },{}],9:[function(require,module,exports){
 // Rastrigin function with Fitness function signature
  
@@ -908,8 +915,8 @@ var ChromosomeFloat={
     , invert: function (chrom) {
      return  new ChromosomeFloat.Chromosome(
          chrom.vector.map( function(e) {
-         return (-e+chrom.minvalue+chrom.maxvalue);
-     }));
+             return (-e+chrom.minvalue+chrom.maxvalue);
+	 }));
     }
 
     // Changes the value at one point by some other randomly calculated
