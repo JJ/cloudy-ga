@@ -265,6 +265,7 @@ eo.algorithm( population, function ( population ) {
 
 }).call(this,require('_process'))
 },{"_process":1,"nodeo":4}],3:[function(require,module,exports){
+(function (process){
 // Evolutionary Algorithm, simplified, for node.js
 /*jslint node: true */
 'use strict';
@@ -296,10 +297,10 @@ FluxEO.prototype.evaluate = function( population, done ) {
 
 // Create a pool of new individuals
 FluxEO.prototype.create_pool = function( population, done ) {
-    var that = this;
+    var selection = this.selection;
     this.evaluate( population, function( population ) {
 	population.rank();
-	var new_population = that.selection.select( population );
+	var new_population = selection.select( population );
 	done( population, new_population );
     });
 };
@@ -326,19 +327,19 @@ FluxEO.prototype.generation = function( population ) {
 
 // Run the algorithm
 FluxEO.prototype.algorithm = function( population, done ) {
-  var that = this;
   this.generation(population);
   if ( this.found_solution( population ) ) {
     console.log( "Found!!!");
     done( population );
   } else {
-    setImmediate( function () {
-      that.algorithm( population, done );
-    });
+    process.nextTick( function () {
+                         this.algorithm( population, done );
+                       }.bind( this ));
   }
 };
 
-},{"./nodeo/Population":8,"./nodeo/Selection":10,"./nodeo/ops":18}],4:[function(require,module,exports){
+}).call(this,require('_process'))
+},{"./nodeo/Population":8,"./nodeo/Selection":10,"./nodeo/ops":18,"_process":1}],4:[function(require,module,exports){
 // Evolutionary Algorithm, simplified, for node.js
 /*jslint node: true */
 'use strict';
@@ -556,23 +557,24 @@ function t( a, b ) {
 }
 
 function T( ev ) {
-    switch(ev) {
+//  console.log(ev);
+  switch(ev) {
     case '-':
     case '1':
     case '0':
-	return ev;
+    return ev;
     case '00':
-	return '0';
+    return '0';
     case '11':
-	return '1';
+    return '1';
     case '01':
     case '10':
-	return '-';
+    return '-';
     default:
-	if (ev.length == 2 && ev.match(/-/))
-	    return '-'
-	else 
-	    return t(T(ev.slice(0,ev.length/2)),T(ev.slice(ev.length/2,ev.length)))
+    if (ev.length == 2 && ev.match(/-/))
+      return '-'
+    else 
+      return t(T(ev.slice(0,ev.length/2)),T(ev.slice(ev.length/2,ev.length)))
   }
 }
 
@@ -664,18 +666,18 @@ function Population( individuals, fitness_hash) {
 
 // Sorts the population and returns it sorted
 Population.prototype.rank = function() {
-    var that = this;
+    var fitness_of = this.fitness_of;
     return this.living.sort( function(a,b) {
-	return that.fitness_of[b] - that.fitness_of[a];
+	return fitness_of[b] - fitness_of[a];
     });
 };
 
 // Evaluates population
 Population.prototype.evaluate = function( fitness ) {
-    var that =  this;
+    var fitness_of =  this.fitness_of;
     this.living.map( function( individual ) {
-	if ( ! (individual in that.fitness_of ) ) {
-	    that.fitness_of[individual] = fitness( individual );
+	if ( ! (individual in fitness_of ) ) {
+	    fitness_of[individual] = fitness( individual );
 	}
     });
 };
@@ -699,11 +701,13 @@ Population.prototype.fitness = function( individual ) {
 
 // Removes last elements
 Population.prototype.cull = function( how_many ) {
-    if ( how_many < this.living.length ) {
-	for ( var i = 0; i < how_many; i++ ) {
-	    this.living.pop();
-	}
+  if ( how_many < this.living.length ) {
+    for ( var i = 0; i < how_many; i++ ) {
+      var removed = this.living.pop();
+      delete this.fitness_of[ removed ];
     }
+  }
+
 };
 
 // Inserts the new population into the old
