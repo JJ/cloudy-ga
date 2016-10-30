@@ -33,18 +33,19 @@ var generation_count = 0;
 
 // Checks termination conditions
 var check = function( population ) {
-
-    if ( (population.fitness( population.best()) < 2304 ) && (generation_count*population_size < 1000000 )) {
-	generation_count++;
-	console.log( { 
-	    "chromosome": population.best(),
-	    "fitness" : population.fitness( population.best() )
-	} );
-	return false;
-    } else {
-
-	return true;
-    }
+  if ( (population.fitness( population.best()) < 2304 ) && (generation_count*population_size < 1000000 )) {
+    generation_count++;
+    console.log( { 
+      "chromosome": population.best(),
+      "fitness" : population.fitness( population.best() )
+    } );
+    return false;
+  } else {
+    console.log("Looks like this is it");
+    console.log(population.fitness( population.best()))
+    console.log(population.fitness( population.best()) < 2304 )
+    return true;
+  }
 };
 
 // Create the evolution/evolvable object
@@ -53,8 +54,6 @@ var eo = new fluxeo( this_fitness,
 		     check);
 
 console.log( { start: process.hrtime() } );
-
-
 
 // Start loop
 console.log( "Starting ");
