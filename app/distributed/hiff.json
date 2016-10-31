@@ -1,12 +1,12 @@
 {  "port": 3000,
    "tournament_size": 2,
-   "max_evaluations": 10000000,
-   "population_size": 512,
+   "max_evaluations": 100000000,
+   "population_size": 19896,
    "output_preffix": "testing",
-   "chromosome_size": 512,
-   "fitness_max" : 5120,
-   "generation_gap": 64,
+   "chromosome_size": 256,
+   "fitness_max" : 2304,
+   "generation_gap": 16,
    "url": "http://gecco2016-jmerelo.rhcloud.com/",
-   "experiment_id": "test"
+   "experiment_id": "0"
 }
 

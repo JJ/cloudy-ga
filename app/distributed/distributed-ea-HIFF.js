@@ -84,35 +84,30 @@ var check = function( population ) {
 	    "chromosome": population.best(),
 	    "fitness" : population.fitness( population.best() )
 	} );
-
+      
 	// Perform immigration
 	if ( generation_count % conf.generation_gap === 0 ) { // do migration stuff
-	    console.log("Do it");
-
-	    // Get from pool
-	    rest.get( conf.url + 'random' ).on('complete', function( data ) {
-		if ( data.chromosome ) {
-		    population.addAsLast( data.chromosome );
-		}
-	    });
-
-	    // Put chromosome
-	    // put in pool
-	    var this_request = conf.url
-		+ 'experiment/0/one/' + population.best() + "/" 
-		+ population.fitness(population.best()) + "/"
-		+ UUID;
-	    console.log( this_request );
-	    rest.put( this_request ).on("complete", function( result, response ) {
-		if ( response.statusCode == 410 ) {
-		    finished = true;
-		    experiment_id = result.current_id;
-		}
-	    });
+	  console.log("Do it");
+          
+	  // Put chromosome in pool
+	  var this_request = conf.url
+		           + 'experiment/0/one/' + population.best() + "/" 
+		           + population.fitness(population.best()) + "/"
+		           + UUID;
+	  console.log( this_request );
+	  rest.put( this_request ).on("complete", function( result, response ) {
+	    if ( response.statusCode == 410 ) {
+	      finished = true;
+	      experiment_id = result.current_id;
+	    }
+            if ( result.chromosome ) {
+	      population.addAsLast( result.chromosome );
+	      console.log('Getting ' + result.chromosome );
+	    }
+	  });
 	}
 	return false;
     } else {
-
 	return true;
     }
 };
