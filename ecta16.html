@@ -138,47 +138,6 @@
 		</section>
 
 		<section>
-		  <pre><code class='javascript'>var hiff = new HIFF.HIFF();
-var eo = new nodeo.Nodeo( { population_size: conf.population_size,
-			    chromosome_size: chromosome_size,
-			    fitness_func: hiff } );
-logger.info( { start: process.hrtime() } );</code></pre>
-
-		  <pre class='fragment'><code>evolve(generation_count, eo, logger, conf, check );</code></pre>
-		</section>
-
-		<section><h1>A container does <strong>one</strong>
-		thing</h1>
-		  <pre><code>if ( typeof process.env.PAPERTRAIL_PORT !== 'undefined' 
-      && typeof process.env.PAPERTRAIL_HOST !== 'undefined' ) { 
-    logger.add(winston.transports.Papertrail, 
-	       {
-		   host: process.env.PAPERTRAIL_HOST,
-		   port: process.env.PAPERTRAIL_PORT
-	       }
-	      )
-		      }</code></pre>
-		  <aside class='notes'>It can't run <em>and</em> log</aside>
-		</section>
-		
-		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
-    if ( (eo.fitness_of[eo.population[0]] < conf.fitness_max ) 
-          && (generation_count*conf.population_size < conf.max_evaluations )) {
-	logger.info( { "chromosome": eo.population[0],
-		       "fitness" : eo.fitness_of[eo.population[0]]} );
-	evolve( generation_count, eo, logger, conf, check);
-    } else {
-	logger.info( {end: { 
-	    time: process.hrtime(),
-	    generation: total_generations,
-	    best : { chromosome : eo.population[0],
-		     fitness : eo.fitness_of[eo.population[0]]}}} );
-	conf.output = conf.output_preffix+".json";
-	process.exit();
-    }
-};</code></pre></section>
-
-		<section>
 		  <h2>Describe infrastructure: <code>package.json</code></h2>
 		  <pre><code>{
   "name": "hiffeitor",
@@ -222,19 +181,13 @@ RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install apt-utils -y 
-RUN apt-get install nodejs npm -y 
-		</code></pre>
-		</section>
-		<section>
-		  	<pre><code class='dockerfile'>RUN mkdir app
-ADD https://github.com/JJ/cloudy-ga/raw/master/app/callback-ea-HIFF.js app
-ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
+[... more stuff ... ]
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
 WORKDIR /app
 RUN npm i
 RUN chmod +x callback-ea-HIFF.js</code></pre>
 
-			<pre class='fragment'><code>CMD npm start</code></pre>
+		<pre class='fragment'><code>CMD npm start</code></pre>
 		</section>
 
 		<section data-background='img/dockerfile.png'>
@@ -255,18 +208,11 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		  <h1>Logging matters</h1>
 		  <img src='img/papertrail.png' alt='Papertrail'>
 		</section>
-
-		<section>
-		  <h1>Use CoreOS</h1>
-		  <h2 class='fragment'>Ready to run on Azure or
-		  anywhere</h2>
-		</section>
 		
 	      </section>
 
 
 	      <!-- Reactive programming -->
-
 	      <section>
 		<section>
 		  <h1>It's not programming as usual</h1>
