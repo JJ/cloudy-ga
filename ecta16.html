@@ -58,7 +58,8 @@
             
 	      <section>
 		<section><h1>Get ready for the cloud!</h1>
-		  <h2>A new paradigm in scientif computing</h2>
+		  <h2>A new paradigm in scientific computing</h2>
+		  <h1><code>@jjmerelo</code></h1>
 		</section>
 		
 		<section data-background='img/iceland-clouds.jpg'>
@@ -66,6 +67,10 @@
 
 		  <aside class='notes'>Clouds in New Mexico - happy clouds - all hail the glow cloud - we shouldn't be afraid of the cloud</aside>
 		</section>
+
+		<section>
+		  <h1>Cloud is where you run your programs</h1>
+		</section> 
 
 		<section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
 		  <h1>Virtualized resources on tap</h1>
@@ -93,16 +98,10 @@
 		</section>
 	      </section>
 
-	      <section>
-		<h2>Grab the whole code</h2>
-		<h1><a href='https://github.com/JJ/cloudy-ga'>git.io/cloudEC</a></h1>
-		<h2>Address your tweets <code>@jjmerelo</code> + <code>#PPSN2016</code></h2>
-	      </section>
-
 	      <!-- why? -->
 	      <section>
 		<section data-background=''>
-		  <h1>Why add cloud to evolutionary algorithms?</h1>
+		  <h1>Why use the cloud in scientific computing?</h1>
 		</section>
 
 		<section data-background=''>
@@ -124,134 +123,6 @@
 		<section data-background=''>
 		  <h1>♻ Let <strong>Nature</strong> be your guide</h1>
 		</section>
-
-	      </section>
-
-	      <!-- Javascript -->
-	      <section>
-
-
-		<section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
-		  <h1 class='img'>JavaScript = cloud's native language</h1>
-		  
-		  <aside class='notes'>JavaScript is a standard scripting
-		    language initially intended for Netscape but landed
-		    eventually in every browser out there.</aside>
-		</section>
-    
-		<section>
-		  <h1>Let's do Javascript!</h1>
-		  
-		  <h2>Menu → developer → console</h2>
-		  
-		  <img class='illo' src='img/console.png' alt='firefox console'>
-		</section>
-		
-		<section>
-		  <h1>Say hello to these nice folks!</h1>
-		  <pre><code>console.log('¡Hola, chavales!')</code></pre>
-		  
-		  <h2>Or the much more annoying</h2>
-		  <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
-		  
-		  <aside class='notes'>A gentle introduction to
-		    JavaScript to get a idea of what it's like</aside>
-		</section>
-		
-		<section data-template='hor1' data-x='8000'>
-		  <h1>This is an object. That, too.</h1>
-		  <pre><code>console.log('Buenos días'.length)</code></pre>
-		  
-		  <h2>Arrays are objects, and the other way round</h2>
-		  <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
-		</section>
-		
-		<section data-template='hor1' data-x='9000'>
-		  <h1>Chromosomes and fitness</h1>
-		  <pre><code>var chromosome = '1001100110011';
-var fitness_of = new Object;
-fitness_of[chromosome] = chromosome.match(/1/g).length;  
-var rr = function (chromosome) {
-  var fitness = 0;
-  for (var i = 0; i &lt; chromosome.length; i+=4 ) {
-	var ones = (chromosome.substr(i, 4).match(/1/g) || []).length;
-	fitness += ( ones == 0 || ones == 4 ); 
-  }
-  return fitness;
-}; </code></pre>
-
-		  <aside class='notes'>What is the way of representing a
-		    chromosome then? What's the fastest way of counting ones? This is
-		    a way of doing it, that besides proves that JS is a higher-order
-		    language that is able to deal with functions as first-class
-		    dwellers of the language</aside>
-		</section>
-
-		<section>
-		  <h1>JavaScript is:</h1>
-		  <h2>Standard, (reasonably) fast and</h2>
-		  <h1 class='fragment'>Everywhere</h1>
-		  <h2 class='fragment'>Yes, also in your PS4</h2>
-		  
-		  <aside class='notes'>Standard is issued by ECMA, which is a
-		    weird standard body, but at least it's one. Last
-		    standard is called ES6, which is closer to more
-		    traditional languages. ES7 up and coming.</aside>
-		</section>
-
-		<section>
-		  <h1>(Almost) forget about loops</h1>
-		  <pre><code>function do_ea() {
- eo.generation();
- generation_count++;
- if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
-  && ( generation_count*conf.population_size < conf.max_evaluations)) {
-  setTimeout(do_ea, 5);
- } else {
-  console.log( "Finished ", log );
- }
-}</code></pre>
-
-		  <aside class='notes'>This has nothing to do with the language,
-		    but with the implementation, which is usually single-threaded.</aside>
-		</section>
-		
-		<section data-background='img/screens.jpg' alt='Picture by bloem'>
-		  <h1 class='img'>A whole algorithm in a browser</h1>
-		  <h2 class='fragment img'>The browser is the new operating system</h2>
-		  
-		  
-		</section>
-
-		<section>
-		  <h1>And why not in the server too?</h1>
-
-		</section>
-
-		<section>
-		  
-		  <h3><p><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter.</p></h3>
-		    <h2 class='fragment'><a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
-		  
-		  <pre><code class='javascript'>var eo = new nodeo.Nodeo( { population_size: population_size,
-			    chromosome_size: chromosome_size,
-			    fitness_func: utils.max_ones } );
-do {
-    eo.generation();
-    console.log( eo.population[0] );
-} while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
-
-		  <aside class='notes'>Nodeo can be downloaded from the Node modules
-  repository with <code>npm install nodeo</code>. This is actually
-  not the preferred way of doing a loop; it should be done
-  asynchronously as above, since that will leave no time for I/O or
-  other events. It's a single thread, same as in the browser. But it
-  can be done alright if you need to do it. Good thing about JS, same
-  programming model and language (but not the rest) in client and
-  server. Very recently, in fact for this tutorial, version 0.2.2 has
-  been released. And here's a loop which I said we shouldn't use. That does not mean we cannot use it from time to time. So just check it out and forget about it.</aside>
-		</section>
-
 
 	      </section>
 
