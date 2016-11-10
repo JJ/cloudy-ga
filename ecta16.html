@@ -364,13 +364,16 @@ plan.local(function(local) {
 		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
 		</section>
 
-		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
-	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+		<section data-background='img/pool-nuns.jpg' src='nuns
+			 and pool Lorianne diSabato' >
+		  
+		  <h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
-	<aside class='notes'>A change in environment implies a change
-	  in the technology. JS is asynchronous, servers are too. We
-	  can't just evolve all the browsers in lockstep like we used
-	  to.</aside>
+		  <aside class='notes'>A change in environment implies a change
+		    in the technology. JS is asynchronous, servers are too. We
+		    can't just evolve all the browsers in lockstep like we used
+		    to. This effectively decouples the algorithm from
+		    the data, allowing for better scalability.</aside>
 
 		</section>
 		
@@ -395,84 +398,33 @@ plan.local(function(local) {
 		  <h1 class='fragment'>2. Fully <strong>asynchronous</strong></h1>
 		  <h1 class='fragment'>3. <strong>Persistent</strong> population</h1>
 		</section>
-
 		
 		<section data-background='img/islas.jpg' alt='islands in the mist'>
 		  <h1>Island models can be used too </h1>
 		  
 		</section>
-
-		<section><h1>The <a
-		  href='https://github.com/JJ/cloudy-ga-server'>cloudy
-		  server</a></h1>
-
-		  <pre><code>app.put('/experiment/:expid/one/:chromosome/:fitness/:uuid', 
-  function(req, res){
-        // stuff here
-	logger.info("put", { chromosome: req.params.chromosome,
-			     fitness: parseInt(req.params.fitness),
-			     IP: client_ip,
-			     worker_uuid:req.params.uuid} );
-        res.send( { length : Object.keys(chromosomes).length });
-     }</code></pre>	  
-		</section>
-
-		<section><pre><code>app.get('/random', function(req, res){
-	var keys = Object.keys(chromosomes );
-	var one = keys[ Math.floor(keys.length*Math.random())];
-	res.send( { 'chromosome': one } );
-	logger.info('get');    
-});</code></pre>
-		  <aside class='notes'>In fact, you can do both together at the same time; latest versions use that.</aside>
-		</section>
-
-		<section><h1>Check out</h1>
-		  <h2 class='fragment'>✓ Asynchronous</h2>
-		  <h2 class='fragment'>✓ Uses Logger</h2>
-		</section>
-
-		<section><h1>Changes in the client: draw from pool</h1>
-		  <pre><code>rest.get( conf.url + 'random' ).on('complete', function( data ) {
-		if ( data.chromosome ) {
-		    population.addAsLast( data.chromosome );
-		}
-});</code></pre>
-
-		</section>
-		<section><h1>Put into pool</h1>
-		  <pre><code>var this_request = conf.url
-		+ 'experiment/0/one/' + population.best() + "/" 
-		+ population.fitness(population.best()) + "/"
-		+ UUID;
-	    rest.put( this_request ).on("complete", function( result, response ) {
-		if ( response.statusCode == 410 ) {
-		    finished = true;
-		    experiment_id = result.current_id;
-		}
-});</code></pre>
-		</section>
 		
 		<section><h1>Deploy server to PaaS ✓</h1>
 		  <h1 class='fragment'>Deploy clients to IaaS ✓</h1>
-		  <h1 class='fragment'>➡ And run!</h1>
+		  <h1 class='fragment'>➡ And do science!</h1>
 		</section>
 
-		<section
-   	      data-background='img/running-azure-parallel.png'
-   alt='running in azure'>		  
+		<section data-background='img/running-azure-parallel.png'
+			 alt='running in azure'>		  
 		</section>
 
 		<section>
-   	      <img src='img/papertrail-openshift.png' alt='papertrail log'>
+   		  <img src='img/papertrail-openshift.png' alt='papertrail log'>
 		  <h1 class='fragment'>Logs glue everything
-   	      together</h1>
+   		    together</h1>
 		</section>
    	      </section>
-
+	      
 	      <!-- Bringing everything together -->
 	      <section>
 		<section>
-		  <h1><code>Vagrant</code> for orchestration</h1>
+		  <h1>Come together now!</h1>
+		  <h2><code>Vagrant</code> for orchestration</h2>
 		  
 		  <pre><code>Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
@@ -490,7 +442,8 @@ end</code></pre>
 		
 		<section><h1>All together</h1>
 		  <h2 class='fragment'>✓ Get servers ➡ PaaS, Loggers</h2>
-		  <h2 class='fragment'>✓ Create/provision boxes ➡ Vagrant/Ansible</h2>
+		  <h2 class='fragment'>✓ Create/provision boxes ➡
+		  Vagrant + Ansible</h2>
 		  <h2 class='fragment'>✓ Deploy/run ➡ FlightPlan </h2>
 		</section>
 	      </section>
@@ -501,7 +454,7 @@ end</code></pre>
 		
 		<ol>
 		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
-		  <li class='fragment'>There is (almost) <span
+		  <li class='fragment'>There is an (almost) <span
 		  class='hilite'>free</span> lunch</li>
 		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
 		  <li class='fragment'>We should ❤ <span class='hilite'>logs</span></li>
@@ -509,13 +462,12 @@ end</code></pre>
 	      </section>
   
   
-    <section data-background='img/forthbridge.jpg' alt='Forth bridge, my own picture'>
-      <h1 class='img'>Questions?</h1>
-
-	<h2  class='img'>Code: <a href="https://github.com/JJ/cloudy-ga"><code>git.io/cloudEC</a></code> </h2>
-	<h3  class='img'>Tweet out (of follow) <code>@jjmerelo</code></h3>
-      </ul>
-    </section>
+	      <section data-background='img/forthbridge.jpg' alt='Forth bridge, my own picture'>
+		<h1 class='img'>Questions?</h1>
+		
+		<h3  class='img'>Tweet out (of follow) <code>@jjmerelo</code></h3>
+</ul>
+</section>
     
     <section>
       <h3>Credits</h3>
