@@ -274,11 +274,11 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
         - git 
         - npm
     - name: Create profile
-copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}}" 
+copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}" 
       dest=/home/cloudy/.profile</code></pre>
 		</section>
 
-		<section><h1>Run the playbook</h1>
+		<section><h1>Run the <em>playbook</em></h1>
 		  <img src='img/vagrant-ansible.png' alt='Running ansible'>
 		</section>
 
@@ -337,12 +337,10 @@ plan.local(function(local) {
 	      </section>
 
 	      <!-- Proceed to platform as a servide -->
-
               <section>
 
-		 
 		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-		  <h1>You might not need a whole server</h1>
+		  <h1>Make do without a server</h1>
 		  
 		</section>
 
@@ -353,30 +351,14 @@ plan.local(function(local) {
 		    and limited configurability; you usually can make do with
 		    whatever stacks are available as <em>cartridges</em></aside>
 		  
-		</section>
-
-		<section data-background='img/rest.jpg' alt='Image by psd'>
-		  
-		  <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
-		  
-		  <h2 class='img'>PUT, GET, POST, DELETE</h2>
-		  
-		</section>
-		
-		<section>
-		  <h1><strong>Ajax</strong>, a standard browser-server communication framework</h1>
-		  
-		  <h2>HTTP petitions from a standard object.</h2>
-		  
-		  <h3 class='fragment'>Asynchronous!</h3>
-		</section>
-		
+		</section>		
     
 		<section data-template='ver2' data-y='4000'>
 		  
 		  <h2>There's <em>freemium</em> PaaS</h2>
 		  
-		  <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a>
+		  <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a>,
+		    IBM's BlueMix
 		    and Google AppSpot</h3>
 		  
 		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
