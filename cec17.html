@@ -63,11 +63,20 @@
 		  <aside class='notes'>Clouds Iceland - happy clouds - all hail the glow cloud - we shouldn't be afraid of the cloud</aside>
 		</section>
 
+		<section data-background='https://farm3.staticflickr.com/2838/13377033913_607d8ac75c_o_d.jpg' alt='running in the clouds'>
+		  <h1>Cloud is where you run your programs</h1>
+		</section> 
+
 		<section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
 		  <h1>Virtualized resources on tap</h1>
 		  <h2 class='fragment'>Scaling out of the box</h2>
 		</section>
 
+		<section data-background='https://farm3.staticflickr.com/2294/13165656105_1f109e12a0_k_d.jpg' alt='building a car'>
+		  <h1>Infrastructure as code</h1>
+
+		  <aside class='notes'>Just imagine you fancy a Ferrari. You go online, describe what you need, and lo and behold, it shows up at your door. You use to drive around the block, and leave it and it disappears. You pay just a few bucks for that. Then you want a Fiat 500 to go on a date. You say what you want, you get it. Next day, you didn't like it too much, change the description a bit, change color, add furry dice, you get it... That's what you have in computing. You describe as code whatever you want your process to be running on. And that's amazing. </aside>
+		</section>
 		
 		<section data-background='https://farm3.staticflickr.com/2720/4353638156_30b153d38e_b_d.jpg' alt='multi vendors'>
 		  <h1>Distributed, multi-vendor, computing</h1>
@@ -98,7 +107,7 @@
 	      <!-- why? -->
 	      <section>
 		<section data-background=''>
-		  <h1>Why add cloud to evolutionary algorithms?</h1>
+		  <h1>Why use the cloud in scientific computing?</h1>
 		</section>
 
 		<section data-background=''>
@@ -391,7 +400,6 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 
 	      <!-- Reactive programming -->
-
 	      <section>
 		<section>
 		  <h1>It's not programming as usual</h1>
@@ -411,6 +419,9 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 		<section>
 		  <h1>Decoupled processing and data structures</h1>
+		  <aside class='notes'>This is one of the things that
+		  differentiates cloud computing the most from usual
+		    monolithic computing. </aside>
 		</section>
 
 		<section>
@@ -484,7 +495,7 @@ population.initialize( population_size, random_chromosome); </code></pre>
         - git 
         - npm
     - name: Create profile
-copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}}" 
+copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}" 
       dest=/home/cloudy/.profile</code></pre>
 		</section>
 
@@ -552,12 +563,10 @@ plan.local(function(local) {
 	      </section>
 
 	      <!-- Proceed to platform as a servide -->
-
               <section>
 
-		 
 		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-		  <h1>You might not need a whole server</h1>
+		  <h1>Make do without a server</h1>
 		  
 		</section>
 
@@ -597,13 +606,16 @@ plan.local(function(local) {
 		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
 		</section>
 
-		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
-	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+		<section data-background='img/pool-nuns.jpg' src='nuns
+			 and pool Lorianne diSabato' >
+		  
+		  <h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
-	<aside class='notes'>A change in environment implies a change
-	  in the technology. JS is asynchronous, servers are too. We
-	  can't just evolve all the browsers in lockstep like we used
-	  to.</aside>
+		  <aside class='notes'>A change in environment implies a change
+		    in the technology. JS is asynchronous, servers are too. We
+		    can't just evolve all the browsers in lockstep like we used
+		    to. This effectively decouples the algorithm from
+		    the data, allowing for better scalability.</aside>
 
 		</section>
 		
@@ -628,7 +640,6 @@ plan.local(function(local) {
 		  <h1 class='fragment'>2. Fully <strong>asynchronous</strong></h1>
 		  <h1 class='fragment'>3. <strong>Persistent</strong> population</h1>
 		</section>
-
 		
 		<section data-background='img/islas.jpg' alt='islands in the mist'>
 		  <h1>Island models can be used too </h1>
@@ -687,25 +698,25 @@ plan.local(function(local) {
 		
 		<section><h1>Deploy server to PaaS ✓</h1>
 		  <h1 class='fragment'>Deploy clients to IaaS ✓</h1>
-		  <h1 class='fragment'>➡ And run!</h1>
+		  <h1 class='fragment'>➡ And do science!</h1>
 		</section>
 
-		<section
-   	      data-background='img/running-azure-parallel.png'
-   alt='running in azure'>		  
+		<section data-background='img/running-azure-parallel.png'
+			 alt='running in azure'>		  
 		</section>
 
 		<section>
-   	      <img src='img/papertrail-openshift.png' alt='papertrail log'>
+   		  <img src='img/papertrail-openshift.png' alt='papertrail log'>
 		  <h1 class='fragment'>Logs glue everything
-   	      together</h1>
+   		    together</h1>
 		</section>
    	      </section>
 
 	      <!-- Bringing everything together -->
 	      <section>
 		<section>
-		  <h1><code>Vagrant</code> for orchestration</h1>
+		  <h1>Come together now!</h1>
+		  <h2><code>Vagrant</code> for orchestration</h2>
 		  
 		  <pre><code>Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
@@ -723,7 +734,8 @@ end</code></pre>
 		
 		<section><h1>All together</h1>
 		  <h2 class='fragment'>✓ Get servers ➡ PaaS, Loggers</h2>
-		  <h2 class='fragment'>✓ Create/provision boxes ➡ Vagrant/Ansible</h2>
+		  <h2 class='fragment'>✓ Create/provision boxes ➡
+		  Vagrant + Ansible</h2>
 		  <h2 class='fragment'>✓ Deploy/run ➡ FlightPlan </h2>
 		</section>
 	      </section>
@@ -734,7 +746,7 @@ end</code></pre>
 		
 		<ol>
 		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
-		  <li class='fragment'>There is (almost) <span
+		  <li class='fragment'>There is an (almost) <span
 		  class='hilite'>free</span> lunch</li>
 		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
 		  <li class='fragment'>We should ❤ <span class='hilite'>logs</span></li>
@@ -753,6 +765,8 @@ end</code></pre>
     <section>
       <h3>Credits</h3>
       <ul class='credits'>
+	<li>Running and clouds by <a href='https://www.flickr.com/photos/hernanpc/13377033913/'>Hernán Piñera</a></li>
+	<li>Car assembly by <a href='https://www.flickr.com/photos/chryslergroup/13165656105/'>Chrysler group</a></li>
 	<li>Faucet on the sky <a href='https://www.flickr.com/photos/kristinnador/10338099714/'>by Kristin Nador</a></li>
 	<li>Strip mall by <a href='https://www.flickr.com/photos/thomashawk/4353638156/'>Thomas Hawk</a></li>
 	 <li>Mobiles, Flickr image by <a href='https://flic.kr/p/5omH5r'>Kai Hendry <code>flic.kr/p/5omH5r</code></a></li>
