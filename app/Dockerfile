@@ -5,7 +5,7 @@ RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
 
 #Download basic stuff
-RUN apk update && apk upgrade 
+RUN apk update && apk upgrade && apk add python make g++ 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 #And check installed version
 RUN node --version
