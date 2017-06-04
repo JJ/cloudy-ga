@@ -83,9 +83,9 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	      </section>
 
 	      <section>
-		<h2>Grab the whole code</h2>
+		<h2>Grab all the code!</h2>
 		<h1><a href='https://github.com/JJ/cloudy-ga'>git.io/cloudEC</a></h1>
-		<h2>Address your tweets <code>@jjmerelo</code> + <code>#gecco2016</code></h2>
+		<h2>Address your tweets <code>@jjmerelo</code> + <code>#cec17</code></h2>
 	      </section>
 
 	      <!-- why? -->
@@ -343,14 +343,22 @@ logger.info( { start: process.hrtime() } );</code></pre>
 		<section><h1>Containerizing through
 		<code>Dockerfile</code></h1>
 
-		<pre><code>FROM phusion/baseimage
+		  <pre><code>FROM node:alpine 
 MAINTAINER JJ Merelo "jjmerelo@gmail.com"
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install apt-utils -y 
-RUN apt-get install nodejs npm -y 
-		</code></pre>
+
+#Download basic stuff
+RUN apk update && apk upgrade && apk add python make g++ 
+		  </code></pre>
+
+		  <aside class='notes'>We are using
+		  the <code>alpine</code> image, which is a
+		  lightweight distro that has become quite popular in
+		  Docker circles. It contains the bare minimum for
+		  doing anything, which makes containers very
+		    lightweight and easy to load</aside>
+		  
 		</section>
 		<section>
 		  	<pre><code class='dockerfile'>RUN mkdir app
