@@ -1,12 +1,11 @@
 # Set up using base node
-FROM node 
+FROM node:alpine 
 MAINTAINER JJ Merelo "jjmerelo@gmail.com"
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
 
 #Download basic stuff
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install apt-utils nodejs npm -y 
+RUN apk update && apk upgrade 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 #And check installed version
 RUN node --version
