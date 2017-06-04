@@ -1,13 +1,12 @@
-# Set up
-FROM phusion/baseimage
+# Set up using base node
+FROM node 
 MAINTAINER JJ Merelo "jjmerelo@gmail.com"
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
 
 #Download basic stuff
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install apt-utils -y 
-RUN apt-get install nodejs npm -y 
+RUN apt-get install apt-utils nodejs npm -y 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 #And check installed version
 RUN node --version
