@@ -332,6 +332,7 @@ do {
 
 		<section data-background='img/tuppers.jpg'>
 		  <h1>Let's containerize</h1>
+		  <h2>HIFF == Hierarchical If and only If</h2>
 		</section>
 
 		<section>
@@ -355,7 +356,8 @@ logger.info( { start: process.hrtime() } );</code></pre>
 	       }
 	      )
 		      }</code></pre>
-		  <aside class='notes'>It can't run <em>and</em> log</aside>
+		  <aside class='notes'>It can't run <em>and</em>
+		  log. And it should be as lightweight as possible. </aside>
 		</section>
 		
 		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
@@ -401,29 +403,34 @@ logger.info( { start: process.hrtime() } );</code></pre>
 		  <h2 class='fragment'><em>Lightweight</em>
 		  virtualization</h2>
 		  <h1 class='fragment'><em>Portable</em>
-		  infraestructure</h1>
+		    infraestructure</h1>
+
+		  <aside class='notes'>Docker is not the only thing
+		  out there, but it's certainly the most popular,
+		  with a whole ecosystem of orchestration and images
+		    built around it.</aside>
 		</section>
 
 		<section><h1>Using docker</h1>
 		  
 		  <code>docker pull jjmerelo/cloudy-ga</code>
-		
+
+		  <aside class='notes'>(not updated to the last version)</aside>
 		</section>
 
 		<section><h1>Containerizing through
-		<code>Dockerfile</code></h1>
+		    <code>Dockerfile</code></h1>
 
-		<pre><code>FROM phusion/baseimage
+		  <pre><code>FROM node:alpine 
 MAINTAINER JJ Merelo "jjmerelo@gmail.com"
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install apt-utils -y 
-RUN apt-get install nodejs npm -y 
-		</code></pre>
+#Download basic stuff
+RUN apk update && apk upgrade && apk add python make g++ 
+		  </code></pre>
 		</section>
 		<section>
-		  	<pre><code class='dockerfile'>RUN mkdir app
+		  <pre><code class='dockerfile'>RUN mkdir app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/callback-ea-HIFF.js app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
@@ -432,6 +439,7 @@ RUN npm i
 RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 			<pre class='fragment'><code>CMD npm start</code></pre>
+			<aside class='notes'>
 		</section>
 
 		<section data-background='img/dockerfile.png'>
@@ -489,7 +497,7 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 		<section>
 		  <h1>Before</h1>
-		  <pre><code class='javascript'>do {
+		  <pre><code>do {
     eo.generation();
 } while ( eo.fitness_of[eo.population[0]] < chromosome_size ); </pre></code>
 		</section>
@@ -503,8 +511,7 @@ var population = new Population();
 population.initialize( population_size, random_chromosome); </code></pre>
 
 		  <pre class='fragment'><code class='javascript'>var eo = new fluxeo( this_fitness,
-		     new Tournament( tournament_size,
-		        population_size-2 ),
+		     new Tournament( tournament_size, population_size-2 ),
                      check);</code></pre>
 		</section>
 
@@ -706,7 +713,8 @@ plan.local(function(local) {
 		
 		<section data-background='img/islas.jpg' alt='islands in the mist'>
 		  <h1>Island models can be used too </h1>
-		  
+
+		  <aside class='notes'>However, it's better to work with cloud-native models. Island is kind of asynchronous, it's probably not the best way to do it.</aside>
 		</section>
 
 		<section><h1>The <a
