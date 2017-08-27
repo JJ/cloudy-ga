@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Tutorial CEC 2017: Evolutionary algorithms in the cloud</title>
+    
+    <meta name="description" content="Tutorial on evolutionary algorithms and cloud computing">
+    <meta name="author" content="JJ Merelo, framework by Hakim El Hattab">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <link rel="stylesheet" href="css/github.css">
+    <script src="js/highlight.pack.js"></script>
+    <link href="css/gecco.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+	  
+    <div class="reveal">
+
+      <!-- Footer with license -->
+      <div class='footer'>URL: <code>goo.gl/KYrOVr</code>
+	<a rel="license"
+	   href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+								    alt="Licencia de Creative Commons" style="border-width:0"
+								    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+								    /></a><br />This work is under a <a rel="license"
+													href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0 license</a>.
+      </div>
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+	    <div class="slides">
+            
+	      <section>
+		<section data-background='img/iceland-clouds.jpg'>
+		  <h1>What is the <strong>cloud?</strong></h1>
+
+		  <aside class='notes'>Clouds Iceland - happy clouds - all hail the glow cloud - we shouldn't be afraid of the cloud</aside>
+		</section>
+
+		<section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
+		  <h1>Virtualized resources on tap</h1>
+		  <h2 class='fragment'>Scaling out of the box</h2>
+		</section>
+
+		
+		<section data-background='https://farm3.staticflickr.com/2720/4353638156_30b153d38e_b_d.jpg' alt='multi vendors'>
+		  <h1>Distributed, multi-vendor, computing</h1>
+		</section>
+
+		
+		<section data-background='https://farm1.staticflickr.com/512/19022588615_2fb585af7c_b_d.jpg' alt='copia de nubes'>
+		  <h1>Reproducible configurations</h1>
+		  <h1 class='fragment'>⇨<strong>Reproducible science</strong></h1>
+		</section>
+
+		
+		<section data-background='img/nubes-edimburgo.jpg'>
+		  <h1>A new application development and deployment paradigm</h1>
+		</section>
+
+		<section data-background='https://farm8.staticflickr.com/7697/17123038651_1ec368b519_b_d.jpg' alt='escaleras'>
+		  <h1>.. designed around scaling</h1>
+		</section>
+	      </section>
+
+	      <section>
+		<h2>Grab the whole code</h2>
+		<h1><a href='https://github.com/JJ/cloudy-ga'>git.io/cloudEC</a></h1>
+		<h2>Address your tweets <code>@jjmerelo</code> + <code>#cec2017</code></h2>
+	      </section>
+
+	      <!-- why? -->
+	      <section>
+		<section data-background=''>
+		  <h1>Why add cloud to evolutionary algorithms?</h1>
+		</section>
+
+		<section data-background=''>
+		  <h1>✓ It's <strong>new</strong>!</h1>
+		</section>
+
+		<section data-background=''>
+		  <h1>✓ No <strong>sunk</strong> costs!</h1>
+		</section>
+
+		<section data-background=''>
+		  <h1>✓ It <strong>scales</strong>!</h1>
+		</section>
+
+		<section data-background=''>
+		  <h1>➡ It changes the algorithmic <strong>paradigm</strong></h1>
+		</section>
+		
+		<section data-background=''>
+		  <h1>♻ Let <strong>Nature</strong> be your guide</h1>
+		</section>
+
+	      </section>
+
+	      <!-- Javascript -->
+	      <section>
+
+
+		<section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
+		  <h1 class='img'>JavaScript = cloud's native language</h1>
+		  
+		  <aside class='notes'>JavaScript is a standard scripting
+		    language initially intended for Netscape but landed
+		    eventually in every browser out there.</aside>
+		</section>
+    
+		<section>
+		  <h1>Let's do Javascript!</h1>
+		  
+		  <h2>Menu → developer → console</h2>
+		  
+		  <img class='illo' src='img/console.png' alt='firefox console'>
+		</section>
+		
+		<section>
+		  <h1>Say hello to these nice folks!</h1>
+		  <pre><code>console.log('¡Hola, chavales!')</code></pre>
+		  
+		  <h2>Or the much more annoying</h2>
+		  <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
+		  
+		  <aside class='notes'>A gentle introduction to
+		    JavaScript to get a idea of what it's like</aside>
+		</section>
+		
+		<section data-template='hor1' data-x='8000'>
+		  <h1>This is an object. That, too.</h1>
+		  <pre><code>console.log('Buenos días'.length)</code></pre>
+		  
+		  <h2>Arrays are objects, and the other way round</h2>
+		  <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
+		</section>
+		
+		<section data-template='hor1' data-x='9000'>
+		  <h1>Chromosomes and fitness</h1>
+		  <pre><code>var chromosome = '1001100110011';
+var fitness_of = new Object;
+fitness_of[chromosome] = chromosome.match(/1/g).length;  
+var rr = function (chromosome) {
+  var fitness = 0;
+  for (var i = 0; i &lt; chromosome.length; i+=4 ) {
+	var ones = (chromosome.substr(i, 4).match(/1/g) || []).length;
+	fitness += ( ones == 0 || ones == 4 ); 
+  }
+  return fitness;
+}; </code></pre>
+
+		  <aside class='notes'>What is the way of representing a
+		    chromosome then? What's the fastest way of counting ones? This is
+		    a way of doing it, that besides proves that JS is a higher-order
+		    language that is able to deal with functions as first-class
+		    dwellers of the language</aside>
+		</section>
+
+		<section>
+		  <h1>JavaScript is:</h1>
+		  <h2>Standard, (reasonably) fast and</h2>
+		  <h1 class='fragment'>Everywhere</h1>
+		  <h2 class='fragment'>Yes, also in your PS4</h2>
+		  
+		  <aside class='notes'>Standard is issued by ECMA, which is a
+		    weird standard body, but at least it's one. Last
+		    standard is called ES6, which is closer to more
+		    traditional languages. ES7 up and coming.</aside>
+		</section>
+
+		<section>
+		  <h1>(Almost) forget about loops</h1>
+		  <pre><code>function do_ea() {
+ eo.generation();
+ generation_count++;
+ if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
+  && ( generation_count*conf.population_size < conf.max_evaluations)) {
+  setTimeout(do_ea, 5);
+ } else {
+  console.log( "Finished ", log );
+ }
+}</code></pre>
+
+		  <aside class='notes'>This has nothing to do with the language,
+		    but with the implementation, which is usually single-threaded.</aside>
+		</section>
+		
+		<section data-background='img/screens.jpg' alt='Picture by bloem'>
+		  <h1 class='img'>A whole algorithm in a browser</h1>
+		  <h2 class='fragment img'>The browser is the new operating system</h2>
+		  
+		  
+		</section>
+
+		<section>
+		  <h1>And why not in the server too?</h1>
+
+		</section>
+
+		<section>
+		  
+		  <h3><p><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter.</p></h3>
+		    <h2 class='fragment'><a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
+		  
+		  <pre><code class='javascript'>var eo = new nodeo.Nodeo( { population_size: population_size,
+			    chromosome_size: chromosome_size,
+			    fitness_func: utils.max_ones } );
+do {
+    eo.generation();
+    console.log( eo.population[0] );
+} while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
+
+		  <aside class='notes'>Nodeo can be downloaded from the Node modules
+  repository with <code>npm install nodeo</code>. This is actually
+  not the preferred way of doing a loop; it should be done
+  asynchronously as above, since that will leave no time for I/O or
+  other events. It's a single thread, same as in the browser. But it
+  can be done alright if you need to do it. Good thing about JS, same
+  programming model and language (but not the rest) in client and
+  server. Very recently, in fact for this tutorial, version 0.2.2 has
+  been released. And here's a loop which I said we shouldn't use. That does not mean we cannot use it from time to time. So just check it out and forget about it.</aside>
+		</section>
+
+
+	      </section>
+
+	      <!-- Containerize -->
+	      <section>
+		<section data-background='https://farm1.staticflickr.com/38/112168045_59c99de30c_o_d.jpg'>
+		  <h2>Cloud is about reproducible infrastructure</h2>
+		  <aside class='notes'>Let's forget about JavaScript for a moment. Not too long. Let's think about the cloud. Clouds are unique, you have to capture the only fleeting moment where they happen. However, the basic idea about the cloud is software-defined, reproducible, infrastructure. And this starts here.</aside>
+		</section>
+
+		<section data-background='img/tuppers.jpg'>
+		  <h1>Let's containerize</h1>
+		</section>
+
+		<section>
+		  <pre><code class='javascript'>var hiff = new HIFF.HIFF();
+var eo = new nodeo.Nodeo( { population_size: conf.population_size,
+			    chromosome_size: chromosome_size,
+			    fitness_func: hiff } );
+logger.info( { start: process.hrtime() } );</code></pre>
+
+		  <pre class='fragment'><code>evolve(generation_count, eo, logger, conf, check );</code></pre>
+		</section>
+
+		<section><h1>A container does <strong>one</strong>
+		thing</h1>
+		  <pre><code>if ( typeof process.env.PAPERTRAIL_PORT !== 'undefined' 
+      && typeof process.env.PAPERTRAIL_HOST !== 'undefined' ) { 
+    logger.add(winston.transports.Papertrail, 
+	       {
+		   host: process.env.PAPERTRAIL_HOST,
+		   port: process.env.PAPERTRAIL_PORT
+	       }
+	      )
+		      }</code></pre>
+		  <aside class='notes'>It can't run <em>and</em> log</aside>
+		</section>
+		
+		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
+    if ( (eo.fitness_of[eo.population[0]] < conf.fitness_max ) 
+          && (generation_count*conf.population_size < conf.max_evaluations )) {
+	logger.info( { "chromosome": eo.population[0],
+		       "fitness" : eo.fitness_of[eo.population[0]]} );
+	evolve( generation_count, eo, logger, conf, check);
+    } else {
+	logger.info( {end: { 
+	    time: process.hrtime(),
+	    generation: total_generations,
+	    best : { chromosome : eo.population[0],
+		     fitness : eo.fitness_of[eo.population[0]]}}} );
+	conf.output = conf.output_preffix+".json";
+	process.exit();
+    }
+};</code></pre></section>
+
+		<section>
+		  <h2>Describe infrastructure: <code>package.json</code></h2>
+		  <pre><code>{
+  "name": "hiffeitor",
+  "scripts": {
+    "test": "mocha",
+    "start": "./callback-ea-HIFF.js"
+  },
+  "dependencies": {
+    "nodeo": "^0.2.1",
+    "winston": "^2.2.0",
+    "winston-logstash": "^0.2.11",
+    "winston-papertrail": "^1.0.2"
+  },
+  "devDependencies": {
+    "flightplan": "^0.6.14"
+  }
+}</code></pre>
+
+		</section>
+
+		<section><h1>Introducing <code>docker</code></h1>
+
+		  <h2 class='fragment'><em>Lightweight</em>
+		  virtualization</h2>
+		  <h1 class='fragment'><em>Portable</em>
+		  infraestructure</h1>
+		</section>
+
+		<section><h1>Using docker</h1>
+		  
+		  <code>docker pull jjmerelo/cloudy-ga</code>
+		
+		</section>
+
+		<section><h1>Containerizing through
+		<code>Dockerfile</code></h1>
+
+		<pre><code>FROM phusion/baseimage
+MAINTAINER JJ Merelo "jjmerelo@gmail.com"
+RUN echo "Building a docker environment for NodEO"
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install apt-utils -y 
+RUN apt-get install nodejs npm -y 
+		</code></pre>
+		</section>
+		<section>
+		  	<pre><code class='dockerfile'>RUN mkdir app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/callback-ea-HIFF.js app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
+ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
+WORKDIR /app
+RUN npm i
+RUN chmod +x callback-ea-HIFF.js</code></pre>
+
+			<pre class='fragment'><code>CMD npm start</code></pre>
+		</section>
+
+		<section data-background='img/dockerfile.png'>
+		  <h1>Bring your own container</h1>
+		  <code class='img'>sudo docker build --no-cache -t jjmerelo/cloudy-ga:0.0.1</code>
+
+		</section>
+
+		<section>
+		  <h1>... and run it</h2>
+
+		  <pre class='fragment shell'><code> sudo docker run -t jjmerelo/cloudy-ga:0.0.1  
+     -e "PAPERTRAIL_PORT=7777" 
+     -e "PAPERTRAIL_HOST=logs77.papertrailapp.com"</code></pre>
+		</section>
+
+		<section>
+		  <h1>Logging matters</h1>
+		  <img src='img/papertrail.png' alt='Papertrail'>
+		</section>
+
+		<section>
+		  <h1>Use CoreOS</h1>
+		  <h2 class='fragment'>Ready to run on Azure or
+		  anywhere</h2>
+		</section>
+		
+	      </section>
+
+
+	      <!-- Reactive programming -->
+
+	      <section>
+		<section>
+		  <h1>It's not programming as usual</h1>
+		</section>
+
+		<section>
+		  <h1><strong>Reactive</strong> programming</h1>
+
+		  <aside class='notes'>It's all about <a
+		    href='https://en.wikipedia.org/wiki/Reactive_programming'>data
+		    flows</a> and taking care of them. </aside>
+		</section>
+		
+		<section>
+		  <h1>Algorithm + stream = application in the cloud</h1>
+		</section>
+
+		<section>
+		  <h1>Decoupled processing and data structures</h1>
+		</section>
+
+		<section>
+		  <h1>Before</h1>
+		  <pre><code class='javascript'>do {
+    eo.generation();
+} while ( eo.fitness_of[eo.population[0]] < chromosome_size ); </pre></code>
+		</section>
+
+		<section>
+		  <h1>After decoupling</h1>
+		  <pre><code class='javascript'>var random_chromosome = function() {
+    return utils.random( chromosome_size );
+};
+var population = new Population();
+population.initialize( population_size, random_chromosome); </code></pre>
+
+		  <pre class='fragment'><code class='javascript'>var eo = new fluxeo( this_fitness,
+		     new Tournament( tournament_size,
+		        population_size-2 ),
+                     check);</code></pre>
+		</section>
+
+		<section>
+		  <h1>Algorithm <strong>on</strong> population</h1>
+		  <pre class='fragment'><code class='javascript'>eo.algorithm( population, function ( population ) {
+    logger.info( {
+	end: { time: process.hrtime(),
+	    generation: total_generations,
+	    best : { chromosome : population.best,
+		fitness : population.fitness(population.best)  }
+	}
+    });
+});</code></pre>
+		</section>
+		
+		
+	      </section>
+
+	      
+	      <!-- Running on cloud infraestructure -->
+	      <section>
+		<section data-background='img/clouds.jpg' alt='Clouds over the Alps on the plane to here'>
+		  <h1 class='img'>Running in the cloud</h1>
+		</section>
+		
+
+		<section data-background='img/sandbox.jpg' alt='sandbox by Gil Garcia'>
+		  <h1 class='img'>Infrastructure as a service</h1>
+		</section>
+
+		<section>
+		  <h1>Create instance</h1>
+
+		  <img src='img/starting-azure.png' alt='Starting
+		       Azure instance'>
+
+		  <aside class='notes'>You can do this from the command line too, using CLI tools or higher level tools like Vagrant (later on).</aside>
+		</section>
+
+		<section>
+		  <h1>Set up with Ansible</h1>
+		  
+		  <pre><code>- hosts: "{{target}}"
+  tasks:
+    - name: install prerrequisites
+      command: apt-get update -y && apt-get upgrade -y
+    - name: install packages
+      apt: pkg={{ item}}
+      with_items:
+        - git 
+        - npm
+    - name: Create profile
+copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}}" 
+      dest=/home/cloudy/.profile</code></pre>
+		</section>
+
+		<section><h1>Run the playbook</h1>
+		  <pre><code>ansible-playbook git.playbook.yml 
+        -e "target=azuredeb" 
+        -u ubuntu 
+        -i ./hosts.txt -vvvv</code></pre>
+
+		  <img src='img/vagrant-ansible.png' alt='Running ansible'>
+		</section>
+
+		<section><h1>Ready to run ✓</h1>
+		  <img src='img/cloud-running.png' alt='Running in  azure'>
+		</section>
+
+		<section data-background='https://farm4.staticflickr.com/3701/12285436923_d569efaa61_k_d.jpg' alt='shooting'><h1>But there's something missing here</h1>
+		  <h1 class='fragment'><strong>Deploying</strong> to the cloud</h1>
+
+		  <aside class='notes'>The reproducibility should be end-to-end</aside>
+		</section>
+
+		<section><h1>Let's use <code>FlightPlan</code></h1>
+
+		  <pre><code>plan.target('azure', {
+  host: 'cloudy-ga.cloudapp.net',
+  username: 'azureuser',
+  agent: process.env.SSH_AUTH_SOCK
+});
+// Local
+plan.local(function(local) {
+    local.echo('Plan local: push changes');
+    local.exec('git push');
+});</code></pre>
+		</section>
+
+		<section><h1>... And after setup</h1>
+		  <pre><code>plan.remote(function(remote) {
+    remote.log('Pull');
+    remote.with('cd cloudy-ga',function() {
+	remote.exec('git pull');
+	remote.exec('cd app;npm install .');
+    });
+    remote.with('cd /home/azureuser/cloudy-ga/app',function() {
+	remote.exec('npm start');
+    });
+});</code></pre>
+
+		  <aside class='notes'>Please note that we are using
+		    here infrastructure at several levels: the
+		    <code>package.json</code> that we declared at the
+		    beginning, that allowed us to run npm install and
+		    npm start</aside>
+		</section>
+
+		<section data-background='https://farm8.staticflickr.com/7023/6500452801_87414fd006_b_d.jpg' alt='freedom'>
+      
+		  <h1>IaaS have free <em>tiers</em></h1>
+		  
+		  <h2>But it generally is pay-as-you-go</h2>
+		  
+		  <h3 class='fragment'>Great if you do small amounts of computation</h3>
+		</section>
+
+	      </section>
+
+	      <!-- Proceed to platform as a servide -->
+
+              <section>
+
+		 
+		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
+		  <h1>You might not need a whole server</h1>
+		  
+		</section>
+
+		<section data-background='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>  
+		  <h1 class='img'>Platform as a service</h1>
+		  
+		  <aside class='notes'>A platform offers a stack for developers,
+		    and limited configurability; you usually can make do with
+		    whatever stacks are available as <em>cartridges</em></aside>
+		  
+		</section>
+
+		<section data-background='img/rest.jpg' alt='Image by psd'>
+		  
+		  <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
+		  
+		  <h2 class='img'>PUT, GET, POST, DELETE</h2>
+		  
+		</section>
+		
+		<section>
+		  <h1><strong>Ajax</strong>, a standard browser-server communication framework</h1>
+		  
+		  <h2>HTTP petitions from a standard object.</h2>
+		  
+		  <h3 class='fragment'>Asynchronous!</h3>
+		</section>
+		
+    
+		<section data-template='ver2' data-y='4000'>
+		  
+		  <h2>There's <em>freemium</em> PaaS</h2>
+		  
+		  <h3><a href='http://heroku.com'>Heroku</a>, <a href='http://openshift.redhat.com/'>OpenShift</a>
+		    and IBM BlueMix or Azure Web Apps</h3>
+		  
+		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
+		</section>
+
+		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
+	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+
+	<aside class='notes'>A change in environment implies a change
+	  in the technology. JS is asynchronous, servers are too. We
+	  can't just evolve all the browsers in lockstep like we used
+	  to.</aside>
+
+		</section>
+		
+		<section>
+		  <h2>Detaching population from operations</h2>
+		  <h1 class='fragment'>➡ <strong>Reactive</strong> programming.</h1>
+
+		</section>
+
+		<section>
+		  <img class='figures' src='img/poolbased.png' alt='pool schema'>
+		  
+		</section>
+		
+		<section data-background='img/3fingers.jpg' alt='3 problems'>
+		  <h1 class='img'>Three good things about pool-based EAs</h1>
+		  
+		</section>
+		
+		<section>
+		  <h1>1. <strong>Self-organizing</strong> clients</h1>
+		  <h1 class='fragment'>2. Fully <strong>asynchronous</strong></h1>
+		  <h1 class='fragment'>3. <strong>Persistent</strong> population</h1>
+		</section>
+
+		
+		<section data-background='img/islas.jpg' alt='islands in the mist'>
+		  <h1>Island models can be used too </h1>
+		  
+		</section>
+
+		<section><h1>The <a
+		  href='https://github.com/JJ/cloudy-ga-server'>cloudy
+		  server</a></h1>
+
+		  <pre><code>app.put('/experiment/:expid/one/:chromosome/:fitness/:uuid', 
+  function(req, res){
+        // stuff here
+	logger.info("put", { chromosome: req.params.chromosome,
+			     fitness: parseInt(req.params.fitness),
+			     IP: client_ip,
+			     worker_uuid:req.params.uuid} );
+        res.send( { length : Object.keys(chromosomes).length });
+     }</code></pre>	  
+		</section>
+
+		<section><pre><code>app.get('/random', function(req, res){
+	var keys = Object.keys(chromosomes );
+	var one = keys[ Math.floor(keys.length*Math.random())];
+	res.send( { 'chromosome': one } );
+	logger.info('get');    
+});</code></pre>
+		  <aside class='notes'>In fact, you can do both together at the same time; latest versions use that.</aside>
+		</section>
+
+		<section><h1>Check out</h1>
+		  <h2 class='fragment'>✓ Asynchronous</h2>
+		  <h2 class='fragment'>✓ Uses Logger</h2>
+		</section>
+
+		<section><h1>Changes in the client: draw from pool</h1>
+		  <pre><code>rest.get( conf.url + 'random' ).on('complete', function( data ) {
+		if ( data.chromosome ) {
+		    population.addAsLast( data.chromosome );
+		}
+});</code></pre>
+
+		</section>
+		<section><h1>Put into pool</h1>
+		  <pre><code>var this_request = conf.url
+		+ 'experiment/0/one/' + population.best() + "/" 
+		+ population.fitness(population.best()) + "/"
+		+ UUID;
+	    rest.put( this_request ).on("complete", function( result, response ) {
+		if ( response.statusCode == 410 ) {
+		    finished = true;
+		    experiment_id = result.current_id;
+		}
+});</code></pre>
+		</section>
+		
+		<section><h1>Deploy server to PaaS ✓</h1>
+		  <h1 class='fragment'>Deploy clients to IaaS ✓</h1>
+		  <h1 class='fragment'>➡ And run!</h1>
+		</section>
+
+		<section
+   	      data-background='img/running-azure-parallel.png'
+   alt='running in azure'>		  
+		</section>
+
+		<section>
+   	      <img src='img/papertrail-openshift.png' alt='papertrail log'>
+		  <h1 class='fragment'>Logs glue everything
+   	      together</h1>
+		</section>
+   	      </section>
+
+	      <!-- Bringing everything together -->
+	      <section>
+		<section>
+		  <h1><code>Vagrant</code> for orchestration</h1>
+		  
+		  <pre><code>Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     apt-get upgrade -y
+  SHELL
+  config.vm.provision "main", type: "ansible" do |ansible|
+    ansible.extra_vars = { target: "all" }
+    ansible.playbook = "playbook.yml"
+  end
+  # and the rest...
+end</code></pre>
+		</section>
+		
+		<section><h1>All together</h1>
+		  <h2 class='fragment'>✓ Get servers ➡ PaaS, Loggers</h2>
+		  <h2 class='fragment'>✓ Create/provision boxes ➡ Vagrant/Ansible</h2>
+		  <h2 class='fragment'>✓ Deploy/run ➡ FlightPlan </h2>
+		</section>
+	      </section>
+
+	      <!-- Final -->
+	      <section>
+		<h2>Take this home</h2>
+		
+		<ol>
+		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
+		  <li class='fragment'>There is (almost) <span
+		  class='hilite'>free</span> lunch</li>
+		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
+		  <li class='fragment'>We should ❤ <span class='hilite'>logs</span></li>
+		</ol>
+	      </section>
+  
+  
+    <section data-background='img/forthbridge.jpg' alt='Forth bridge, my own picture'>
+      <h1 class='img'>Questions?</h1>
+
+	<h2  class='img'>Code: <a href="https://github.com/JJ/cloudy-ga"><code>git.io/cloudEC</a></code> </h2>
+	<h3  class='img'>Tweet out (of follow) <code>@jjmerelo</code></h3>
+      </ul>
+    </section>
+    
+    <section>
+      <h3>Credits</h3>
+      <ul class='credits'>
+	<li>Faucet on the sky <a href='https://www.flickr.com/photos/kristinnador/10338099714/'>by Kristin Nador</a></li>
+	<li>Strip mall by <a href='https://www.flickr.com/photos/thomashawk/4353638156/'>Thomas Hawk</a></li>
+	 <li>Mobiles, Flickr image by <a href='https://flic.kr/p/5omH5r'>Kai Hendry <code>flic.kr/p/5omH5r</code></a></li>
+	 <li>People in room from <a
+      href='https://flic.kr/p/8NDCRh'>Adriaan Bloem
+      <code>flic.kr/p/8NDCRh</code></a></li>
+
+	<li><a href='https://www.flickr.com/photos/light-palette/12285436923/'>Shooting at clouds by Charles Prithvi Raj</a></li>
+
+	<li>Sandbox, Flickr image by <a
+	href='https://flic.kr/p/5Pa7ZJ'>Gil Garcia
+	<code>flic.kr/p/5Pa7ZJ</code></a></li>
+
+	<li>B&W sandbox, Flickr image by <a href='https://flic.kr/p/4QiGQV'>Stefani Woods <code>flic.kr/p/4QiGQV</code></a></li>
+
+	<li>HTTP codes, Image by <a
+	href='https://flic.kr/p/8yZyBF'>Paul Downey
+	<code>flic.kr/p/8yZyBF</code></a></li>
+
+	<li>Data center in cave, from <a
+	  href='https://www.flickr.com/photos/reggestraat/3768977152'>Antony
+	  Antony <code>flic.kr/p/6K3ZAG</code></a></li>
+
+      	<li>Nuns and pool, Flickr image by <a href=' https://flic.kr/p/nXfbQ6'>Lorianne diSabato  @<code>flic.kr/p/nXfbQ6</code></a></li>
+
+<li>3 fingers, Flickr image by <a href='https://www.flickr.com/photos/mutsmuts/6007667842'>Mutiara Karina <code>https://flic.kr/p/a9SSm3</code></a>.</li>
+
+<li>Freedom by <a href='https://www.flickr.com/photos/gonzalobaeza/6500452801/'>Gonzalo Baeza</a></li>
+      </ul>
+
+    </section>
+
+
+	    </div>
+	  
+	  </div>
+	  
+	  <script src="lib/js/head.min.js"></script>
+	  <script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+			  width: "95%",
+			  // Factor of the display size that should remain empty around the content
+			  margin: 0.02,
+			  
+			  // Bounds for smallest/largest possible scale to apply to content
+			  minScale: 0.2,
+			  maxScale: 1.0,
+			  controls: true,
+			  progress: true,
+			  history: true,
+			  center: true,
+
+			  transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+			  // Optional reveal.js plugins
+			  dependencies: [
+			    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+			    { src: 'plugin/zoom-js/zoom.js', async: true },
+			    { src: 'plugin/notes/notes.js', async: true }
+			  ]
+			});
+
+		</script>
+
+	</body>
+</html>
