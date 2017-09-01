@@ -46,89 +46,154 @@
       <!-- Footer with license -->
       <div class='footer'>URL: <code>goo.gl/KYrOVr</code>
 	<a rel="license"
-	   href="http://creativecommons.org/licenses/by-sa/4.0/"><img
-								    alt="Licencia de Creative Commons" style="border-width:0"
-								    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
-								    /></a><br />This work is under a <a rel="license"
-													href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0 license</a>.
+	   href="http://creativecommons.org/licenses/by-sa/4.0/">
+	  <img
+	     alt="Licencia de Creative Commons" style="border-width:0"
+	     src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+	     />
+	</a><br />This work is under a <a rel="license"	href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0 license</a>.
       </div>
 
       <!-- Any section element inside of this container is displayed as a slide -->
-	    <div class="slides">
-            
-	      <section>
-		<section data-background='img/iceland-clouds.jpg'>
-		  <h1>What is the <strong>cloud?</strong></h1>
+      <div class="slides">
+        
+	<section>
+	  <section data-background='img/iceland-clouds.jpg'>
+	    <h1>What is the <strong>cloud?</strong></h1>
+	    
+	    <aside class='notes'>Clouds Iceland - happy clouds. Probably not the nicest in the world, but they are everywhere.</aside>
+	  </section>
+	  
+	  <section data-background='https://farm3.staticflickr.com/2838/13377033913_607d8ac75c_o_d.jpg' alt='running in the clouds'>
+	    <h1>Cloud is where you run your programs</h1>
+	    <aside class='notes'>Or, in the words of Richar Stallman, they are somebody else's computer. In fact, this "running your programs" is the most important part. It is where you are going to run your programs from now on.</aside>
+	  </section> 
+	  
+	  <section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
+	    <h1>Virtualized resources on tap</h1>
 
-		  <aside class='notes'>Clouds Iceland - happy clouds - all hail the glow cloud - we shouldn't be afraid of the cloud</aside>
-		</section>
+	    <aside class='notes'>It scales out of the box as long as
+	    you care to split your application into funcional entities
+	    that make sense and that can scale separately. The whole
+	    design of cloud native applications is built around the
+	      concept of scaling.</aside>
+	  </section>
+	  
+	  <section data-background='https://farm3.staticflickr.com/2294/13165656105_1f109e12a0_k_d.jpg' alt='building a car'>
+	    <h1>Infrastructure as code</h1>
 
-		<section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
-		  <h1>Virtualized resources on tap</h1>
-		  <h2 class='fragment'>Scaling out of the box</h2>
-		</section>
+	    <aside class='notes'>Since resources are available just by
+	    requesting them, you can specify them using scripts or
+	    declarations. Just imagine you fancy a Ferrari. You
+	    go online, describe what you need, and lo and behold, it
+	    shows up at your door. You use to drive around the block,
+	    and leave it and it disappears. You pay just a few bucks
+	    for that. Then you want a Fiat 500 to go on a date. You
+	    say what you want, you get it. Next day, you didn't like
+	    it too much, change the description a bit, change color,
+	    add a furry dice, you get it... That's what you have,
+	    nowadays, in computing. You describe, using code, whatever
+	    you want your process to be running on. And that's
+	    amazing. Software defined hardware is what we have,
+	    indeed.  </aside> 
+	  </section>
 
+	  <section data-background='https://farm1.staticflickr.com/512/19022588615_2fb585af7c_b_d.jpg' alt='copia de nubes'>
+	    <h1>Reproducible configurations</h1>
+	    <h1 class='fragment'>⇨<strong>Reproducible
+		science</strong></h1>
+	    <aside class='notes'>From the point of view of science,
+	    it's just amazing to have this kind of thing, because you
+	    can run, over and over again, the same experiment. This
+	    would include, of course, that you had also experimental
+	      parameters described in some source control system such as git.</aside>
+	  </section>
 		
-		<section data-background='https://farm3.staticflickr.com/2720/4353638156_30b153d38e_b_d.jpg' alt='multi vendors'>
-		  <h1>Distributed, multi-vendor, computing</h1>
-		</section>
+	  <section data-background='https://farm3.staticflickr.com/2720/4353638156_30b153d38e_b_d.jpg' alt='multi vendors'>
+	    <h1>Distributed, multi-vendor, computing</h1>
+	    <aside class='notes'>In fact you buy your computer from a
+	    single seller, but it contains parts from many other
+	    providers, and software from even more. Computing
+	    resources in the cloud can be mixed and matched to obtain
+	    whatever resources you need, at the price and lever you
+	    can afford. The important thing is that you don't have to
+	    make do with a single one; you can use virtualized
+	      resources form as many providers as you want.</aside>
+	  </section>
 
-		
-		<section data-background='https://farm1.staticflickr.com/512/19022588615_2fb585af7c_b_d.jpg' alt='copia de nubes'>
-		  <h1>Reproducible configurations</h1>
-		  <h1 class='fragment'>⇨<strong>Reproducible science</strong></h1>
-		</section>
+	  <section data-background='img/nubes-edimburgo.jpg'>
+	    <h1>A new application development and deployment
+	      paradigm</h1>
 
-		
-		<section data-background='img/nubes-edimburgo.jpg'>
-		  <h1>A new application development and deployment paradigm</h1>
-		</section>
+	    <aside class='notes'>That goes behond compiling and
+	    starting to run. Deployment of complex applications with 0
+	    downtime is a complex thing, that might include testing it
+	    in a limited enviroment or with a limited number of
+	      users, substituting parts and so on.</aside>
+	  </section>
 
-		<section data-background='https://farm8.staticflickr.com/7697/17123038651_1ec368b519_b_d.jpg' alt='escaleras'>
-		  <h1>.. designed around scaling</h1>
-		</section>
-	      </section>
+	  <section data-background='https://farm8.staticflickr.com/7697/17123038651_1ec368b519_b_d.jpg' alt='escaleras'>
+	    <h1>.. designed around scaling</h1>
+	    <aside class='notes'>And around making the user experience
+	    as smooth and uniform as possible by decoupling request
+	      from response.</aside>
+	  </section>
+	</section>
+	
+	<section>
+	  <h2>Grab the whole code</h2>
+	  <h1><a href='https://github.com/JJ/cloudy-ga'>git.io/cloudEC</a></h1>
+	  <h2>Address your tweets <code>@jjmerelo</code> + <code>#cec2017</code></h2>
+	</section>
+	
+	<!-- why? -->
+	<section>
+	  <section data-background=''>
+	    <h1>Why use the cloud in scientific computing?</h1>
+	  </section>
+	  
+	  <section data-background='img/cubo.jpg'>
+	    <h1>✓ It's <strong>new</strong>!</h1>
+	    <aside class='notes'>These cubes were very infamous at the
+	    beginning, but eventually everyone liked them. Check out
+	      the <a href='https://es.wikipedia.org/wiki/Palacio_de_Congresos_y_Auditorio_Kursaal'>wikipedia
+	    entry</a>. Here
+	    a <a href='https://caminodeperfeccion.wordpress.com/tag/cubos-de-moneo-san-sebastian/'>a
+		few jokes about it</a></aside>
+	  </section>
+	  
+	  <section data-background=''>
+	    <h1>✓ No <strong>sunk</strong> costs!</h1>
+	  </section>
+	  
+	  <section data-background=''>
+	    <h1>✓ It <strong>scales</strong>!</h1>
+	  </section>
+	  
+	  <section data-background=''>
+	    <h1>➡ It changes the
+	      algorithmic <strong>paradigm</strong></h1>
 
-	      <section>
-		<h2>Grab the whole code</h2>
-		<h1><a href='https://github.com/JJ/cloudy-ga'>git.io/cloudEC</a></h1>
-		<h2>Address your tweets <code>@jjmerelo</code> + <code>#cec2017</code></h2>
-	      </section>
+	    <aside class='notes'>And this is probably the most
+	    important issue that should not be disregarded. With this,
+	    you have new and possibly more efficient ways of designing
+	      metaheuristic algorithms that do not follow the Von
+	    Neuman architecture (they might, piecewise).</aside>
+	  </section>
+	  
+	  <section data-background='https://farm9.staticflickr.com/8083/8295721947_ff4f9b865a_h_d.jpg'
+	    alt='nature guiding'>
+	    <h1>♻ Let <strong>Nature</strong> be your guide</h1>
+	  </section>
+	  
+	</section>
 
-	      <!-- why? -->
-	      <section>
-		<section data-background=''>
-		  <h1>Why add cloud to evolutionary algorithms?</h1>
-		</section>
-
-		<section data-background=''>
-		  <h1>✓ It's <strong>new</strong>!</h1>
-		</section>
-
-		<section data-background=''>
-		  <h1>✓ No <strong>sunk</strong> costs!</h1>
-		</section>
-
-		<section data-background=''>
-		  <h1>✓ It <strong>scales</strong>!</h1>
-		</section>
-
-		<section data-background=''>
-		  <h1>➡ It changes the algorithmic <strong>paradigm</strong></h1>
-		</section>
-		
-		<section data-background=''>
-		  <h1>♻ Let <strong>Nature</strong> be your guide</h1>
-		</section>
-
-	      </section>
-
-	      <!-- Javascript -->
-	      <section>
-
-
-		<section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
-		  <h1 class='img'>JavaScript = cloud's native language</h1>
+	<!-- Javascript -->
+	<section>
+	  
+	  
+	  <section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
+	    <h1 class='img'>JavaScript = cloud's native language</h1>
 		  
 		  <aside class='notes'>JavaScript is a standard scripting
 		    language initially intended for Netscape but landed
@@ -145,21 +210,19 @@
 		
 		<section>
 		  <h1>Say hello to these nice folks!</h1>
-		  <pre><code>console.log('¡Hola, chavales!')</code></pre>
-		  
-		  <h2>Or the much more annoying</h2>
-		  <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
+		  <pre><code>console.log('¡Kaixo, lagun!')</code></pre>
 		  
 		  <aside class='notes'>A gentle introduction to
-		    JavaScript to get a idea of what it's like</aside>
+		    JavaScript to get a idea of what it's like and
+		    why it's important. Just two words: full stack. </aside>
 		</section>
 		
 		<section data-template='hor1' data-x='8000'>
 		  <h1>This is an object. That, too.</h1>
-		  <pre><code>console.log('Buenos días'.length)</code></pre>
+		  <pre><code>console.log('Egun on'.length)</code></pre>
 		  
 		  <h2>Arrays are objects, and the other way round</h2>
-		  <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
+		  <pre><code>console.log(['Egun on','Arratsalde on','Gabon'].pop())</code></pre>
 		</section>
 		
 		<section data-template='hor1' data-x='9000'>
@@ -180,7 +243,9 @@ var rr = function (chromosome) {
 		    chromosome then? What's the fastest way of counting ones? This is
 		    a way of doing it, that besides proves that JS is a higher-order
 		    language that is able to deal with functions as first-class
-		    dwellers of the language</aside>
+		    dwellers of the language. There should be a "for
+		    loop" tax. In fact, we can do one better if we
+		    avoid them altogether. </aside>
 		</section>
 
 		<section>
@@ -209,14 +274,21 @@ var rr = function (chromosome) {
 }</code></pre>
 
 		  <aside class='notes'>This has nothing to do with the language,
-		    but with the implementation, which is usually single-threaded.</aside>
+		    but with the implementation, which is usually
+		    single-threaded. It will help cloud
+		    implementation afterwards. Javascript is
+		    functional, so are the best cloud
+		    implementations. </aside>
 		</section>
 		
 		<section data-background='img/screens.jpg' alt='Picture by bloem'>
 		  <h1 class='img'>A whole algorithm in a browser</h1>
-		  <h2 class='fragment img'>The browser is the new operating system</h2>
+		  <h2 class='fragment img'>Browser ∪ cloud → the new operating system</h2>
 		  
-		  
+		  <aside class='notes'>Browser and cloud provide a new
+		  level of abstractions over which applications can be
+		  built in an (approximately) substrate-independente
+		    way. </aside>
 		</section>
 
 		<section>
@@ -260,6 +332,7 @@ do {
 
 		<section data-background='img/tuppers.jpg'>
 		  <h1>Let's containerize</h1>
+		  <h2>HIFF == Hierarchical If and only If</h2>
 		</section>
 
 		<section>
@@ -283,7 +356,8 @@ logger.info( { start: process.hrtime() } );</code></pre>
 	       }
 	      )
 		      }</code></pre>
-		  <aside class='notes'>It can't run <em>and</em> log</aside>
+		  <aside class='notes'>It can't run <em>and</em>
+		  log. And it should be as lightweight as possible. </aside>
 		</section>
 		
 		<section><pre><code>var check = function( eo, logger, conf,  generation_count ) {
@@ -329,29 +403,34 @@ logger.info( { start: process.hrtime() } );</code></pre>
 		  <h2 class='fragment'><em>Lightweight</em>
 		  virtualization</h2>
 		  <h1 class='fragment'><em>Portable</em>
-		  infraestructure</h1>
+		    infraestructure</h1>
+
+		  <aside class='notes'>Docker is not the only thing
+		  out there, but it's certainly the most popular,
+		  with a whole ecosystem of orchestration and images
+		    built around it.</aside>
 		</section>
 
 		<section><h1>Using docker</h1>
 		  
 		  <code>docker pull jjmerelo/cloudy-ga</code>
-		
+
+		  <aside class='notes'>(not updated to the last version)</aside>
 		</section>
 
 		<section><h1>Containerizing through
-		<code>Dockerfile</code></h1>
+		    <code>Dockerfile</code></h1>
 
-		<pre><code>FROM phusion/baseimage
+		  <pre><code>FROM node:alpine 
 MAINTAINER JJ Merelo "jjmerelo@gmail.com"
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install apt-utils -y 
-RUN apt-get install nodejs npm -y 
-		</code></pre>
+#Download basic stuff
+RUN apk update && apk upgrade && apk add python make g++ 
+		  </code></pre>
 		</section>
 		<section>
-		  	<pre><code class='dockerfile'>RUN mkdir app
+		  <pre><code class='dockerfile'>RUN mkdir app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/callback-ea-HIFF.js app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/package.json app
 ADD https://github.com/JJ/cloudy-ga/raw/master/app/hiff.json app
@@ -360,6 +439,7 @@ RUN npm i
 RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 			<pre class='fragment'><code>CMD npm start</code></pre>
+			<aside class='notes'>
 		</section>
 
 		<section data-background='img/dockerfile.png'>
@@ -391,7 +471,6 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 
 	      <!-- Reactive programming -->
-
 	      <section>
 		<section>
 		  <h1>It's not programming as usual</h1>
@@ -411,11 +490,14 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 		<section>
 		  <h1>Decoupled processing and data structures</h1>
+		  <aside class='notes'>This is one of the things that
+		  differentiates cloud computing the most from usual
+		    monolithic computing. </aside>
 		</section>
 
 		<section>
 		  <h1>Before</h1>
-		  <pre><code class='javascript'>do {
+		  <pre><code>do {
     eo.generation();
 } while ( eo.fitness_of[eo.population[0]] < chromosome_size ); </pre></code>
 		</section>
@@ -429,8 +511,7 @@ var population = new Population();
 population.initialize( population_size, random_chromosome); </code></pre>
 
 		  <pre class='fragment'><code class='javascript'>var eo = new fluxeo( this_fitness,
-		     new Tournament( tournament_size,
-		        population_size-2 ),
+		     new Tournament( tournament_size, population_size-2 ),
                      check);</code></pre>
 		</section>
 
@@ -484,7 +565,7 @@ population.initialize( population_size, random_chromosome); </code></pre>
         - git 
         - npm
     - name: Create profile
-copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}}" 
+copy: content="export PAPERTRAIL_PORT={{PAPERTRAIL_PORT}}" 
       dest=/home/cloudy/.profile</code></pre>
 		</section>
 
@@ -552,12 +633,10 @@ plan.local(function(local) {
 	      </section>
 
 	      <!-- Proceed to platform as a servide -->
-
               <section>
 
-		 
 		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-		  <h1>You might not need a whole server</h1>
+		  <h1>Make do without a server</h1>
 		  
 		</section>
 
@@ -597,13 +676,16 @@ plan.local(function(local) {
 		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
 		</section>
 
-		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
-	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+		<section data-background='img/pool-nuns.jpg' src='nuns
+			 and pool Lorianne diSabato' >
+		  
+		  <h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
-	<aside class='notes'>A change in environment implies a change
-	  in the technology. JS is asynchronous, servers are too. We
-	  can't just evolve all the browsers in lockstep like we used
-	  to.</aside>
+		  <aside class='notes'>A change in environment implies a change
+		    in the technology. JS is asynchronous, servers are too. We
+		    can't just evolve all the browsers in lockstep like we used
+		    to. This effectively decouples the algorithm from
+		    the data, allowing for better scalability.</aside>
 
 		</section>
 		
@@ -628,11 +710,11 @@ plan.local(function(local) {
 		  <h1 class='fragment'>2. Fully <strong>asynchronous</strong></h1>
 		  <h1 class='fragment'>3. <strong>Persistent</strong> population</h1>
 		</section>
-
 		
 		<section data-background='img/islas.jpg' alt='islands in the mist'>
 		  <h1>Island models can be used too </h1>
-		  
+
+		  <aside class='notes'>However, it's better to work with cloud-native models. Island is kind of asynchronous, it's probably not the best way to do it.</aside>
 		</section>
 
 		<section><h1>The <a
@@ -687,25 +769,25 @@ plan.local(function(local) {
 		
 		<section><h1>Deploy server to PaaS ✓</h1>
 		  <h1 class='fragment'>Deploy clients to IaaS ✓</h1>
-		  <h1 class='fragment'>➡ And run!</h1>
+		  <h1 class='fragment'>➡ And do science!</h1>
 		</section>
 
-		<section
-   	      data-background='img/running-azure-parallel.png'
-   alt='running in azure'>		  
+		<section data-background='img/running-azure-parallel.png'
+			 alt='running in azure'>		  
 		</section>
 
 		<section>
-   	      <img src='img/papertrail-openshift.png' alt='papertrail log'>
+   		  <img src='img/papertrail-openshift.png' alt='papertrail log'>
 		  <h1 class='fragment'>Logs glue everything
-   	      together</h1>
+   		    together</h1>
 		</section>
    	      </section>
 
 	      <!-- Bringing everything together -->
 	      <section>
 		<section>
-		  <h1><code>Vagrant</code> for orchestration</h1>
+		  <h1>Come together now!</h1>
+		  <h2><code>Vagrant</code> for orchestration</h2>
 		  
 		  <pre><code>Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
@@ -723,7 +805,8 @@ end</code></pre>
 		
 		<section><h1>All together</h1>
 		  <h2 class='fragment'>✓ Get servers ➡ PaaS, Loggers</h2>
-		  <h2 class='fragment'>✓ Create/provision boxes ➡ Vagrant/Ansible</h2>
+		  <h2 class='fragment'>✓ Create/provision boxes ➡
+		  Vagrant + Ansible</h2>
 		  <h2 class='fragment'>✓ Deploy/run ➡ FlightPlan </h2>
 		</section>
 	      </section>
@@ -733,8 +816,8 @@ end</code></pre>
 		<h2>Take this home</h2>
 		
 		<ol>
-		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
-		  <li class='fragment'>There is (almost) <span
+		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (computer|OS)</li>
+		  <li class='fragment'>There is an (almost) <span
 		  class='hilite'>free</span> lunch</li>
 		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
 		  <li class='fragment'>We should ❤ <span class='hilite'>logs</span></li>
@@ -742,7 +825,8 @@ end</code></pre>
 	      </section>
   
   
-    <section data-background='img/forthbridge.jpg' alt='Forth bridge, my own picture'>
+    <section data-background='img/cubos-y-urumea.jpg' alt='From the
+	     other river side, cubes, my own picture'>
       <h1 class='img'>Questions?</h1>
 
 	<h2  class='img'>Code: <a href="https://github.com/JJ/cloudy-ga"><code>git.io/cloudEC</a></code> </h2>
@@ -753,6 +837,8 @@ end</code></pre>
     <section>
       <h3>Credits</h3>
       <ul class='credits'>
+	<li>Running and clouds by <a href='https://www.flickr.com/photos/hernanpc/13377033913/'>Hernán Piñera</a></li>
+	<li>Car assembly by <a href='https://www.flickr.com/photos/chryslergroup/13165656105/'>Chrysler group</a></li>
 	<li>Faucet on the sky <a href='https://www.flickr.com/photos/kristinnador/10338099714/'>by Kristin Nador</a></li>
 	<li>Strip mall by <a href='https://www.flickr.com/photos/thomashawk/4353638156/'>Thomas Hawk</a></li>
 	 <li>Mobiles, Flickr image by <a href='https://flic.kr/p/5omH5r'>Kai Hendry <code>flic.kr/p/5omH5r</code></a></li>
@@ -760,6 +846,8 @@ end</code></pre>
       href='https://flic.kr/p/8NDCRh'>Adriaan Bloem
       <code>flic.kr/p/8NDCRh</code></a></li>
 
+	 <li><a href='https://www.flickr.com/photos/huskyte/8295721947/'>Nature
+	     guiding by  Michael Theis</a></li>
 	<li><a href='https://www.flickr.com/photos/light-palette/12285436923/'>Shooting at clouds by Charles Prithvi Raj</a></li>
 
 	<li>Sandbox, Flickr image by <a
