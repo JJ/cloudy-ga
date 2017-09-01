@@ -1,0 +1,13 @@
+---
+title: 'Artificial life, complex systems and cloud computing: a short review'
+author: "JJ Merelo +"
+date: "1 de septiembre de 2017"
+output: html_document
+bibliography: refs.bib
+abstract:  "Cloud computing is the pervailing mode of designing, creating and deploying complex applications nowadays. Its underlying assumtioms include distributed computing, but also new concepts that need to be incorporated in the different fields. In this short paper we will make a review of how the world of cloud computing has intersected the complex systems and artificial life field, and how it has been used as inspiration for new models or implementation of new and powerful algorithms""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
