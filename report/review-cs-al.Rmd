@@ -1,13 +1,22 @@
 ---
 title: 'Artificial life, complex systems and cloud computing: a short review'
-author: "JJ Merelo +"
+author: "JJ Merelo"
 date: "1 de septiembre de 2017"
 output: html_document
 bibliography: refs.bib
-abstract:  "Cloud computing is the pervailing mode of designing, creating and deploying complex applications nowadays. Its underlying assumtioms include distributed computing, but also new concepts that need to be incorporated in the different fields. In this short paper we will make a review of how the world of cloud computing has intersected the complex systems and artificial life field, and how it has been used as inspiration for new models or implementation of new and powerful algorithms""
+abstract:  "Cloud computing is the pervailing mode of designing, creating and deploying complex applications nowadays. Its underlying assumtioms include distributed computing, but also new concepts that need to be incorporated in the different fields. In this short paper we will make a review of how the world of cloud computing has intersected the complex systems and artificial life field, and how it has been used as inspiration for new models or implementation of new and powerful algorithms"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Introduction
 
+
+[Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing) is currently the dominant computing platform. Even if initially it was a metaphor applied to virtualized resources of any kind that could be accessed in a pay-per-use basis, it has extended itself way beyond its initial and simple translation of data center concepts to create completely new software architectures and metholodogies for developing, testing and deploying large scale applications. 
+These new methodologies have several key issues:
+* Infrastructure is fully automatized and described by software; there is no *hard* boundary between software and hardware, which are developed at the same time, with an application accompanied by the description of the resources it needs. 
+* Applications are a loose collection of resources which interact asynchronously, are independent of each other, and in many cases have their own vendors or product owners. Some resources are ephemeral, appearing when they are needed and vanishing afterwards, some are permanent, but all of them behave reactively, acting when they receive information, and asynchronously, never waiting for response to return but relying instead on promises or other programming language constructs.
+* As such a collection, cloud-native applications become *organic* with parts of it changing without making the applicationa s a whole a different one. There is internal evolution with continuous integration, testing and deployment, as well as evolution in the sense of a progress in fitness, as applications compete with others for mind and market share, as well as resources.
+
+All these characteristics make the cloud an environment that is closer to artificial life than single or multidesktop applications. However, cloud computing is relatively new and, being as it is a technosocial system [@vespignani2009predicting,@JJ2016] it will probably constitute the object of study form the point of view of complex systems, although for the time being that has not been the case. That is the reason why we have decided to create this mini-review of how cloud computing has been applied in the alife/complex systems field, with an emphasis on those papers written in the last few years, when the cloud ecosystem has experimented a big diversity expansion, mainly due to the introduction of containers, isolated applications that act like lightweight virtual machines. We will do so in the next section.
+
+
+## References
