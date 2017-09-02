@@ -53,3 +53,5 @@ node_modules/
 css/reveal.min.css
 js/reveal.min.js
 
+*.html
+**/.vagrant
