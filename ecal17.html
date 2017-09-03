@@ -379,16 +379,19 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 
 		<section data-background='img/dockerfile.png'>
 		  <h1>Bring your own container</h1>
-		  <code class='img'>sudo docker build --no-cache -t jjmerelo/cloudy-ga:0.0.1</code>
+		  <code class='img'>sudo docker build --no-cache -t jjmerelo/cloudy-ga</code>
 
 		</section>
 
 		<section>
 		  <h1>... and run it</h2>
 
-		  <pre class='fragment shell'><code> sudo docker run -t jjmerelo/cloudy-ga:0.0.1  
+		  <pre class='fragment shell'><code> sudo docker run -t jjmerelo/cloudy-ga
      -e "PAPERTRAIL_PORT=7777" 
      -e "PAPERTRAIL_HOST=logs77.papertrailapp.com"</code></pre>
+
+		  <aside class='notes'>This includes logging because
+		    logging is important.</aside>
 		</section>
 
 		<section>
@@ -396,12 +399,6 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		  <img src='img/papertrail.png' alt='Papertrail'>
 		</section>
 
-		<section>
-		  <h1>Use CoreOS</h1>
-		  <h2 class='fragment'>Ready to run on Azure or
-		  anywhere</h2>
-		</section>
-		
 	      </section>
 
 
