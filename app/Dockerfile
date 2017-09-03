@@ -1,8 +1,9 @@
 # Set up using base node
 FROM node:alpine 
-MAINTAINER JJ Merelo "jjmerelo@gmail.com"
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
+LABEL version="0.0.2" maintainer="JJ Merelo <jjmerelo@gmail.com>"
+
 
 #Download basic stuff
 RUN apk update && apk upgrade && apk add python make g++ 
@@ -21,6 +22,7 @@ WORKDIR /app
 RUN npm i
 RUN chmod +x callback-ea-HIFF.js
 RUN cat package.json
+RUN apk del make g++ python
 
 #Set up running cmd
 CMD npm start
