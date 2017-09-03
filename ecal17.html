@@ -119,54 +119,58 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	</section>
 
 	<section>
-	  <h2>Grab the whole presentation</h2>
+	  <h2>Grab the whole presentation and code</h2>
 	  <h1><a href='https://github.com/JJ/cloudy-ga'>git.io/cloudEC</a></h1>
 	  <h2>Address your tweets <code>@jjmerelo</code> + <code>#ecal17</code></h2>
 	</section>
 
-	      <!-- JavaScript -->
-	      <section>
-
-		<section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
-		  <h1 class='img'>JavaScript = native language of the cloud</h1>
-		  
-		  <aside class='notes'>JavaScript is a standard scripting
+	<!-- JavaScript -->
+	<section>
+	  
+	  <section data-background='img/js-mobiles.jpg' alt='pic by hendry'>
+	    <h1 class='img'>JavaScript = native language of the cloud</h1>
+	    
+	    <aside class='notes'>JavaScript is a standard scripting
 		    language initially intended for Netscape but landed
 		    eventually in every browser out there. Maybe Go is
-		    a bit native, too... 
-		  </aside>
-		</section>
-    
-		<section>
-		  <h1>Let's do JavaScript!</h1>
-		  
-		  <h2>Menu → developer → console</h2>
-		  
-		  <img class='illo' src='img/console.png' alt='firefox console'>
-		</section>
-		
-		<section>
-		  <h1>Say hello to these nice folks!</h1>
-		  <pre><code>console.log('¡Hola, chavales!')</code></pre>
-		  
-		  <h2>Or the much more annoying</h2>
-		  <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
-		  
-		  <aside class='notes'>A gentle introduction to
-		    JavaScript to get a idea of what it's like</aside>
-		</section>
-		
-		<section data-template='hor1' data-x='8000'>
-		  <h1>This is an object. That, too.</h1>
-		  <pre><code>console.log('Buenos días'.length)</code></pre>
-		  
-		  <h2>Arrays are objects, and the other way round</h2>
-		  <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
-		</section>
-		
-		<section data-template='hor1' data-x='9000'>
-		  <h1>Chromosomes and fitness</h1>
-		  <pre><code>var chromosome = '1001100110011';
+		    a bit native, too... You can use any language, but
+		    many services, like zeit, are prepared by default
+		    to run JS, which, besides, is the only you can run
+		    on the browser. We are going to see some code, so
+	      we might better get acquainted with it a little bit.</aside>
+	    </aside>
+	  </section>
+	  
+	  <section>
+	    <h1>Let's do JavaScript!</h1>
+	    
+	    <h2>Menu → developer → console</h2>
+	    
+	    <img class='illo' src='img/console.png' alt='firefox console'>
+	  </section>
+	  
+	  <section>
+	    <h1>Say hello to these nice folks!</h1>
+	    <pre><code>console.log('¡Hola, chavales!')</code></pre>
+	    
+	    <h2>Or the much more annoying</h2>
+	    <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
+	    
+	    <aside class='notes'>A gentle introduction to
+	      JavaScript to get a idea of what it's like</aside>
+	  </section>
+	  
+	  <section data-template='hor1' data-x='8000'>
+	    <h1>This is an object. That, too.</h1>
+	    <pre><code>console.log('Buenos días'.length)</code></pre>
+	    
+	    <h2>Arrays are objects, and the other way round</h2>
+	    <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
+	  </section>
+	  
+	  <section data-template='hor1' data-x='9000'>
+	    <h1>Chromosomes and fitness</h1>
+	    <pre><code>var chromosome = '1001100110011';
 var fitness_of = new Object;
 fitness_of[chromosome] = chromosome.match(/1/g).length;  
 var rr = function (chromosome) {
@@ -182,24 +186,24 @@ var rr = function (chromosome) {
 		    chromosome then? What's the fastest way of counting ones? This is
 		    a way of doing it, that besides proves that JS is a higher-order
 		    language that is able to deal with functions as first-class
-		    dwellers of the language</aside>
-		</section>
+		    dwellers of the language.</aside>
+	  </section>
 
-		<section>
-		  <h1>JavaScript is:</h1>
-		  <h2>Standard, (reasonably) fast and</h2>
-		  <h1 class='fragment'>Everywhere</h1>
-		  <h2 class='fragment'>Yes, also in your PS4</h2>
+	  <section>
+	    <h1>JavaScript is:</h1>
+	    <h2>Standard, (reasonably) fast and</h2>
+	    <h1 class='fragment'>Everywhere</h1>
+	    <h2 class='fragment'>Yes, also in your gaming console.</h2>
 		  
-		  <aside class='notes'>Standard is issued by ECMA, which is a
-		    weird standard body, but at least it's one. Last
-		    standard is called ES6, which is closer to more
-		    traditional languages. ES7 up and coming.</aside>
-		</section>
+	    <aside class='notes'>Standard is issued by ECMA, which is a
+	      weird standard body, but at least it's one. Last
+	      standard is called ES6, which is closer to more
+	      traditional languages. ES7 up and coming.</aside>
+	  </section>
 
-		<section>
-		  <h1>(Almost) forget about loops</h1>
-		  <pre><code>function do_ea() {
+	  <section>
+	    <h1>(Almost) forget about loops</h1>
+	    <pre><code>function do_ea() {
  eo.generation();
  generation_count++;
  if( (eo.fitness_of[eo.population[0]] < traps*conf.fitness.b )
@@ -210,28 +214,18 @@ var rr = function (chromosome) {
  }
 }</code></pre>
 
-		  <aside class='notes'>This has nothing to do with the language,
-		    but with the implementation, which is usually single-threaded.</aside>
-		</section>
+	    <aside class='notes'>This has nothing to do with the language,
+	      but with the implementation, which is usually
+	      single-threaded. Besides, it relates to the
+	      asynchronous nature of the cloud.</aside>
+	  </section>
 		
-		<section data-background='img/screens.jpg' alt='Picture by bloem'>
-		  <h1 class='img'>A whole algorithm in a browser</h1>
-		  <h2 class='fragment img'>The browser is the new operating system</h2>
+	  <section>
 		  
-		  
-		</section>
-
-		<section>
-		  <h1>And why not in the server too?</h1>
-
-		</section>
-
-		<section>
-		  
-		  <h3><p><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter.</p></h3>
-		    <h2 class='fragment'><a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
-		  
-		  <pre><code class='javascript'>var eo = new nodeo.Nodeo( { population_size: population_size,
+	    <h3><p><a href='http://node.js'><strong>node.js</strong></a> is an asynchronous JS interpreter.</p></h3>
+	    <h2 class='fragment'><a href='http://dl.acm.org/citation.cfm?id=2605688'>NodEO is an EA library</a>.</h2>
+	    
+	    <pre><code class='javascript'>var eo = new nodeo.Nodeo( { population_size: population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: utils.max_ones } );
 do {
@@ -239,7 +233,7 @@ do {
     console.log( eo.population[0] );
 } while ( eo.fitness_of[eo.population[0]] &lt; chromosome_size );</code></pre>
 
-		  <aside class='notes'>Nodeo can be downloaded from the Node modules
+	    <aside class='notes'>Nodeo can be downloaded from the Node modules
   repository with <code>npm install nodeo</code>. This is actually
   not the preferred way of doing a loop; it should be done
   asynchronously as above, since that will leave no time for I/O or
@@ -251,20 +245,31 @@ do {
 		</section>
 
 
-	      </section>
+	</section>
 
-	      <!-- Containerize -->
-	      <section>
-		<section data-background='https://farm1.staticflickr.com/38/112168045_59c99de30c_o_d.jpg'>
-		  <h2>Cloud is about reproducible infrastructure</h2>
-		  <aside class='notes'>Let's forget about JavaScript for a moment. Not too long. Let's think about the cloud. Clouds are unique, you have to capture the only fleeting moment where they happen. However, the basic idea about the cloud is software-defined, reproducible, infrastructure. And this starts here.</aside>
-		</section>
+	<!-- Containerize -->
+	<section>
+	  <section data-background='https://farm1.staticflickr.com/38/112168045_59c99de30c_o_d.jpg'>
+	    <h2>Cloud is about reproducible infrastructure</h2>
+	    <aside class='notes'>Let's forget about JavaScript for a moment. Not too long. Let's think about the cloud. Clouds are unique, you have to capture the only fleeting moment where they happen. However, the basic idea about the cloud is software-defined, reproducible, infrastructure. And this starts here.</aside>
+	  </section>
+	  
+	  <section data-background='img/tuppers.jpg'>
+	    <h1>Let's containerize</h1>
 
-		<section data-background='img/tuppers.jpg'>
-		  <h1>Let's containerize</h1>
-		</section>
+	    <aside class='notes'>The eclosion of the container
+	  movement started with Docker, although the concept had been
+	  doing the rounds for quite some time. Containers are about
+	  isolation, or packaging applications in such a way that they
+	  can be run, without interference and well-defined
+	      interfaces, everywhere. They started with <em>chroot
+	      cages</em> and <em>zones</em>, but in the last two years
+	  they have become a mature technology that is used mainly in
+	      Linux but also is being slowly ported to other operating systems.</aside>
+	  </section>
 
-		<section>
+	  <section>
+	    <h1>Cooking for containers</h1>
 		  <pre><code class='javascript'>var hiff = new HIFF.HIFF();
 var eo = new nodeo.Nodeo( { population_size: conf.population_size,
 			    chromosome_size: chromosome_size,
