@@ -61,7 +61,17 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	  <section data-background='img/iceland-clouds.jpg'>
 	    <h1>What is the <strong>cloud?</strong></h1>
 	    
-	    <aside class='notes'>Clouds Iceland - happy clouds - all hail the glow cloud - we shouldn't be afraid of the cloud</aside>
+	    <aside class='notes'>Clouds Iceland - happy clouds - all
+	    hail the glow cloud - we shouldn't be afraid of the
+	    cloud. Curious thing is that being as it is a paradigm
+	    shift in computing, there's not so much reference to it
+	    in the artificial life and complex systems field. There's
+	    a single reference in the proceedings to cloud computing,
+	    and it's in the context of a techno-social (or
+	    socio-technical) system. The objective of this tutorial
+	    is to show you more about cloud computing, so that you
+	    get to know it and try to look at it from the point of
+	    view of evolution and artificial life. </aside>
 	  </section>
 	  
 	  <section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
@@ -599,25 +609,12 @@ plan.local(function(local) {
 		    and limited configurability; you usually can make do with
 		    whatever stacks are available as <em>cartridges</em></aside>
 		  
-		</section>
+		</section>		
 
-		<section data-background='img/rest.jpg' alt='Image by psd'>
-		  
-		  <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
-		  
-		  <h2 class='img'>PUT, GET, POST, DELETE</h2>
-		  
+		<section><h1>There's open source PaaS</h1>
+		  <h2 class='fragment'>CloudFoundry, Openshift </h2>
 		</section>
 		
-		<section>
-		  <h1><strong>Ajax</strong>, a standard browser-server communication framework</h1>
-		  
-		  <h2>HTTP petitions from a standard object.</h2>
-		  
-		  <h3 class='fragment'>Asynchronous!</h3>
-		</section>
-		
-    
 		<section data-template='ver2' data-y='4000'>
 		  
 		  <h2>There's <em>freemium</em> PaaS</h2>
@@ -629,7 +626,8 @@ plan.local(function(local) {
 		</section>
 
 		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
-	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+		  <h2>There are cloud <em>native</em> algorithm</h2>
+	<h1 class='fragment'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
 	<aside class='notes'>A change in environment implies a change
 	  in the technology. JS is asynchronous, servers are too. We
@@ -678,7 +676,16 @@ plan.local(function(local) {
 			     IP: client_ip,
 			     worker_uuid:req.params.uuid} );
         res.send( { length : Object.keys(chromosomes).length });
-     }</code></pre>	  
+  }</code></pre>
+
+		  <aside class='notes'>Well defined interfaces and
+		  loose connections are one of the characteristics of
+		  the cloud. We use REST interfaces and JSON as a
+		  representation model to interface between different
+		  parts of the application. And when a part of the
+		  clients can be volunteers, this eventually leads to
+		  a techno-social system which becomes a complex
+		    system. </aside>
 		</section>
 
 		<section><pre><code>app.get('/random', function(req, res){
