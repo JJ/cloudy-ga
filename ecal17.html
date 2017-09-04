@@ -137,7 +137,8 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 		    many services, like zeit, are prepared by default
 		    to run JS, which, besides, is the only you can run
 		    on the browser. We are going to see some code, so
-	      we might better get acquainted with it a little bit.</aside>
+	      we might better get acquainted with it a little bit. It's also asynchronous, functional in a way and continuosly evolving with implementations competing for speed.
+	    </aside>
 	    </aside>
 	  </section>
 	  
@@ -147,29 +148,34 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	    <h2>Menu → developer → console</h2>
 	    
 	    <img class='illo' src='img/console.png' alt='firefox console'>
+	    <aside class='notes'>A few sentences are not enough to
+	    allow you to write a program from scratch, but I would
+	    like you guys to have enough knowledge of JavaScript to
+	      understand what the programs shown here do.</aside>
 	  </section>
 	  
 	  <section>
 	    <h1>Say hello to these nice folks!</h1>
-	    <pre><code>console.log('¡Hola, chavales!')</code></pre>
-	    
-	    <h2>Or the much more annoying</h2>
-	    <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
+	    <pre><code>console.log('Ça va!')</code></pre>
 	    
 	    <aside class='notes'>A gentle introduction to
-	      JavaScript to get a idea of what it's like</aside>
+	      JavaScript to get a idea of what it's like. Different implementations of JavaScript share the same language, but they have different object models. <code>console</code>, however, is in all of them. </aside>
 	  </section>
 	  
 	  <section data-template='hor1' data-x='8000'>
 	    <h1>This is an object. That, too.</h1>
-	    <pre><code>console.log('Buenos días'.length)</code></pre>
+	    <pre><code>console.log('Bonjour'.length)</code></pre>
 	    
 	    <h2>Arrays are objects, and the other way round</h2>
-	    <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
+	    <pre><code>console.log(['Bonjour','Bon après midi','Bon soir'].pop())</code></pre>
+
+	    <aside class='notes'>This also a example of JSON,
+	    JavaScript Object Notation. JSON ties together all the
+	      different parts of the cloud.</aside>
 	  </section>
 	  
 	  <section data-template='hor1' data-x='9000'>
-	    <h1>Chromosomes and fitness</h1>
+	    <h1>Let's evolve: Chromosomes and fitness</h1>
 	    <pre><code>var chromosome = '1001100110011';
 var fitness_of = new Object;
 fitness_of[chromosome] = chromosome.match(/1/g).length;  
@@ -186,7 +192,10 @@ var rr = function (chromosome) {
 		    chromosome then? What's the fastest way of counting ones? This is
 		    a way of doing it, that besides proves that JS is a higher-order
 		    language that is able to deal with functions as first-class
-		    dwellers of the language.</aside>
+		    dwellers of the language. We are also using a
+		    hash so that we don't have to represent it
+		    several times. This is how NodEO, the
+		    evolutionary algorithm in node, works.</aside>
 	  </section>
 
 	  <section>
@@ -202,7 +211,7 @@ var rr = function (chromosome) {
 	  </section>
 
 	  <section>
-	    <h1>(Almost) forget about loops</h1>
+	    <h1>Loops? What loops?</h1>
 	    <pre><code>function do_ea() {
  eo.generation();
  generation_count++;
