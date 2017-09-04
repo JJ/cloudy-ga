@@ -188,14 +188,14 @@ var rr = function (chromosome) {
   return fitness;
 }; </code></pre>
 
-		  <aside class='notes'>What is the way of representing a
-		    chromosome then? What's the fastest way of counting ones? This is
-		    a way of doing it, that besides proves that JS is a higher-order
-		    language that is able to deal with functions as first-class
-		    dwellers of the language. We are also using a
-		    hash so that we don't have to represent it
-		    several times. This is how NodEO, the
-		    evolutionary algorithm in node, works.</aside>
+	    <aside class='notes'>What is the way of representing a
+	      chromosome then? What's the fastest way of counting ones? This is
+	      a way of doing it, that besides proves that JS is a higher-order
+	      language that is able to deal with functions as first-class
+	      dwellers of the language. We are also using a
+	      hash so that we don't have to represent it
+	      several times. This is how NodEO, the
+	      evolutionary algorithm in node, works.</aside>
 	  </section>
 
 	  <section>
@@ -223,10 +223,11 @@ var rr = function (chromosome) {
  }
 }</code></pre>
 
-	    <aside class='notes'>This has nothing to do with the language,
+					       <aside class='notes'>This has nothing to do with the language,
 	      but with the implementation, which is usually
 	      single-threaded. Besides, it relates to the
-	      asynchronous nature of the cloud.</aside>
+	      asynchronous nature of the cloud. We have also used
+	      loops before, so they are not left completely out. </aside>
 	  </section>
 		
 	  <section>
@@ -250,8 +251,17 @@ do {
   can be done alright if you need to do it. Good thing about JS, same
   programming model and language (but not the rest) in client and
   server. Very recently, in fact for this tutorial, version 0.2.2 has
-  been released. And here's a loop which I said we shouldn't use. That does not mean we cannot use it from time to time. So just check it out and forget about it.</aside>
-		</section>
+  been released. And here's a loop which I said we shouldn't use. That
+  does not mean we cannot use it from time to time. So just check it
+	      out and forget about it. And once again, we have a
+  loop. We could do without, of course, using purely
+  functional/concurrent constructs. We'll se to that later on. At this
+  point, of course, we could be doing this in any language; however,
+  there are subtle changes of programming style which are being
+  implemented little by little to arrive at a cloud-native
+  implementation. 
+	    </aside>
+	  </section>
 
 
 	</section>
