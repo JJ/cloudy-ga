@@ -58,10 +58,27 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
       <div class="slides">
         
 	<section>
-	  <section data-background='img/iceland-clouds.jpg'>
+	  <section data-background='img/Museo_Textil_Algoselan_Flandria_09.jpg' alt='Jacquard'>
 	    <h1>What is the <strong>cloud?</strong></h1>
 	    
-	    <aside class='notes'>Clouds Iceland - happy clouds - all hail the glow cloud - we shouldn't be afraid of the cloud</aside>
+	    <aside class='notes'>Curious thing is that being as it is a paradigm
+	    shift in computing, there's not so much reference to it
+	    in the artificial life and complex systems field. There's
+	    a single reference in the proceedings to cloud computing,
+	    and it's in the context of a techno-social (or
+	    socio-technical) system. The objective of this tutorial
+	    is to show you more about cloud computing, so that you
+	    get to know it and try to look at it from the point of
+	    view of evolution and artificial life. And it's a paradigm
+	    shift because description is important. You get to
+	    describe something, you have power over it, but over all
+	    you have the power to reproduce it over and over
+	    again. Jacquard, who was born here in Lyon, and who in
+	    fact experienced the burning of one of their machines
+	    right here, through the Jacquard loom managed to speed up
+	    the production of clothes, and also have them with an
+	    uniform quality. He created, in fact, WaaS, weaving as a
+	    service. </aside>
 	  </section>
 	  
 	  <section data-background='https://farm4.staticflickr.com/3714/10338099714_0cea4974cb_b_d.jpg' alt='tap to the sky'>
@@ -74,8 +91,7 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	    view, except if you have to write grants (which you
 	      probably do)</aside>
 	  </section>
-	  
-	  
+	  	  
 	  <section data-background='https://farm3.staticflickr.com/2720/4353638156_30b153d38e_b_d.jpg' alt='multi vendors'>
 	    <h1>Distributed, multi-vendor, computing</h1>
 	    <aside class='notes'>The intrinsic fact that it's
@@ -93,13 +109,19 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	    <aside class='notes'>This is the real deal. You can do
 	  science, and do it all over again. You  can provide
 	  everything that is needed to reproduce your results, in an
-	      open source basis, and everyone can build on that.</aside>
+	      open source basis, and everyone can build on
+	  that. Repeatability is the essence of experimentation, and
+	  of course the essence of models, and the best way to provide
+	  for this repeatability is to fully describe the
+	  infraestructure needed for running it.</aside>
 	  </section>
 
 		
-	  <section data-background='img/nubes-edimburgo.jpg'>
-	    <h1>A <span class='pink'>new</span> application
+	  <section data-background='https://farm5.staticflickr.com/4391/36841726996_6173503372_o_d.jpg'>
+	    <h2>It's a <span class='pink'>new</span></h2>
+	    <h1 class='fragment'>application
 	      development and deployment paradigm</h1>
+	    <h1 class='fragment'>→ DevOps</h1>
 	    <aside class='notes'>Parallel programming needs parallel
 	    algorithms, concurrent programming needs concurrent
 	      algorithms, cloud programming needss a bit of every one.</aside>
@@ -137,7 +159,8 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 		    many services, like zeit, are prepared by default
 		    to run JS, which, besides, is the only you can run
 		    on the browser. We are going to see some code, so
-	      we might better get acquainted with it a little bit.</aside>
+	      we might better get acquainted with it a little bit. It's also asynchronous, functional in a way and continuosly evolving with implementations competing for speed.
+	    </aside>
 	    </aside>
 	  </section>
 	  
@@ -147,29 +170,34 @@ src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
 	    <h2>Menu → developer → console</h2>
 	    
 	    <img class='illo' src='img/console.png' alt='firefox console'>
+	    <aside class='notes'>A few sentences are not enough to
+	    allow you to write a program from scratch, but I would
+	    like you guys to have enough knowledge of JavaScript to
+	      understand what the programs shown here do.</aside>
 	  </section>
 	  
 	  <section>
 	    <h1>Say hello to these nice folks!</h1>
-	    <pre><code>console.log('¡Hola, chavales!')</code></pre>
-	    
-	    <h2>Or the much more annoying</h2>
-	    <pre><code>alert('¿Qué pasa, coleguis?');</code></pre>
+	    <pre><code>console.log('Ça va!')</code></pre>
 	    
 	    <aside class='notes'>A gentle introduction to
-	      JavaScript to get a idea of what it's like</aside>
+	      JavaScript to get a idea of what it's like. Different implementations of JavaScript share the same language, but they have different object models. <code>console</code>, however, is in all of them. </aside>
 	  </section>
 	  
 	  <section data-template='hor1' data-x='8000'>
 	    <h1>This is an object. That, too.</h1>
-	    <pre><code>console.log('Buenos días'.length)</code></pre>
+	    <pre><code>console.log('Bonjour'.length)</code></pre>
 	    
 	    <h2>Arrays are objects, and the other way round</h2>
-	    <pre><code>console.log(['Buenos días','Buenas tardes','Buenas noches'].pop())</code></pre>
+	    <pre><code>console.log(['Bonjour','Bon après midi','Bon soir'].pop())</code></pre>
+
+	    <aside class='notes'>This also a example of JSON,
+	    JavaScript Object Notation. JSON ties together all the
+	      different parts of the cloud.</aside>
 	  </section>
 	  
 	  <section data-template='hor1' data-x='9000'>
-	    <h1>Chromosomes and fitness</h1>
+	    <h1>Let's evolve: Chromosomes and fitness</h1>
 	    <pre><code>var chromosome = '1001100110011';
 var fitness_of = new Object;
 fitness_of[chromosome] = chromosome.match(/1/g).length;  
@@ -182,11 +210,14 @@ var rr = function (chromosome) {
   return fitness;
 }; </code></pre>
 
-		  <aside class='notes'>What is the way of representing a
-		    chromosome then? What's the fastest way of counting ones? This is
-		    a way of doing it, that besides proves that JS is a higher-order
-		    language that is able to deal with functions as first-class
-		    dwellers of the language.</aside>
+	    <aside class='notes'>What is the way of representing a
+	      chromosome then? What's the fastest way of counting ones? This is
+	      a way of doing it, that besides proves that JS is a higher-order
+	      language that is able to deal with functions as first-class
+	      dwellers of the language. We are also using a
+	      hash so that we don't have to represent it
+	      several times. This is how NodEO, the
+	      evolutionary algorithm in node, works.</aside>
 	  </section>
 
 	  <section>
@@ -202,7 +233,7 @@ var rr = function (chromosome) {
 	  </section>
 
 	  <section>
-	    <h1>(Almost) forget about loops</h1>
+	    <h1>Loops? What loops?</h1>
 	    <pre><code>function do_ea() {
  eo.generation();
  generation_count++;
@@ -214,10 +245,11 @@ var rr = function (chromosome) {
  }
 }</code></pre>
 
-	    <aside class='notes'>This has nothing to do with the language,
+					       <aside class='notes'>This has nothing to do with the language,
 	      but with the implementation, which is usually
 	      single-threaded. Besides, it relates to the
-	      asynchronous nature of the cloud.</aside>
+	      asynchronous nature of the cloud. We have also used
+	      loops before, so they are not left completely out. </aside>
 	  </section>
 		
 	  <section>
@@ -241,8 +273,17 @@ do {
   can be done alright if you need to do it. Good thing about JS, same
   programming model and language (but not the rest) in client and
   server. Very recently, in fact for this tutorial, version 0.2.2 has
-  been released. And here's a loop which I said we shouldn't use. That does not mean we cannot use it from time to time. So just check it out and forget about it.</aside>
-		</section>
+  been released. And here's a loop which I said we shouldn't use. That
+  does not mean we cannot use it from time to time. So just check it
+	      out and forget about it. And once again, we have a
+  loop. We could do without, of course, using purely
+  functional/concurrent constructs. We'll se to that later on. At this
+  point, of course, we could be doing this in any language; however,
+  there are subtle changes of programming style which are being
+  implemented little by little to arrive at a cloud-native
+  implementation. 
+	    </aside>
+	  </section>
 
 
 	</section>
@@ -424,8 +465,21 @@ RUN chmod +x callback-ea-HIFF.js</code></pre>
 		  <h1>Algorithm + stream = application in the cloud</h1>
 		</section>
 
-		<section>
+		<section data-background='https://farm7.staticflickr.com/6109/6228476904_b18c2d5c5e_o_d.jpg'>
 		  <h1>Decoupled processing and data structures</h1>
+		  <h2 class='fragment'><em>Serverless</em>
+		    computing</h2>
+		  <aside class='notes'>Serverless computing reduces
+		  virtualization to single functions, that are
+		  triggered on purpose or by event, creating
+		  autonomous data-flows that scale automatically and
+		  function in a reactive way. Functions do not keep
+		  state, but map inputs to outputs. This is equivalent
+		    to old <em>data-flow</em> computing, but takes it
+		  from some specialized quirk to the mainstream. Most
+		    cloud players implemente
+		  serverless <em>functions</em>, and there is also
+		    OpenWhisk, an open source framework.</aside>
 		</section>
 
 		<section>
@@ -583,25 +637,12 @@ plan.local(function(local) {
 		    and limited configurability; you usually can make do with
 		    whatever stacks are available as <em>cartridges</em></aside>
 		  
-		</section>
+		</section>		
 
-		<section data-background='img/rest.jpg' alt='Image by psd'>
-		  
-		  <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
-		  
-		  <h2 class='img'>PUT, GET, POST, DELETE</h2>
-		  
+		<section><h1>There's open source PaaS</h1>
+		  <h2 class='fragment'>CloudFoundry, Openshift </h2>
 		</section>
 		
-		<section>
-		  <h1><strong>Ajax</strong>, a standard browser-server communication framework</h1>
-		  
-		  <h2>HTTP petitions from a standard object.</h2>
-		  
-		  <h3 class='fragment'>Asynchronous!</h3>
-		</section>
-		
-    
 		<section data-template='ver2' data-y='4000'>
 		  
 		  <h2>There's <em>freemium</em> PaaS</h2>
@@ -613,7 +654,8 @@ plan.local(function(local) {
 		</section>
 
 		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
-	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
+		  <h2>There are cloud <em>native</em> algorithm</h2>
+	<h1 class='fragment'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
 	<aside class='notes'>A change in environment implies a change
 	  in the technology. JS is asynchronous, servers are too. We
@@ -662,7 +704,16 @@ plan.local(function(local) {
 			     IP: client_ip,
 			     worker_uuid:req.params.uuid} );
         res.send( { length : Object.keys(chromosomes).length });
-     }</code></pre>	  
+  }</code></pre>
+
+		  <aside class='notes'>Well defined interfaces and
+		  loose connections are one of the characteristics of
+		  the cloud. We use REST interfaces and JSON as a
+		  representation model to interface between different
+		  parts of the application. And when a part of the
+		  clients can be volunteers, this eventually leads to
+		  a techno-social system which becomes a complex
+		    system. </aside>
 		</section>
 
 		<section><pre><code>app.get('/random', function(req, res){
@@ -687,6 +738,7 @@ plan.local(function(local) {
 });</code></pre>
 
 		</section>
+		
 		<section><h1>Put into pool</h1>
 		  <pre><code>var this_request = conf.url
 		+ 'experiment/0/one/' + population.best() + "/" 
@@ -749,7 +801,7 @@ end</code></pre>
 		<section
 	      data-background='https://farm8.staticflickr.com/7064/6788288304_463cd4897e_b_d.jpg'
 	      alt='Someone in the cloud'>
-		  <h1>Why should you do evolution on the cloud?</h1>
+		  <h1>Why should you do evolution in the cloud?</h1>
 		</section>
 
 		<section
@@ -781,23 +833,24 @@ end</code></pre>
 		  <h1>♻ Let <strong>Nature</strong> be your guide</h1>
 		</section>
 
+			      <!-- Final -->
+			      <section>
+				<h2>Take this home</h2>
+				
+				<ol>
+				  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
+				  <li class='fragment'>There is (almost) <span
+									    class='hilite'>free</span> lunch</li>
+				  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
+				  <li class='fragment'>We should ❤ <span class='hilite'>logs</span></li>
+				</ol>
+			      </section>
+
 	      </section>
 
-	      <!-- Final -->
-	      <section>
-		<h2>Take this home</h2>
-		
-		<ol>
-		  <li class='fragment'><span class='hilite'>Cloud</span> is the new (grid|cluster)</li>
-		  <li class='fragment'>There is (almost) <span
-		  class='hilite'>free</span> lunch</li>
-		  <li class='fragment'><span class='hilite'>Reactive</span> programming</li>
-		  <li class='fragment'>We should ❤ <span class='hilite'>logs</span></li>
-		</ol>
-	      </section>
   
   
-    <section data-background='img/forthbridge.jpg' alt='Forth bridge, my own picture'>
+    <section data-background='https://farm5.staticflickr.com/4415/36889119141_b283b7f9f2_k_d.jpg' alt='Forth bridge, my own picture'>
       <h1 class='img'>Questions?</h1>
 
 	<h2  class='img'>Code: <a href="https://github.com/JJ/cloudy-ga"><code>git.io/cloudEC</a></code> </h2>
@@ -808,6 +861,7 @@ end</code></pre>
     <section>
       <h3>Credits</h3>
       <ul class='credits'>
+	<li><a title="By Roberto Fiadone (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AMuseo_Textil_Algoselan_Flandria_09.jpg">Jacquard cards</a>
 	<li>Faucet on the sky <a href='https://www.flickr.com/photos/kristinnador/10338099714/'>by Kristin Nador</a></li>
 	<li>Strip mall by <a href='https://www.flickr.com/photos/thomashawk/4353638156/'>Thomas Hawk</a></li>
 	 <li>Mobiles, Flickr image by <a href='https://flic.kr/p/5omH5r'>Kai Hendry <code>flic.kr/p/5omH5r</code></a></li>
@@ -835,7 +889,12 @@ end</code></pre>
 
 <li>3 fingers, Flickr image by <a href='https://www.flickr.com/photos/mutsmuts/6007667842'>Mutiara Karina <code>https://flic.kr/p/a9SSm3</code></a>.</li>
 
-<li>Freedom by <a href='https://www.flickr.com/photos/gonzalobaeza/6500452801/'>Gonzalo Baeza</a></li>
+<li>Freedom
+  by <a href='https://www.flickr.com/photos/gonzalobaeza/6500452801/'>Gonzalo
+    Baeza</a></li>
+
+<li>Birds on wire
+  by <a href='https://www.flickr.com/photos/blueviking/6228476904/in/photolist-auozbQ-nUnro5-cSZJQN-nm1wJ1-qeEZao-jyLhCE-dkmcgr-AKC2dM-oRekB8-cugZ6m-d7EuKd-e7mKF7-oXuqTD-9n5KJF-dsEEiV-a3kajp-e1Q2Yf-9UQoQC-9uUZcY-jjh5yP-nLco5E-brMjau-koduNY-ddb8Af-dqms64-dPSpb3-iK5LNi-p2gC5s-8U6mep-bbk1h6-p3ssYf-gvbC1Q-4dv7wE-aTr66V-BJDFtr-bpCrbH-b8dbzH-b2pnTx-q2nSp4-fzGW3o-oiYhfX-av4SSL-jpV1nG-qR4TFL-bsjwFJ-fKHaQb-aFbT51-nnJJup-9vT87v-58J7ij'>Leroy Andersen</a></li>
       </ul>
 
     </section>

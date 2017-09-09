@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import 'https://fonts.googleapis.com/css?family=Baloo+Tamma|Play|Miriam+Libre|Signika|Titillium+Web|Varela+Round|Share+Tech+Mono';
+@import 'https://fonts.googleapis.com/css?family=Baloo+Tamma|Play|Miriam+Libre|Signika|Titillium+Web|Varela+Round|Share+Tech+Mono|Abril+Fatface';
 
 /*********************************************
  * GLOBAL STYLES
@@ -53,7 +53,7 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-             font-family: "Baloo Tamma", Helvetica, sans-serif;
+             font-family: "Abril Fatface", Helvetica, sans-serif;
              font-size: 4em; }
 
 .reveal h2 {
