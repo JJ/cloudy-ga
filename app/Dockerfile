@@ -1,5 +1,5 @@
 # Set up using base node
-FROM node:alpine 
+FROM node:8-alpine 
 RUN echo "Building a docker environment for NodEO"
 ENV DEBIAN_FRONTEND=noninteractive
 LABEL version="0.0.2" maintainer="JJ Merelo <jjmerelo@gmail.com>"

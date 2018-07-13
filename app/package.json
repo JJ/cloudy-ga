@@ -1,6 +1,9 @@
 {
   "name": "hiffeitor",
-  "version": "0.1.1",
+    "version": "0.1.1",
+    { "engines" : { "node" : "<=8" } }
+
+
   "description": "App for testing NodEO",
   "main": "index.js",
   "scripts": {
