@@ -802,31 +802,30 @@ end</code></pre>
 	  <script src="lib/js/head.min.js"></script>
 	  <script src="js/reveal.js"></script>
 
-		<script>
+	  <script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-			  width: '90%',
-			  // Factor of the display size that should remain empty around the content
-			  margin: 0.1,
+	    // Full list of configuration options available at:
+	    // https://github.com/hakimel/reveal.js#configuration
+	    Reveal.initialize({
+	    width: "99%",
+	    // Factor of the display size that should remain empty around the content
 			  
-			  // Bounds for smallest/largest possible scale to apply to content
-			  minScale: 0.2,
-			  maxScale: 1.0,
-			  controls: true,
-			  progress: true,
-			  history: true,
-			  center: true,
+	    // Bounds for smallest/largest possible scale to apply to content
+	    minScale: 0.2,
+	    maxScale: 1.0,
+	    controls: true,
+	    progress: true,
+	    history: true,
+	    center: true,
 
-			  transition: 'convex', // none/fade/slide/convex/concave/zoom
+	    transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-			  // Optional reveal.js plugins
-			  dependencies: [
-			    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-			    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-			    { src: 'plugin/zoom-js/zoom.js', async: true },
-			    { src: 'plugin/notes/notes.js', async: true }
+	    // Optional reveal.js plugins
+	    dependencies: [
+	    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+	    { src: 'plugin/zoom-js/zoom.js', async: true },
+	    { src: 'plugin/notes/notes.js', async: true }
 			  ]
 			});
 

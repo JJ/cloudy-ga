@@ -20,7 +20,7 @@ body {
 
 .reveal {
   font-family: "Varela Round", sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: normal;
   color: #333; }
 
@@ -54,7 +54,7 @@ body {
 
 .reveal h1 {
              font-family: "Abril Fatface", Helvetica, sans-serif;
-             font-size: 4em; }
+             font-size: 3.5em; }
 
 .reveal h2 {
              font-family: "Titillium Web", Helvetica, sans-serif;
