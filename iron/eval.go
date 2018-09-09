@@ -13,5 +13,11 @@ type Individual struct {
 func main() {
 	p := &Individual{Chromosome: ""}
 	json.NewDecoder(os.Stdin).Decode(p)
-	fmt.Printf("Decoded %Chromosome!", p.Chromosome)
+	count_ones := 0
+	for i := 0; i < len(p.Chromosome); i++ {
+		if p.Chromosome[i] == '1' {
+			count_ones++;
+		}
+	}
+	fmt.Printf("{ eval: %d }", count_ones)
 }
