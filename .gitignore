@@ -55,3 +55,6 @@ css/reveal.min.css
 js/reveal.min.js
 
 report/
+
+# Iron.io
+*.db
