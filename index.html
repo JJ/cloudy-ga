@@ -117,6 +117,7 @@
 	  
 	  <section data-background='https://farm2.staticflickr.com/1890/43540425555_20fda85aba_k_d.jpg'>
 	    <h1>➡ It changes the algorithmic <strong>paradigm</strong></h1>
+	    <aside class='notes'>Frank Gehry <a href='https://www.biography.com/people/frank-gehry-9308278'>broke the paradigm of form follows function</a>. You can use any kind of structure, as long as it's aesthetically pleasing. Same with cloudy evolutionary algorithms: you need to think about them in completely different terms. </aside>
 	  </section>
 		
 	  <section data-background='https://farm5.staticflickr.com/4576/38050651675_4c047f44bd_k_d.jpg'>
@@ -573,21 +574,6 @@ plan.local(function(local) {
 
               <section>
 
-		 
-		<section data-background='img/servers.jpg' alt='Servers in a cave by reggestraat'>
-		  <h1>You might not need a whole server</h1>
-		  
-		</section>
-
-		<section data-background='img/sandbox-toys.jpg' alt='sandbox toy by spiritwoods'>  
-		  <h1 class='img'>Platform as a service</h1>
-		  
-		  <aside class='notes'>A platform offers a stack for developers,
-		    and limited configurability; you usually can make do with
-		    whatever stacks are available as <em>cartridges</em></aside>
-		  
-		</section>
-
 		<section data-background='img/rest.jpg' alt='Image by psd'>
 		  
 		  <h1 class='img'>Browsers communicate using <code>HTTP</code> commands</h1>
@@ -615,7 +601,7 @@ plan.local(function(local) {
 		  <img class='illo' src='img/openshift.png' alt="it's openshift capture">
 		</section>
 
-		<section data-background='img/pool-nuns.jpg' src='nuns and pool Lorianne diSabato' >
+		<section data-background='img/pool-nuns.jpg' src='nuns and pool by Lorianne diSabato' >
 	<h1 class='img'>Pool-based evolutionary algorithms: not so canonical any more</h1>
 
 	<aside class='notes'>A change in environment implies a change
@@ -699,23 +685,47 @@ plan.local(function(local) {
 });</code></pre>
 		</section>
 		
-		<section><h1>Deploy server to PaaS ✓</h1>
-		  <h1 class='fragment'>Deploy clients to IaaS ✓</h1>
-		  <h1 class='fragment'>➡ And run!</h1>
-		</section>
-
 		<section
    	      data-background='img/running-azure-parallel.png'
    alt='running in azure'>		  
 		</section>
 
 		<section>
-   	      <img src='img/papertrail-openshift.png' alt='papertrail log'>
+   		  <img src='img/papertrail-openshift.png' alt='papertrail log'>
 		  <h1 class='fragment'>Logs glue everything
-   	      together</h1>
+   		    together</h1>
 		</section>
    	      </section>
 
+	      <!-- Go serverless -->
+	      <section>
+		<section><h1>Go serverless</h1>
+		  <aside class='notes'>Serverless deploys single functions, and scales automatically. It's combined with a message queue for fully asynchronous and concurrent operation.</aside>
+
+		  <section><pre><code>type Individual struct {
+	Chromosome string
+}
+
+func main() {
+	p := &Individual{Chromosome: ""}
+	json.NewDecoder(os.Stdin).Decode(p)
+	count_ones := 0
+	for i := 0; i &lt; len(p.Chromosome); i++ {
+		if p.Chromosome[i] == '1' {
+			count_ones++;
+		}
+	}
+	fmt.Printf("{ eval: %d }", count_ones)
+}</code></pre>
+		    <aside class='notes'>This is an example of function that uses standard input to receive the payload, and prints to standard output. This is managed by the Iron.io framework, a serverless framework</aside>
+		  </section>
+
+		  <section><img src='img/iron-eval.png' alt='Client'>
+		    <img src='img/log.png' alt='Log'>
+		  </section>
+		  <section><h1>Combine with asynchronous queue</h1>
+		  </section>
+	      </section>
 	      <!-- Bringing everything together -->
 	      <section>
 		<section>
