@@ -56,3 +56,5 @@ js/reveal.min.js
 *.html
 **/.vagrant
 **/profile-processed.txt
+
+*.db
