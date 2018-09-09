@@ -3,4 +3,4 @@ version: 0.0.1
 runtime: go
 entrypoint: ./func
 path: /iron-eval
-max_concurrency: 1
+max_concurrency: 4
